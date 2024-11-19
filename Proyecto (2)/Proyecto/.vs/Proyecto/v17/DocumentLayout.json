@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\",
+  "WorkspaceRootPath": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\proyecto final\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\proyectoprograavanzada\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\login\\iniciosesion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\login\\iniciosesion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\login\\iniciosesion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -34,15 +34,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Proyecto\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Usuario.cs",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Usuario.cs",
               "RelativeToolTip": "Proyecto\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -52,9 +60,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CambiarContrasenna.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -64,10 +72,10 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx",
               "RelativeDocumentMoniker": "Proyecto\\Models\\Model1.edmx",
               "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "Proyecto\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2024-11-19T01:07:39.572Z"
             },
@@ -75,9 +83,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Proyecto\\Controllers\\LoginController.cs",
               "ViewState": "AgIAAKMAAAAAAAAAAAAQwMAAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -88,9 +96,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "InicioSesion.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\InicioSesion.cshtml",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\InicioSesion.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Login\\InicioSesion.cshtml",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\InicioSesion.cshtml",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\InicioSesion.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Login\\InicioSesion.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -100,9 +108,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAADQAAACFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",

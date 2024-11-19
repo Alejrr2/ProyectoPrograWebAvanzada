@@ -1,0 +1,69 @@
+﻿@model Proyecto.Models.Usuario
+
+@{
+    ViewBag.Title = "Registro";
+}
+
+<h2>Registro</h2>
+
+
+
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+     data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-3">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <br>
+                            <center> <p class="text6"> A La Pasta </p></center>
+
+                            @using (Html.BeginForm("RegistroEmpleado", "Login"))
+                            {
+                                <div class="mb-4">
+                                    <label class="form-label">Identificación</label>
+                                    @Html.TextBoxFor(m => m.Identificacion, new { @class = "form-control", @type = "id" })
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Nombre</label>
+                                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @type = "name" })
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Apellido</label>
+                                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @type = "lastname" })
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Número de télefono</label>
+                                    @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel" })
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email" })
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Contraseña</label>
+                                    @Html.TextBoxFor(m => m.Contrasenna, new { @class = "form-control", @type = "password" })
+                                </div>
+                                <br>
+
+                                <input type="submit" class="btn w-100 py-2" style="background-color: #f44c31; color: white;" value="Registrarse">
+
+
+                                <br><br>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p class="fs-4 mb-0 fw-bold">¿Ya tiene una cuenta?</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="text-danger fw-bold ms-2" href="@Url.Action("InicioSesion", "Login")">Iniciar Sesión</a>
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

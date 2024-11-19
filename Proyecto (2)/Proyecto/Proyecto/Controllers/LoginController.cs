@@ -83,8 +83,36 @@ namespace Proyecto.Controllers
 
     }
 
-    // GET: Login/RecuperarAcceso
-    [HttpGet]
+        [HttpGet]
+        public ActionResult RegistroEmpleado()
+        {
+            return View();
+        }
+
+        // POST: Login/Registro
+        [HttpPost]
+        public ActionResult RegistroEmpleado(Usuario model)
+        {
+
+            using (var context = new AlaPastaDatabaseEntities1())
+            {
+                var respuesta = context.RegistroEmpleado(model.Identificacion, model.Nombre, model.Apellido, model.CorreoElectronico, model.Telefono, model.Contrasenna);
+
+                if (respuesta > 0)
+                {
+                    return RedirectToAction("InicioSesion", "Login");
+                }
+                else
+                {
+                    ViewBag.MensajePantalla = "No se ha podido regitrar el usuario";
+                    return View();
+                }
+
+            }
+        }
+
+        // GET: Login/RecuperarAcceso
+        [HttpGet]
     public ActionResult RecuperarAcceso()
     {
         return View();

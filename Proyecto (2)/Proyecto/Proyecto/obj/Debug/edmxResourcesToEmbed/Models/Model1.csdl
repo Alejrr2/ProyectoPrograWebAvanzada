@@ -247,27 +247,6 @@
       <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
       <Parameter Name="Telefono" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="CambiarContrasenna">
-      <Parameter Name="Identificacion" Mode="In" Type="String" />
-      <Parameter Name="Contrasenna" Mode="In" Type="String" />
-      <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
-      <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
-      <Parameter Name="Identificacion" Mode="In" Type="String" />
-      <Parameter Name="Contrasenna" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
-      <Parameter Name="Identificacion" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="RegistroUsuario">
-      <Parameter Name="Identificacion" Mode="In" Type="String" />
-      <Parameter Name="Nombre" Mode="In" Type="String" />
-      <Parameter Name="Apellido" Mode="In" Type="String" />
-      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-      <Parameter Name="Telefono" Mode="In" Type="String" />
-      <Parameter Name="Contrasenna" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="ActualizarProducto">
       <Parameter Name="IdProducto" Mode="In" Type="Int32" />
       <Parameter Name="NombreProducto" Mode="In" Type="String" />
@@ -278,8 +257,29 @@
       <Parameter Name="ImagenProd" Mode="In" Type="String" />
       <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
     </FunctionImport>
+    <FunctionImport Name="CambiarContrasenna">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+      <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
+      <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
+    </FunctionImport>
     <FunctionImport Name="EliminarProducto">
       <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroEmpleado">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="RegistroProducto">
       <Parameter Name="NombreProducto" Mode="In" Type="String" />
@@ -289,6 +289,14 @@
       <Parameter Name="Stock" Mode="In" Type="Int32" />
       <Parameter Name="ImagenProd" Mode="In" Type="String" />
       <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroUsuario">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="InicioSesion_Result">

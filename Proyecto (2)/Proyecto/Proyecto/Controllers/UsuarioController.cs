@@ -69,5 +69,67 @@ namespace Proyecto.Controllers
 
         }
 
+        // LISTAR EMPLEADOS - Read
+        public ActionResult ListarEmpleado()
+        {
+            using (var context = new AlaPastaDatabaseEntities1())
+            {
+                var datos = context.tUsuario
+                    .Where(x => x.ConsecutivoRol == 2)
+                    .ToList();
+
+                List<Usuario> empleados = new List<Usuario>();
+
+                foreach (var dato in datos)
+                {
+                    empleados.Add(new Usuario
+                    {
+                        Consecutivo = dato.Consecutivo,
+                        Identificacion = dato.Identificacion,
+                        Nombre = dato.Nombre,
+                        Apellido = dato.Apellido,
+                        CorreoElectronico = dato.CorreoElectronico,
+                        Telefono = dato.Telefono,
+                        ConsecutivoRol = dato.ConsecutivoRol,
+                        NombreRol = "Empleado"
+                    });
+                }
+
+                return View(empleados);
+            }
+        }
+
+
+        /*
+        [HttpGet]
+        public ActionResult EditarEmpleado(Usuario model)
+        {
+            Usuario usuario = new Usuario();
+
+            using (var context = new AlaPastaDatabaseEntities1())
+            {
+                var datos = context.tUsuario
+                    .Where(x => x.Identificacion == model.Identificacion && x.ConsecutivoRol == 2)
+                    .FirstOrDefault();
+
+                if (datos != null)
+                {
+                    usuario.Consecutivo = datos.Consecutivo;
+                    usuario.Identificacion = datos.Identificacion;
+                    usuario.Nombre = datos.Nombre;
+                    usuario.Apellido = datos.Apellido;
+                    usuario.CorreoElectronico = datos.CorreoElectronico;
+                    usuario.Telefono = datos.Telefono;
+                }
+                else
+                {
+                    ViewBag.MensajePantalla = "No se encontró un empleado con el ID especificado.";
+                    return RedirectToAction("ListarEmpleado");
+                }
+
+                return View(usuario);
+            }
+        }*/
+
     }
 }

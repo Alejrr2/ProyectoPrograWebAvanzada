@@ -84,78 +84,6 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarPerfil", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter);
         }
     
-        public virtual int CambiarContrasenna(string identificacion, string contrasenna, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            var contrasennaParameter = contrasenna != null ?
-                new ObjectParameter("Contrasenna", contrasenna) :
-                new ObjectParameter("Contrasenna", typeof(string));
-    
-            var tieneContrasennaTempParameter = tieneContrasennaTemp.HasValue ?
-                new ObjectParameter("TieneContrasennaTemp", tieneContrasennaTemp) :
-                new ObjectParameter("TieneContrasennaTemp", typeof(bool));
-    
-            var fechaVencimientoTempParameter = fechaVencimientoTemp.HasValue ?
-                new ObjectParameter("FechaVencimientoTemp", fechaVencimientoTemp) :
-                new ObjectParameter("FechaVencimientoTemp", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CambiarContrasenna", identificacionParameter, contrasennaParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter);
-        }
-    
-        public virtual ObjectResult<InicioSesion_Result> InicioSesion(string identificacion, string contrasenna)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            var contrasennaParameter = contrasenna != null ?
-                new ObjectParameter("Contrasenna", contrasenna) :
-                new ObjectParameter("Contrasenna", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InicioSesion_Result>("InicioSesion", identificacionParameter, contrasennaParameter);
-        }
-    
-        public virtual ObjectResult<ObtenerDatosUsuario_Result> ObtenerDatosUsuario(string identificacion)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
-        }
-    
-        public virtual int RegistroUsuario(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var apellidoParameter = apellido != null ?
-                new ObjectParameter("Apellido", apellido) :
-                new ObjectParameter("Apellido", typeof(string));
-    
-            var correoElectronicoParameter = correoElectronico != null ?
-                new ObjectParameter("CorreoElectronico", correoElectronico) :
-                new ObjectParameter("CorreoElectronico", typeof(string));
-    
-            var telefonoParameter = telefono != null ?
-                new ObjectParameter("Telefono", telefono) :
-                new ObjectParameter("Telefono", typeof(string));
-    
-            var contrasennaParameter = contrasenna != null ?
-                new ObjectParameter("Contrasenna", contrasenna) :
-                new ObjectParameter("Contrasenna", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
-        }
-    
         public virtual int ActualizarProducto(Nullable<int> idProducto, string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
         {
             var idProductoParameter = idProducto.HasValue ?
@@ -193,6 +121,27 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarProducto", idProductoParameter, nombreProductoParameter, descripciónParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
         }
     
+        public virtual int CambiarContrasenna(string identificacion, string contrasenna, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            var tieneContrasennaTempParameter = tieneContrasennaTemp.HasValue ?
+                new ObjectParameter("TieneContrasennaTemp", tieneContrasennaTemp) :
+                new ObjectParameter("TieneContrasennaTemp", typeof(bool));
+    
+            var fechaVencimientoTempParameter = fechaVencimientoTemp.HasValue ?
+                new ObjectParameter("FechaVencimientoTemp", fechaVencimientoTemp) :
+                new ObjectParameter("FechaVencimientoTemp", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CambiarContrasenna", identificacionParameter, contrasennaParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter);
+        }
+    
         public virtual int EliminarProducto(Nullable<int> idProducto)
         {
             var idProductoParameter = idProducto.HasValue ?
@@ -200,6 +149,57 @@ namespace Proyecto.Models
                 new ObjectParameter("IdProducto", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EliminarProducto", idProductoParameter);
+        }
+    
+        public virtual ObjectResult<InicioSesion_Result> InicioSesion(string identificacion, string contrasenna)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InicioSesion_Result>("InicioSesion", identificacionParameter, contrasennaParameter);
+        }
+    
+        public virtual ObjectResult<ObtenerDatosUsuario_Result> ObtenerDatosUsuario(string identificacion)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
+        }
+    
+        public virtual int RegistroEmpleado(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("Apellido", apellido) :
+                new ObjectParameter("Apellido", typeof(string));
+    
+            var correoElectronicoParameter = correoElectronico != null ?
+                new ObjectParameter("CorreoElectronico", correoElectronico) :
+                new ObjectParameter("CorreoElectronico", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroEmpleado", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
     
         public virtual int RegistroProducto(string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
@@ -233,6 +233,35 @@ namespace Proyecto.Models
                 new ObjectParameter("ActivoProd", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroProducto", nombreProductoParameter, descripciónParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
+        }
+    
+        public virtual int RegistroUsuario(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("Apellido", apellido) :
+                new ObjectParameter("Apellido", typeof(string));
+    
+            var correoElectronicoParameter = correoElectronico != null ?
+                new ObjectParameter("CorreoElectronico", correoElectronico) :
+                new ObjectParameter("CorreoElectronico", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
     }
 }

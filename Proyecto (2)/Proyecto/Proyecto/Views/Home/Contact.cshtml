@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<br>
+<div class="container_24">
+    <center><span class="text3">Contáctenos</span></center>
+    <div class="card-body p-4">
+        <form>
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">Nombre</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="passwordInput" class="form-label">Número de teléfono</label>
+                <input type="number" class="form-control" id="numberInput" placeholder="Ingresa tu número de teléfono" required>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje">Déjanos tu comentario: </label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required="required"></textarea>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+            </div>
+            <a href="@Url.Action("Index","Home")" button type="submit" class="btn w-100 py-2" style="background-color: #f44c31; color: white;">Enviar Comentario</a>
+        </form>
+        <br>
+        <br>
+        <section id="informacion-contacto">
+            <div class="container_24">
+                <center><span class="text4">Información de Contacto</span></center>
+                <p>
+                    <strong>Correo Electrónico:</strong> alapasta@gmail.com<br>
+                    <strong>Teléfono:</strong> +506 0800 1234<br>
+                    <strong>Dirección:</strong> Avenida Central, San José, Costa Rica
+                    <br><br>
+                    Si tienes alguna pregunta o necesitas más información, no dudes en ponerte en contacto con nosotros.
+                </p>
+            </div>
+        </section>
+    </div>
+</div>

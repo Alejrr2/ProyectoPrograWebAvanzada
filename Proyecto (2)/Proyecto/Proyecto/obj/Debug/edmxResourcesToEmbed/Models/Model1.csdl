@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlaPastaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tCategorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCat" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tProductos" Relationship="Self.FK_tProductos_tCategorias" FromRole="tCategorias" ToRole="tProductos" />
+  </EntityType>
+  <EntityType Name="tDetalles">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConsecutivoPed" Type="Int32" Nullable="false" />
+    <Property Name="ConsecutivoProd" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Subtotal" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="tPedidos" Relationship="Self.FK_tDetalles_tPedidos" FromRole="tDetalles" ToRole="tPedidos" />
+    <NavigationProperty Name="tProductos" Relationship="Self.FK_tDetalles_tProductos" FromRole="tDetalles" ToRole="tProductos" />
+  </EntityType>
+  <EntityType Name="tDirecciones">
+    <Key>
+      <PropertyRef Name="IdDireccion" />
+    </Key>
+    <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cantón" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="O_Señales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tMetodos">
+    <Key>
+      <PropertyRef Name="IdMetodo" />
+    </Key>
+    <Property Name="IdMetodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tPagos" Relationship="Self.FK_tPagos_tMetodos" FromRole="tMetodos" ToRole="tPagos" />
+  </EntityType>
+  <EntityType Name="tPagos">
+    <Key>
+      <PropertyRef Name="IdPago" />
+    </Key>
+    <Property Name="IdPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Monto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ConsecutivoPed" Type="Int32" Nullable="false" />
+    <Property Name="ConsecutivoMet" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tMetodos" Relationship="Self.FK_tPagos_tMetodos" FromRole="tPagos" ToRole="tMetodos" />
+    <NavigationProperty Name="tPedidos" Relationship="Self.FK_tPagos_tPedidos" FromRole="tPagos" ToRole="tPedidos" />
+  </EntityType>
+  <EntityType Name="tPedidos">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ConsecutivoCli" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tDetalles" Relationship="Self.FK_tDetalles_tPedidos" FromRole="tPedidos" ToRole="tDetalles" />
+    <NavigationProperty Name="tPagos" Relationship="Self.FK_tPagos_tPedidos" FromRole="tPedidos" ToRole="tPagos" />
+    <NavigationProperty Name="tUsuario" Relationship="Self.FK_tPedidos_tClientes" FromRole="tPedidos" ToRole="tUsuario" />
+  </EntityType>
+  <EntityType Name="tProductos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreProducto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ConsecutivoCat" Type="Int32" Nullable="false" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+    <Property Name="ImagenProd" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ActivoProd" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tCategorias" Relationship="Self.FK_tProductos_tCategorias" FromRole="tProductos" ToRole="tCategorias" />
+    <NavigationProperty Name="tDetalles" Relationship="Self.FK_tDetalles_tProductos" FromRole="tProductos" ToRole="tDetalles" />
+  </EntityType>
+  <EntityType Name="tPuestos">
+    <Key>
+      <PropertyRef Name="IdPuesto" />
+    </Key>
+    <Property Name="IdPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombrePuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tRoles">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tUsuario" Relationship="Self.FK_tUsuario_tRol" FromRole="tRoles" ToRole="tUsuario" />
+  </EntityType>
+  <EntityType Name="tUsuario">
+    <Key>
+      <PropertyRef Name="Consecutivo" />
+    </Key>
+    <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CorreoElectronico" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contrasenna" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ConsecutivoRol" Type="Int32" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="TieneContrasennaTemp" Type="Boolean" Nullable="false" />
+    <Property Name="FechaVencimientoTemp" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tPedidos" Relationship="Self.FK_tPedidos_tClientes" FromRole="tUsuario" ToRole="tPedidos" />
+    <NavigationProperty Name="tRoles" Relationship="Self.FK_tUsuario_tRol" FromRole="tUsuario" ToRole="tRoles" />
+  </EntityType>
+  <Association Name="FK_tProductos_tCategorias">
+    <End Role="tCategorias" Type="Self.tCategorias" Multiplicity="1" />
+    <End Role="tProductos" Type="Self.tProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tCategorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tProductos">
+        <PropertyRef Name="ConsecutivoCat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDetalles_tPedidos">
+    <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="1" />
+    <End Role="tDetalles" Type="Self.tDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPedidos">
+        <PropertyRef Name="IdPedido" />
+      </Principal>
+      <Dependent Role="tDetalles">
+        <PropertyRef Name="ConsecutivoPed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDetalles_tProductos">
+    <End Role="tProductos" Type="Self.tProductos" Multiplicity="1" />
+    <End Role="tDetalles" Type="Self.tDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProductos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tDetalles">
+        <PropertyRef Name="ConsecutivoProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPagos_tMetodos">
+    <End Role="tMetodos" Type="Self.tMetodos" Multiplicity="1" />
+    <End Role="tPagos" Type="Self.tPagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMetodos">
+        <PropertyRef Name="IdMetodo" />
+      </Principal>
+      <Dependent Role="tPagos">
+        <PropertyRef Name="ConsecutivoMet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPagos_tPedidos">
+    <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="1" />
+    <End Role="tPagos" Type="Self.tPagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPedidos">
+        <PropertyRef Name="IdPedido" />
+      </Principal>
+      <Dependent Role="tPagos">
+        <PropertyRef Name="ConsecutivoPed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPedidos_tClientes">
+    <End Role="tUsuario" Type="Self.tUsuario" Multiplicity="1" />
+    <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="Consecutivo" />
+      </Principal>
+      <Dependent Role="tPedidos">
+        <PropertyRef Name="IdPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tUsuario_tRol">
+    <End Role="tRoles" Type="Self.tRoles" Multiplicity="1" />
+    <End Role="tUsuario" Type="Self.tUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tRoles">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="tUsuario">
+        <PropertyRef Name="ConsecutivoRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AlaPastaDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tCategorias" EntityType="Self.tCategorias" />
+    <EntitySet Name="tDetalles" EntityType="Self.tDetalles" />
+    <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" />
+    <EntitySet Name="tMetodos" EntityType="Self.tMetodos" />
+    <EntitySet Name="tPagos" EntityType="Self.tPagos" />
+    <EntitySet Name="tPedidos" EntityType="Self.tPedidos" />
+    <EntitySet Name="tProductos" EntityType="Self.tProductos" />
+    <EntitySet Name="tPuestos" EntityType="Self.tPuestos" />
+    <EntitySet Name="tRoles" EntityType="Self.tRoles" />
+    <EntitySet Name="tUsuario" EntityType="Self.tUsuario" />
+    <AssociationSet Name="FK_tProductos_tCategorias" Association="Self.FK_tProductos_tCategorias">
+      <End Role="tCategorias" EntitySet="tCategorias" />
+      <End Role="tProductos" EntitySet="tProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDetalles_tPedidos" Association="Self.FK_tDetalles_tPedidos">
+      <End Role="tPedidos" EntitySet="tPedidos" />
+      <End Role="tDetalles" EntitySet="tDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDetalles_tProductos" Association="Self.FK_tDetalles_tProductos">
+      <End Role="tProductos" EntitySet="tProductos" />
+      <End Role="tDetalles" EntitySet="tDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPagos_tMetodos" Association="Self.FK_tPagos_tMetodos">
+      <End Role="tMetodos" EntitySet="tMetodos" />
+      <End Role="tPagos" EntitySet="tPagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPagos_tPedidos" Association="Self.FK_tPagos_tPedidos">
+      <End Role="tPedidos" EntitySet="tPedidos" />
+      <End Role="tPagos" EntitySet="tPagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPedidos_tClientes" Association="Self.FK_tPedidos_tClientes">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tPedidos" EntitySet="tPedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tUsuario_tRol" Association="Self.FK_tUsuario_tRol">
+      <End Role="tRoles" EntitySet="tRoles" />
+      <End Role="tUsuario" EntitySet="tUsuario" />
+    </AssociationSet>
+    <FunctionImport Name="ActualizarContrasenna">
+      <Parameter Name="ContrasennaTemp" Mode="In" Type="String" />
+      <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
+      <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
+      <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="ActualizarPerfil">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
+      <Parameter Name="ConsecutivoRol" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroUsuario">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="InicioSesion_Result">
+    <Property Type="Int32" Name="Consecutivo" Nullable="false" />
+    <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Contrasenna" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="ConsecutivoRol" Nullable="false" />
+    <Property Type="Boolean" Name="Activo" Nullable="false" />
+    <Property Type="String" Name="NombreRol" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="TieneContrasennaTemp" Nullable="false" />
+    <Property Type="DateTime" Name="FechaVencimientoTemp" Nullable="false" Precision="23" />
+  </ComplexType>
+</Schema>

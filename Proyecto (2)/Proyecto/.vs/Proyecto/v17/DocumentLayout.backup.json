@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\styles\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\styles\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\styles\\css\\superfish.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\styles\\css\\superfish.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\style.css",
+              "RelativeDocumentMoniker": "Proyecto\\Styles\\css\\style.css",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\style.css",
+              "RelativeToolTip": "Proyecto\\Styles\\css\\style.css",
+              "ViewState": "AgIAALIEAAAAAAAAAAAuwNkEAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-18T23:43:25.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CambiarContrasenna.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-18T23:36:37.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Proyecto\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAcwJAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T23:29:12.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "superfish.css",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\superfish.css",
+              "RelativeDocumentMoniker": "Proyecto\\Styles\\css\\superfish.css",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\superfish.css",
+              "RelativeToolTip": "Proyecto\\Styles\\css\\superfish.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-18T22:57:17.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-18T22:28:26.456Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

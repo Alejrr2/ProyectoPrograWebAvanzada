@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tCategorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCat" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tDetalles">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsecutivoPed" Type="int" Nullable="false" />
+    <Property Name="ConsecutivoProd" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Subtotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tDirecciones">
+    <Key>
+      <PropertyRef Name="IdDireccion" />
+    </Key>
+    <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cantón" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="O_Señales" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tMetodos">
+    <Key>
+      <PropertyRef Name="IdMetodo" />
+    </Key>
+    <Property Name="IdMetodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tPagos">
+    <Key>
+      <PropertyRef Name="IdPago" />
+    </Key>
+    <Property Name="IdPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="FechaPago" Type="date" Nullable="false" />
+    <Property Name="ConsecutivoPed" Type="int" Nullable="false" />
+    <Property Name="ConsecutivoMet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tPedidos">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaPedido" Type="date" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ConsecutivoCli" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tProductos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreProducto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripción" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ConsecutivoCat" Type="int" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
+    <Property Name="ImagenProd" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ActivoProd" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tPuestos">
+    <Key>
+      <PropertyRef Name="IdPuesto" />
+    </Key>
+    <Property Name="IdPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombrePuesto" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tRoles">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreRol" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tUsuario">
+    <Key>
+      <PropertyRef Name="Consecutivo" />
+    </Key>
+    <Property Name="Consecutivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CorreoElectronico" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Contrasenna" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ConsecutivoRol" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="TieneContrasennaTemp" Type="bit" Nullable="false" />
+    <Property Name="FechaVencimientoTemp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tDetalles_tPedidos">
+    <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="1" />
+    <End Role="tDetalles" Type="Self.tDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPedidos">
+        <PropertyRef Name="IdPedido" />
+      </Principal>
+      <Dependent Role="tDetalles">
+        <PropertyRef Name="ConsecutivoPed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDetalles_tProductos">
+    <End Role="tProductos" Type="Self.tProductos" Multiplicity="1" />
+    <End Role="tDetalles" Type="Self.tDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProductos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tDetalles">
+        <PropertyRef Name="ConsecutivoProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPagos_tMetodos">
+    <End Role="tMetodos" Type="Self.tMetodos" Multiplicity="1" />
+    <End Role="tPagos" Type="Self.tPagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMetodos">
+        <PropertyRef Name="IdMetodo" />
+      </Principal>
+      <Dependent Role="tPagos">
+        <PropertyRef Name="ConsecutivoMet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPagos_tPedidos">
+    <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="1" />
+    <End Role="tPagos" Type="Self.tPagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPedidos">
+        <PropertyRef Name="IdPedido" />
+      </Principal>
+      <Dependent Role="tPagos">
+        <PropertyRef Name="ConsecutivoPed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPedidos_tClientes">
+    <End Role="tUsuario" Type="Self.tUsuario" Multiplicity="1" />
+    <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="Consecutivo" />
+      </Principal>
+      <Dependent Role="tPedidos">
+        <PropertyRef Name="IdPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tProductos_tCategorias">
+    <End Role="tCategorias" Type="Self.tCategorias" Multiplicity="1" />
+    <End Role="tProductos" Type="Self.tProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tCategorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tProductos">
+        <PropertyRef Name="ConsecutivoCat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tUsuario_tRol">
+    <End Role="tRoles" Type="Self.tRoles" Multiplicity="1" />
+    <End Role="tUsuario" Type="Self.tUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tRoles">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="tUsuario">
+        <PropertyRef Name="ConsecutivoRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ActualizarContrasenna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContrasennaTemp" Type="varchar" Mode="In" />
+    <Parameter Name="TieneContrasennaTemp" Type="bit" Mode="In" />
+    <Parameter Name="FechaVencimientoTemp" Type="datetime" Mode="In" />
+    <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="ActualizarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
+    <Parameter Name="ConsecutivoRol" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InicioSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+    <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="RegistroUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="AlaPastaDatabaseModelStoreContainer">
+    <EntitySet Name="tCategorias" EntityType="Self.tCategorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDetalles" EntityType="Self.tDetalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tMetodos" EntityType="Self.tMetodos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPagos" EntityType="Self.tPagos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPedidos" EntityType="Self.tPedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tProductos" EntityType="Self.tProductos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPuestos" EntityType="Self.tPuestos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tRoles" EntityType="Self.tRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tUsuario" EntityType="Self.tUsuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tDetalles_tPedidos" Association="Self.FK_tDetalles_tPedidos">
+      <End Role="tPedidos" EntitySet="tPedidos" />
+      <End Role="tDetalles" EntitySet="tDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDetalles_tProductos" Association="Self.FK_tDetalles_tProductos">
+      <End Role="tProductos" EntitySet="tProductos" />
+      <End Role="tDetalles" EntitySet="tDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPagos_tMetodos" Association="Self.FK_tPagos_tMetodos">
+      <End Role="tMetodos" EntitySet="tMetodos" />
+      <End Role="tPagos" EntitySet="tPagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPagos_tPedidos" Association="Self.FK_tPagos_tPedidos">
+      <End Role="tPedidos" EntitySet="tPedidos" />
+      <End Role="tPagos" EntitySet="tPagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPedidos_tClientes" Association="Self.FK_tPedidos_tClientes">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tPedidos" EntitySet="tPedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tProductos_tCategorias" Association="Self.FK_tProductos_tCategorias">
+      <End Role="tCategorias" EntitySet="tCategorias" />
+      <End Role="tProductos" EntitySet="tProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tUsuario_tRol" Association="Self.FK_tUsuario_tRol">
+      <End Role="tRoles" EntitySet="tRoles" />
+      <End Role="tUsuario" EntitySet="tUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

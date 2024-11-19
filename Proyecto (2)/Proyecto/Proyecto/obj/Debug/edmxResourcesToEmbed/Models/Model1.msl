@@ -143,8 +143,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
     <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
     <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
+    <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
   </EntityContainerMapping>
 </Mapping>

@@ -173,35 +173,6 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
         }
     
-        public virtual int RegistroEmpleado(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var apellidoParameter = apellido != null ?
-                new ObjectParameter("Apellido", apellido) :
-                new ObjectParameter("Apellido", typeof(string));
-    
-            var correoElectronicoParameter = correoElectronico != null ?
-                new ObjectParameter("CorreoElectronico", correoElectronico) :
-                new ObjectParameter("CorreoElectronico", typeof(string));
-    
-            var telefonoParameter = telefono != null ?
-                new ObjectParameter("Telefono", telefono) :
-                new ObjectParameter("Telefono", typeof(string));
-    
-            var contrasennaParameter = contrasenna != null ?
-                new ObjectParameter("Contrasenna", contrasenna) :
-                new ObjectParameter("Contrasenna", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroEmpleado", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
-        }
-    
         public virtual int RegistroProducto(string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
         {
             var nombreProductoParameter = nombreProducto != null ?
@@ -262,6 +233,35 @@ namespace Proyecto.Models
                 new ObjectParameter("Contrasenna", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
+        }
+    
+        public virtual int RegistroEmpleado(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("Apellido", apellido) :
+                new ObjectParameter("Apellido", typeof(string));
+    
+            var correoElectronicoParameter = correoElectronico != null ?
+                new ObjectParameter("CorreoElectronico", correoElectronico) :
+                new ObjectParameter("CorreoElectronico", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroEmpleado", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
     }
 }

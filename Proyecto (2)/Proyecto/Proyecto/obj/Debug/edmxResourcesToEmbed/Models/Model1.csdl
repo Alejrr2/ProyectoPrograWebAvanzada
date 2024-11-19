@@ -273,14 +273,6 @@
     <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="RegistroEmpleado">
-      <Parameter Name="Identificacion" Mode="In" Type="String" />
-      <Parameter Name="Nombre" Mode="In" Type="String" />
-      <Parameter Name="Apellido" Mode="In" Type="String" />
-      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-      <Parameter Name="Telefono" Mode="In" Type="String" />
-      <Parameter Name="Contrasenna" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="RegistroProducto">
       <Parameter Name="NombreProducto" Mode="In" Type="String" />
       <Parameter Name="Descripción" Mode="In" Type="String" />
@@ -291,6 +283,14 @@
       <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="RegistroUsuario">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroEmpleado">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Nombre" Mode="In" Type="String" />
       <Parameter Name="Apellido" Mode="In" Type="String" />

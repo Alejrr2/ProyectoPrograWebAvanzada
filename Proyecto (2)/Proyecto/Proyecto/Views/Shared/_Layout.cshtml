@@ -43,6 +43,15 @@
                             <li><a href="@Url.Action("Contact","Home")">Contactenos</a></li>
                             <li><a href="@Url.Action("Canasta", "Carrito")">Carrito</a></li>
 
+                            @{
+                                int rol = 0;
+                                if (Session["Rol"] != null)
+                                {
+                                    rol = int.Parse(Session["Rol"].ToString());
+                                }
+                            }
+
+
                             @if (Session["NombreUsuario"] != null)
                             {
                                 <li class="nav-item dropdown">
@@ -51,8 +60,13 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="userDropdown">
                                         <li><a class="dropdown-item" href="@Url.Action("ActualizarPerfil", "Usuario")">Actualizar <br /> Usuario</a></li>
+                                        @if (rol == 1)
+                                        {
+                                            <li><a class="dropdown-item" href="@Url.Action("RegistroEmpleado", "Login")">Registro <br /> Empleado</a></li>
+                                        }
                                         <li><a class="dropdown-item" href="@Url.Action("CambiarContrasenna", "Login")">Cambiar <br /> Contraseña</a></li>
                                         <li><a class="dropdown-item" href="@Url.Action("CierreSesion", "Login")">Cerrar Sesión</a></li>
+
                                     </ul>
                                 </li>
                             }
@@ -61,7 +75,6 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="guestDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Mi Perfil</a>
                                     <ul class="dropdown-menu" aria-labelledby="guestDropdown">
-                                        <li><a class="dropdown-item" href="@Url.Action("RegistroEmpleado", "Login")">Registro <br /> Empleado</a></li>
                                         <li><a class="dropdown-item" href="@Url.Action("InicioSesion", "Login")">Ingresar</a></li>
                                     </ul>
                                 </li>

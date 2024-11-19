@@ -40,6 +40,12 @@ namespace Proyecto.Controllers
         [HttpGet]
         public ActionResult AgregarProducto()
         {
+            using (var context = new AlaPastaDatabaseEntities1())
+            {
+                var categorias = context.tCategorias.Select(c => new { c.IdCategoria, c.NombreCat }).ToList();
+                ViewBag.Categorias = new SelectList(categorias, "IdCategoria", "NombreCat");
+            }
+
             return View();
         }
 
@@ -63,7 +69,7 @@ namespace Proyecto.Controllers
 
                 if (respuesta > 0)
                 {
-                    string extension = Path.GetExtension(ImagenProd.FileName);  
+                    string extension = Path.GetExtension(ImagenProd.FileName);
                     string ruta = AppDomain.CurrentDomain.BaseDirectory + "ImagenProd\\" + tabla.IdProducto + extension;
                     ImagenProd.SaveAs(ruta);
 

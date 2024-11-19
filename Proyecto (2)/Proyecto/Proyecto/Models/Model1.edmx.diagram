@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ce23911526594752bf4e7e78e54b1665" Name="Diagram1">
+      <Diagram DiagramId="5a7389661ae84896ab11fe168af932be" Name="Diagram1">
         <EntityTypeShape EntityType="AlaPastaDatabaseModel.tCategorias" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AlaPastaDatabaseModel.tDetalles" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AlaPastaDatabaseModel.tDirecciones" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />

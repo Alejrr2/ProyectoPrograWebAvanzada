@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tCategorias">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -290,8 +290,7 @@
             <End Role="tUsuario" EntitySet="tUsuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlaPastaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -559,22 +558,14 @@
             <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="EliminarProducto">
-            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+          <Parameter Name="IdProducto" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
-            <Parameter Name="Identificacion" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="RegistroEmpleado">
-            <Parameter Name="Identificacion" Mode="In" Type="String" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Apellido" Mode="In" Type="String" />
-            <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-            <Parameter Name="Telefono" Mode="In" Type="String" />
-            <Parameter Name="Contrasenna" Mode="In" Type="String" />
+          <Parameter Name="Identificacion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="RegistroProducto">
             <Parameter Name="NombreProducto" Mode="In" Type="String" />
@@ -586,6 +577,14 @@
             <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="RegistroUsuario">
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido" Mode="In" Type="String" />
+            <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="Contrasenna" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegistroEmpleado">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Apellido" Mode="In" Type="String" />
@@ -764,9 +763,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
           <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
           <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
+          <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

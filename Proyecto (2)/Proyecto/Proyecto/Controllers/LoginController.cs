@@ -43,18 +43,17 @@ namespace Proyecto.Controllers
                         Session["Rol"] = resultado.ConsecutivoRol;
                         return RedirectToAction("Index", "Home");
                     }
-                } else
+                }
+                else
                 {
                     ViewBag.MensajePantalla = "Correo o Contraseña incorrecta";
                     return View();
 
                 }
             }
-
-            
         }
 
-    // GET: Login/Registro
+        // GET: Login/Registro
     [HttpGet]
     public ActionResult Registro()
     {

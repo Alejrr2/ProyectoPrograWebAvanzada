@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tCategorias">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -28,9 +28,9 @@
           </Key>
           <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cantón" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cant�n" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="O_Señales" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="O_Se�ales" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -65,7 +65,7 @@
           </Key>
           <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreProducto" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Descripción" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ConsecutivoCat" Type="int" Nullable="false" />
           <Property Name="Stock" Type="int" Nullable="false" />
@@ -202,7 +202,7 @@
         <Function Name="ActualizarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdProducto" Type="int" Mode="In" />
           <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-          <Parameter Name="Descripción" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
           <Parameter Name="Precio" Type="decimal" Mode="In" />
           <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
           <Parameter Name="Stock" Type="int" Mode="In" />
@@ -235,7 +235,7 @@
         </Function>
         <Function Name="RegistroProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-          <Parameter Name="Descripción" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
           <Parameter Name="Precio" Type="decimal" Mode="In" />
           <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
           <Parameter Name="Stock" Type="int" Mode="In" />
@@ -290,7 +290,8 @@
             <End Role="tUsuario" EntitySet="tUsuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlaPastaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -320,9 +321,9 @@
           </Key>
           <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cantón" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cant_n" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="O_Señales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="O_Se_ales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -363,7 +364,7 @@
           </Key>
           <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreProducto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ConsecutivoCat" Type="Int32" Nullable="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
@@ -489,7 +490,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AlaPastaDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AlaPastaDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tCategorias" EntityType="Self.tCategorias" />
           <EntitySet Name="tDetalles" EntityType="Self.tDetalles" />
           <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" />
@@ -544,7 +545,7 @@
           <FunctionImport Name="ActualizarProducto">
             <Parameter Name="IdProducto" Mode="In" Type="Int32" />
             <Parameter Name="NombreProducto" Mode="In" Type="String" />
-            <Parameter Name="Descripción" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
             <Parameter Name="Precio" Mode="In" Type="Decimal" />
             <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
             <Parameter Name="Stock" Mode="In" Type="Int32" />
@@ -558,25 +559,16 @@
             <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="EliminarProducto">
-          <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
-          <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="RegistroProducto">
-            <Parameter Name="NombreProducto" Mode="In" Type="String" />
-            <Parameter Name="Descripción" Mode="In" Type="String" />
-            <Parameter Name="Precio" Mode="In" Type="Decimal" />
-            <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
-            <Parameter Name="Stock" Mode="In" Type="Int32" />
-            <Parameter Name="ImagenProd" Mode="In" Type="String" />
-            <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="RegistroUsuario">
+          <FunctionImport Name="RegistroEmpleado">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Apellido" Mode="In" Type="String" />
@@ -584,7 +576,16 @@
             <Parameter Name="Telefono" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="RegistroEmpleado">
+          <FunctionImport Name="RegistroProducto">
+            <Parameter Name="NombreProducto" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="Precio" Mode="In" Type="Decimal" />
+            <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
+            <Parameter Name="Stock" Mode="In" Type="Int32" />
+            <Parameter Name="ImagenProd" Mode="In" Type="String" />
+            <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="RegistroUsuario">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Apellido" Mode="In" Type="String" />
@@ -620,7 +621,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities1">
+        <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities">
           <EntitySetMapping Name="tCategorias">
             <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCategorias">
               <MappingFragment StoreEntitySet="tCategorias">
@@ -645,9 +646,9 @@
               <MappingFragment StoreEntitySet="tDirecciones">
                 <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Cantón" ColumnName="Cantón" />
+                <ScalarProperty Name="Cant_n" ColumnName="Cant�n" />
                 <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-                <ScalarProperty Name="O_Señales" ColumnName="O_Señales" />
+                <ScalarProperty Name="O_Se_ales" ColumnName="O_Se�ales" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -686,7 +687,7 @@
               <MappingFragment StoreEntitySet="tProductos">
                 <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
                 <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="ConsecutivoCat" ColumnName="ConsecutivoCat" />
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
@@ -763,9 +764,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
           <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
           <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
-          <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

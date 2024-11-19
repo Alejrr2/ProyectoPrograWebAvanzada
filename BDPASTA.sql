@@ -1,4 +1,4 @@
-USE [master]
+ï»¿USE [master]
 GO
 
 CREATE DATABASE [AlaPastaDatabase]
@@ -53,9 +53,9 @@ GO
 CREATE TABLE [dbo].[tDirecciones](
 	[IdDireccion] [int] IDENTITY(1,1) NOT NULL,
 	[Provincia] [varchar](50) NOT NULL,
-	[Cantón] [varchar](50) NOT NULL,
+	[Canton] [varchar](50) NOT NULL,
 	[Distrito] [varchar](50) NOT NULL,
-	[O_Señales] [varchar](255) NOT NULL,
+	[O_Senales] [varchar](255) NOT NULL,
  CONSTRAINT [PK_tDirecciones] PRIMARY KEY CLUSTERED 
 (
 	[IdDireccion] ASC
@@ -102,7 +102,7 @@ GO
 CREATE TABLE [dbo].[tProductos](
 	[IdProducto] [int] IDENTITY(1,1) NOT NULL,
 	[NombreProducto] [varchar](255) NOT NULL,
-	[Descripción] [varchar](255) NOT NULL,
+	[Descripcion] [varchar](255) NOT NULL,
 	[Precio] [decimal](10, 2) NOT NULL,
 	[ConsecutivoCat] [int] NOT NULL,
 	[Stock] [int] NOT NULL,
@@ -228,6 +228,7 @@ BEGIN
     FROM tUsuario
     WHERE Identificacion = @Identificacion
 END
+GO
 
 CREATE PROCEDURE [dbo].[InicioSesion]
 	@Identificacion		varchar(20),
@@ -314,7 +315,7 @@ INSERT INTO [dbo].[tUsuario]
      VALUES
            ('1234567890'
            ,'Juan'
-           ,'Pérez'
+           ,'Perez'
            ,'juan.perez@ejemplo.com'
            ,'123456789'
            ,'password12'
@@ -342,7 +343,7 @@ GO
 
 CREATE PROCEDURE [dbo].[RegistroProducto]
 	@NombreProducto		varchar(255),
-	@Descripción		varchar(255),
+	@Descripcion		varchar(255),
 	@Precio				decimal(10,2),
 	@ConsecutivoCat		int,
 	@Stock				int,
@@ -350,20 +351,18 @@ CREATE PROCEDURE [dbo].[RegistroProducto]
 	@ActivoProd			bit
 AS
 BEGIN
-	INSERT INTO dbo.tProductos(NombreProducto,Descripción,Precio,ConsecutivoCat,Stock,ImagenProd, ActivoProd)
-	VALUES (@NombreProducto,@Descripción,@Precio,@ConsecutivoCat,@Stock,@ImagenProd,1)
+	INSERT INTO dbo.tProductos(NombreProducto,Descripcion,Precio,ConsecutivoCat,Stock,ImagenProd, ActivoProd)
+	VALUES (@NombreProducto,@Descripcion,@Precio,@ConsecutivoCat,@Stock,@ImagenProd,1)
 
 END
 GO
 
 
-USE [AlaPastaDatabase]
 GO
-
 CREATE PROCEDURE [dbo].[ActualizarProducto]
 	@IdProducto int,
 	@NombreProducto		varchar(255),
-	@Descripción		varchar(255),
+	@Descripcion		varchar(255),
 	@Precio				decimal(10,2),
 	@ConsecutivoCat		int,
 	@Stock				int,
@@ -372,8 +371,8 @@ CREATE PROCEDURE [dbo].[ActualizarProducto]
 AS
 BEGIN
     UPDATE    dbo.tProductos
-       SET   NombreProducto = @NombreProducto,
-            Descripción = @Descripción,
+       SET  NombreProducto = @NombreProducto,
+            Descripcion = @Descripcion,
             Precio = @Precio,
             ConsecutivoCat = @ConsecutivoCat,
 			Stock = @Stock,
@@ -418,6 +417,22 @@ BEGIN
 END
 GO
 
+
+GO
+
+INSERT INTO [dbo].[tCategorias]
+           ([NombreCat])
+     VALUES
+           ('Pasta Italiana')
+GO
+USE [AlaPastaDatabase]
+GO
+
+INSERT INTO [dbo].[tCategorias]
+           ([NombreCat])
+     VALUES
+           ('Entradas')
+GO
 
 
 

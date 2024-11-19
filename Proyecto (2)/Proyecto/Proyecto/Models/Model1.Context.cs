@@ -15,10 +15,10 @@ namespace Proyecto.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class AlaPastaDatabaseEntities1 : DbContext
+    public partial class AlaPastaDatabaseEntities : DbContext
     {
-        public AlaPastaDatabaseEntities1()
-            : base("name=AlaPastaDatabaseEntities1")
+        public AlaPastaDatabaseEntities()
+            : base("name=AlaPastaDatabaseEntities")
         {
         }
     
@@ -84,7 +84,7 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarPerfil", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter);
         }
     
-        public virtual int ActualizarProducto(Nullable<int> idProducto, string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
+        public virtual int ActualizarProducto(Nullable<int> idProducto, string nombreProducto, string descripcion, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
         {
             var idProductoParameter = idProducto.HasValue ?
                 new ObjectParameter("IdProducto", idProducto) :
@@ -94,9 +94,9 @@ namespace Proyecto.Models
                 new ObjectParameter("NombreProducto", nombreProducto) :
                 new ObjectParameter("NombreProducto", typeof(string));
     
-            var descripciónParameter = descripción != null ?
-                new ObjectParameter("Descripción", descripción) :
-                new ObjectParameter("Descripción", typeof(string));
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
     
             var precioParameter = precio.HasValue ?
                 new ObjectParameter("Precio", precio) :
@@ -118,7 +118,7 @@ namespace Proyecto.Models
                 new ObjectParameter("ActivoProd", activoProd) :
                 new ObjectParameter("ActivoProd", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarProducto", idProductoParameter, nombreProductoParameter, descripciónParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarProducto", idProductoParameter, nombreProductoParameter, descripcionParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
         }
     
         public virtual int CambiarContrasenna(string identificacion, string contrasenna, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp)
@@ -173,15 +173,44 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
         }
     
-        public virtual int RegistroProducto(string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
+        public virtual int RegistroEmpleado(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("Apellido", apellido) :
+                new ObjectParameter("Apellido", typeof(string));
+    
+            var correoElectronicoParameter = correoElectronico != null ?
+                new ObjectParameter("CorreoElectronico", correoElectronico) :
+                new ObjectParameter("CorreoElectronico", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroEmpleado", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
+        }
+    
+        public virtual int RegistroProducto(string nombreProducto, string descripcion, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
         {
             var nombreProductoParameter = nombreProducto != null ?
                 new ObjectParameter("NombreProducto", nombreProducto) :
                 new ObjectParameter("NombreProducto", typeof(string));
     
-            var descripciónParameter = descripción != null ?
-                new ObjectParameter("Descripción", descripción) :
-                new ObjectParameter("Descripción", typeof(string));
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
     
             var precioParameter = precio.HasValue ?
                 new ObjectParameter("Precio", precio) :
@@ -203,7 +232,7 @@ namespace Proyecto.Models
                 new ObjectParameter("ActivoProd", activoProd) :
                 new ObjectParameter("ActivoProd", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroProducto", nombreProductoParameter, descripciónParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroProducto", nombreProductoParameter, descripcionParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
         }
     
         public virtual int RegistroUsuario(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
@@ -233,35 +262,6 @@ namespace Proyecto.Models
                 new ObjectParameter("Contrasenna", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
-        }
-    
-        public virtual int RegistroEmpleado(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var apellidoParameter = apellido != null ?
-                new ObjectParameter("Apellido", apellido) :
-                new ObjectParameter("Apellido", typeof(string));
-    
-            var correoElectronicoParameter = correoElectronico != null ?
-                new ObjectParameter("CorreoElectronico", correoElectronico) :
-                new ObjectParameter("CorreoElectronico", typeof(string));
-    
-            var telefonoParameter = telefono != null ?
-                new ObjectParameter("Telefono", telefono) :
-                new ObjectParameter("Telefono", typeof(string));
-    
-            var contrasennaParameter = contrasenna != null ?
-                new ObjectParameter("Contrasenna", contrasenna) :
-                new ObjectParameter("Contrasenna", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroEmpleado", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
     }
 }

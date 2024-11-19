@@ -25,7 +25,7 @@ namespace Proyecto.Controllers
         public ActionResult InicioSesion(Usuario model)
         {
 
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var resultado = context.InicioSesion(model.Identificacion, model.Contrasenna).FirstOrDefault();
 
@@ -65,7 +65,7 @@ namespace Proyecto.Controllers
     public ActionResult Registro(Usuario model)
     {
 
-        using (var context = new AlaPastaDatabaseEntities1())
+        using (var context = new AlaPastaDatabaseEntities())
         {
                 bool identificacionExiste = context.tUsuario.Any(u => u.Identificacion == model.Identificacion);
                 bool correoExiste = context.tUsuario.Any(u => u.CorreoElectronico == model.CorreoElectronico);
@@ -116,7 +116,7 @@ namespace Proyecto.Controllers
         public ActionResult RegistroEmpleado(Usuario model)
         {
 
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 bool identificacionExiste = context.tUsuario.Any(u => u.Identificacion == model.Identificacion);
                 bool correoExiste = context.tUsuario.Any(u => u.CorreoElectronico == model.CorreoElectronico);
@@ -168,7 +168,7 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult RecuperarAcceso(Usuario model)
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var datos = context.tUsuario.Where(x => x.Identificacion == model.Identificacion).FirstOrDefault();
 
@@ -256,7 +256,7 @@ namespace Proyecto.Controllers
                 return View();
             }
 
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 String Identificacion = Session["IdUsuario"].ToString();
                 var datos = context.tUsuario.Where(x => x.Identificacion == Identificacion).FirstOrDefault();

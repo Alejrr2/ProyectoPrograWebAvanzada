@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities1">
+  <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities">
     <EntitySetMapping Name="tCategorias">
       <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCategorias">
         <MappingFragment StoreEntitySet="tCategorias">
@@ -25,9 +25,9 @@
         <MappingFragment StoreEntitySet="tDirecciones">
           <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
           <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="Cantón" ColumnName="Cantón" />
+          <ScalarProperty Name="Cant_n" ColumnName="Cant�n" />
           <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-          <ScalarProperty Name="O_Señales" ColumnName="O_Señales" />
+          <ScalarProperty Name="O_Se_ales" ColumnName="O_Se�ales" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -66,7 +66,7 @@
         <MappingFragment StoreEntitySet="tProductos">
           <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
           <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
           <ScalarProperty Name="ConsecutivoCat" ColumnName="ConsecutivoCat" />
           <ScalarProperty Name="Stock" ColumnName="Stock" />
@@ -143,8 +143,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
     <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
     <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
-    <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
   </EntityContainerMapping>
 </Mapping>

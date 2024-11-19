@@ -23,9 +23,9 @@
     </Key>
     <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Cantón" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cant�n" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="O_Señales" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="O_Se�ales" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="tMetodos">
     <Key>
@@ -60,7 +60,7 @@
     </Key>
     <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NombreProducto" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Descripción" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="ConsecutivoCat" Type="int" Nullable="false" />
     <Property Name="Stock" Type="int" Nullable="false" />
@@ -197,7 +197,7 @@
   <Function Name="ActualizarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IdProducto" Type="int" Mode="In" />
     <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-    <Parameter Name="Descripción" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
     <Parameter Name="Precio" Type="decimal" Mode="In" />
     <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
     <Parameter Name="Stock" Type="int" Mode="In" />
@@ -230,7 +230,7 @@
   </Function>
   <Function Name="RegistroProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-    <Parameter Name="Descripción" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
     <Parameter Name="Precio" Type="decimal" Mode="In" />
     <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
     <Parameter Name="Stock" Type="int" Mode="In" />

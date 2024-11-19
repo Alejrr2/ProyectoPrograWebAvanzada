@@ -13,7 +13,7 @@ namespace Proyecto.Controllers
 
         public ActionResult ActualizarPerfil()
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 String Identificacion = Session["IdUsuario"].ToString();
                 var datos = context.ObtenerDatosUsuario(Identificacion).FirstOrDefault();
@@ -43,7 +43,7 @@ namespace Proyecto.Controllers
 
         public ActionResult ActualizarPerfil(Usuario model)
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 
                 var datos = context.tUsuario.Where(x => x.Identificacion == model.Identificacion).FirstOrDefault();
@@ -83,7 +83,7 @@ namespace Proyecto.Controllers
 
         public ActionResult ListarEmpleado()
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var datos = context.tUsuario
                     .Where(x => x.ConsecutivoRol == 2)
@@ -117,7 +117,7 @@ namespace Proyecto.Controllers
         {
             Usuario usuario = new Usuario();
 
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var datos = context.tUsuario
                     .Where(x => x.Identificacion == model.Identificacion && x.ConsecutivoRol == 2)

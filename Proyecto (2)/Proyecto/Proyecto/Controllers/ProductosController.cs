@@ -13,7 +13,7 @@ namespace Proyecto.Controllers
         [HttpGet]
         public ActionResult Productos()
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var datos = context.tProductos.ToList();
 
@@ -24,7 +24,7 @@ namespace Proyecto.Controllers
                     {
                         IdProducto = item.IdProducto,
                         NombreProducto = item.NombreProducto,
-                        Descripción = item.Descripción,
+                        Descripcion = item.Descripcion,
                         Precio = item.Precio,
                         ConsecutivoCat = item.ConsecutivoCat,
                         Stock = item.Stock,
@@ -40,7 +40,7 @@ namespace Proyecto.Controllers
         [HttpGet]
         public ActionResult AgregarProducto()
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var categorias = context.tCategorias.Select(c => new { c.IdCategoria, c.NombreCat }).ToList();
                 ViewBag.Categorias = new SelectList(categorias, "IdCategoria", "NombreCat");
@@ -52,12 +52,12 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult AgregarProducto(Producto model, HttpPostedFileBase ImagenProd)
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var tabla = new tProductos();
                 tabla.IdProducto = 0;
                 tabla.NombreProducto = model.NombreProducto;
-                tabla.Descripción = model.Descripción;
+                tabla.Descripcion = model.Descripcion;
                 tabla.Precio = model.Precio;
                 tabla.ConsecutivoCat = model.ConsecutivoCat;
                 tabla.Stock = model.Stock;
@@ -89,7 +89,7 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult EliminarProducto(int idProducto)
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var respuesta = context.EliminarProducto(idProducto);
 
@@ -113,7 +113,7 @@ namespace Proyecto.Controllers
         [HttpGet]
         public ActionResult ActualizarProducto(long idProducto)
         {
-            using (var context = new AlaPastaDatabaseEntities1())
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var datos = context.tProductos.Where(x => x.IdProducto == idProducto).FirstOrDefault();
 
@@ -126,7 +126,7 @@ namespace Proyecto.Controllers
                 {
                     IdProducto = datos.IdProducto,
                     NombreProducto = datos.NombreProducto,
-                    Descripción = datos.Descripción,
+                    Descripcion = datos.Descripcion,
                     Precio = datos.Precio,
                     ConsecutivoCat = datos.ConsecutivoCat,
                     Stock = datos.Stock,

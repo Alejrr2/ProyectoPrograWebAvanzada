@@ -26,9 +26,9 @@
     </Key>
     <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Cantón" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cant_n" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="O_Señales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="O_Se_ales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="tMetodos">
     <Key>
@@ -69,7 +69,7 @@
     </Key>
     <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NombreProducto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="ConsecutivoCat" Type="Int32" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
@@ -195,7 +195,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="AlaPastaDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="AlaPastaDatabaseEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tCategorias" EntityType="Self.tCategorias" />
     <EntitySet Name="tDetalles" EntityType="Self.tDetalles" />
     <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" />
@@ -250,7 +250,7 @@
     <FunctionImport Name="ActualizarProducto">
       <Parameter Name="IdProducto" Mode="In" Type="Int32" />
       <Parameter Name="NombreProducto" Mode="In" Type="String" />
-      <Parameter Name="Descripción" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
       <Parameter Name="Precio" Mode="In" Type="Decimal" />
       <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
       <Parameter Name="Stock" Mode="In" Type="Int32" />
@@ -273,16 +273,7 @@
     <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="RegistroProducto">
-      <Parameter Name="NombreProducto" Mode="In" Type="String" />
-      <Parameter Name="Descripción" Mode="In" Type="String" />
-      <Parameter Name="Precio" Mode="In" Type="Decimal" />
-      <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
-      <Parameter Name="Stock" Mode="In" Type="Int32" />
-      <Parameter Name="ImagenProd" Mode="In" Type="String" />
-      <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="RegistroUsuario">
+    <FunctionImport Name="RegistroEmpleado">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Nombre" Mode="In" Type="String" />
       <Parameter Name="Apellido" Mode="In" Type="String" />
@@ -290,7 +281,16 @@
       <Parameter Name="Telefono" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="RegistroEmpleado">
+    <FunctionImport Name="RegistroProducto">
+      <Parameter Name="NombreProducto" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
+      <Parameter Name="Stock" Mode="In" Type="Int32" />
+      <Parameter Name="ImagenProd" Mode="In" Type="String" />
+      <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroUsuario">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Nombre" Mode="In" Type="String" />
       <Parameter Name="Apellido" Mode="In" Type="String" />

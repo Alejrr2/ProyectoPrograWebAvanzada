@@ -1,70 +1,63 @@
-﻿
+﻿@model List<Proyecto.Models.Producto>
 @{
     ViewBag.Title = "Productos";
 }
-
-
 <section id="content" class="prod">
     <div class="container_24">
         <div class="wrapper">
             <article class="grid_24">
-                <h2 class="p17">Nuestro menú</h2>
-                <div class="wrapper p19">
-                    <article class="grid_6 alpha">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img1.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 1</a>
-                        <p class="p11">Descripcion del producto </p>
-                        <span class="text5">$14.99</span>
-                    </article>
-                    <article class="grid_6">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img2.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 2</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$15.75</span>
-                    </article>
-                    <article class="grid_6">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img3.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 3</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$12.00</span>
-                    </article>
-                    <article class="grid_6 omega">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img4.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 4</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$14.50</span>
-                    </article>
+                @{
+                    int rol = 0;
+                    if (Session["Rol"] != null)
+                    {
+                        rol = int.Parse(Session["Rol"].ToString());
+                    }
+                }
+
+
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 class="p17 text-black font-weight-bold">Nuestro menú</h2>
+                    @if (rol == 1)
+                    {
+                        <a class="btn btn-outline-danger" href="@Url.Action("AgregarProducto", "Productos")"> + Agregar </a>
+                    }
                 </div>
-                <div class="wrapper">
-                    <article class="grid_6 alpha">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img5.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 5</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$10.80</span>
-                    </article>
-                    <article class="grid_6">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img6.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 6</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$13.99</span>
-                    </article>
-                    <article class="grid_6">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img7.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 7</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$16.25</span>
-                    </article>
-                    <article class="grid_6 omega">
-                        <figure class="page3-img1 img-bot"><img src="/Styles/images/page3-img8.jpg" alt=""></figure>
-                        <a class="link2" href="#">Producto 8</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$15.55</span>
-                    </article>
+
+
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 text-center border-0 shadow-sm" style="background-color: #f8f9fa;">
+                                <figure class="page3-img1 img-bot">
+                                    <img src="@(!string.IsNullOrEmpty(item.ImagenProd) ? item.ImagenProd : Url.Content("~/Images/placeholder.png"))"
+                                         alt="@item.NombreProducto"
+                                         class="img-fluid rounded"
+                                         style="width:250px; height:225px; object-fit: cover; margin: auto;" />
+                                </figure>
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger font-weight-bold">@item.NombreProducto</h5>
+                                    <p class="card-text text-body">@item.Descripción</p>
+                                    <span class="text-dark font-weight-bold">$@item.Precio</span>
+                                </div>
+                                @if (rol == 1)
+                                {
+                                    <!-- <a class="btn" href="@Url.Action("ActualizarProducto","Productos", new { q = item.IdProducto })"><i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a> -->
+
+                                    <form action="@Url.Action("EliminarProducto", "Productos")" method="post" style="display:inline;">
+                                        <input type="hidden" name="idProducto" value="@item.IdProducto" />
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
+                                    </form>
+                                }
+                                    <br />
+                                </div>
+                        </div>
+                    }
                 </div>
             </article>
         </div>
     </div>
 </section>
 
+<!-- Archivo JS -->
 <script src="~/Styles/FuncionesJS/Productos.js"></script>
-

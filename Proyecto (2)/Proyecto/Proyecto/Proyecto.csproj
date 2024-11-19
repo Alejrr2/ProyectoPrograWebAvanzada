@@ -381,9 +381,11 @@
     <Content Include="Views\Productos\Productos.cshtml" />
     <Content Include="Views\Login\CambiarContrasenna.cshtml" />
     <Content Include="Views\Usuario\ActualizarPerfil.cshtml" />
+    <Content Include="Views\Productos\AgregarProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ImagenProd\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

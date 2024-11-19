@@ -142,5 +142,8 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
+    <FunctionImportMapping FunctionImportName="ActualizarProducto" FunctionName="AlaPastaDatabaseModel.Store.ActualizarProducto" />
+    <FunctionImportMapping FunctionImportName="EliminarProducto" FunctionName="AlaPastaDatabaseModel.Store.EliminarProducto" />
+    <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
   </EntityContainerMapping>
 </Mapping>

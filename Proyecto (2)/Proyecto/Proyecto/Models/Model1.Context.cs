@@ -155,5 +155,84 @@ namespace Proyecto.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
+    
+        public virtual int ActualizarProducto(Nullable<int> idProducto, string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("IdProducto", idProducto) :
+                new ObjectParameter("IdProducto", typeof(int));
+    
+            var nombreProductoParameter = nombreProducto != null ?
+                new ObjectParameter("NombreProducto", nombreProducto) :
+                new ObjectParameter("NombreProducto", typeof(string));
+    
+            var descripciónParameter = descripción != null ?
+                new ObjectParameter("Descripción", descripción) :
+                new ObjectParameter("Descripción", typeof(string));
+    
+            var precioParameter = precio.HasValue ?
+                new ObjectParameter("Precio", precio) :
+                new ObjectParameter("Precio", typeof(decimal));
+    
+            var consecutivoCatParameter = consecutivoCat.HasValue ?
+                new ObjectParameter("ConsecutivoCat", consecutivoCat) :
+                new ObjectParameter("ConsecutivoCat", typeof(int));
+    
+            var stockParameter = stock.HasValue ?
+                new ObjectParameter("Stock", stock) :
+                new ObjectParameter("Stock", typeof(int));
+    
+            var imagenProdParameter = imagenProd != null ?
+                new ObjectParameter("ImagenProd", imagenProd) :
+                new ObjectParameter("ImagenProd", typeof(string));
+    
+            var activoProdParameter = activoProd.HasValue ?
+                new ObjectParameter("ActivoProd", activoProd) :
+                new ObjectParameter("ActivoProd", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarProducto", idProductoParameter, nombreProductoParameter, descripciónParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
+        }
+    
+        public virtual int EliminarProducto(Nullable<int> idProducto)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("IdProducto", idProducto) :
+                new ObjectParameter("IdProducto", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EliminarProducto", idProductoParameter);
+        }
+    
+        public virtual int RegistroProducto(string nombreProducto, string descripción, Nullable<decimal> precio, Nullable<int> consecutivoCat, Nullable<int> stock, string imagenProd, Nullable<bool> activoProd)
+        {
+            var nombreProductoParameter = nombreProducto != null ?
+                new ObjectParameter("NombreProducto", nombreProducto) :
+                new ObjectParameter("NombreProducto", typeof(string));
+    
+            var descripciónParameter = descripción != null ?
+                new ObjectParameter("Descripción", descripción) :
+                new ObjectParameter("Descripción", typeof(string));
+    
+            var precioParameter = precio.HasValue ?
+                new ObjectParameter("Precio", precio) :
+                new ObjectParameter("Precio", typeof(decimal));
+    
+            var consecutivoCatParameter = consecutivoCat.HasValue ?
+                new ObjectParameter("ConsecutivoCat", consecutivoCat) :
+                new ObjectParameter("ConsecutivoCat", typeof(int));
+    
+            var stockParameter = stock.HasValue ?
+                new ObjectParameter("Stock", stock) :
+                new ObjectParameter("Stock", typeof(int));
+    
+            var imagenProdParameter = imagenProd != null ?
+                new ObjectParameter("ImagenProd", imagenProd) :
+                new ObjectParameter("ImagenProd", typeof(string));
+    
+            var activoProdParameter = activoProd.HasValue ?
+                new ObjectParameter("ActivoProd", activoProd) :
+                new ObjectParameter("ActivoProd", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroProducto", nombreProductoParameter, descripciónParameter, precioParameter, consecutivoCatParameter, stockParameter, imagenProdParameter, activoProdParameter);
+        }
     }
 }

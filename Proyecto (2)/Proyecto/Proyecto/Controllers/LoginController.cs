@@ -42,6 +42,7 @@ namespace Proyecto.Controllers
                     {
                         Session["IdUsuario"] = resultado.Identificacion;
                         Session["NombreUsuario"] = resultado.Nombre;
+                        Session["Rol"] = resultado.ConsecutivoRol;
                         return RedirectToAction("Index", "Home");
                     }
                 }

@@ -11,9 +11,9 @@ namespace Proyecto.Models
         public string NombreProducto { get; set; }
         public string Descripción { get; set; }
         public Decimal Precio { get; set; }
-        public long ConsecutivoCat { get; set; }
+        public int ConsecutivoCat { get; set; }
         public int Stock { get; set; }
         public string ImagenProd { get; set; }
-        public string ActivoProd { get; set; }
+        public bool ActivoProd { get; set; }
     }
 }

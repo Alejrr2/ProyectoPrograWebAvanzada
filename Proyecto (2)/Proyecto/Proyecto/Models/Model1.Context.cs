@@ -38,7 +38,7 @@ namespace Proyecto.Models
         public virtual DbSet<tRoles> tRoles { get; set; }
         public virtual DbSet<tUsuario> tUsuario { get; set; }
     
-        public virtual int ActualizarContrasenna(string contrasennaTemp, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp, Nullable<long> consecutivo)
+        public virtual int ActualizarContrasenna(string contrasennaTemp, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp, Nullable<int> consecutivo)
         {
             var contrasennaTempParameter = contrasennaTemp != null ?
                 new ObjectParameter("ContrasennaTemp", contrasennaTemp) :
@@ -54,12 +54,12 @@ namespace Proyecto.Models
     
             var consecutivoParameter = consecutivo.HasValue ?
                 new ObjectParameter("Consecutivo", consecutivo) :
-                new ObjectParameter("Consecutivo", typeof(long));
+                new ObjectParameter("Consecutivo", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarContrasenna", contrasennaTempParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter, consecutivoParameter);
         }
     
-        public virtual int ActualizarPerfil(string identificacion, string nombre, string correoElectronico, Nullable<long> consecutivo, Nullable<int> consecutivoRol)
+        public virtual int ActualizarPerfil(string identificacion, string nombre, string apellido, string correoElectronico, string telefono)
         {
             var identificacionParameter = identificacion != null ?
                 new ObjectParameter("Identificacion", identificacion) :
@@ -69,19 +69,40 @@ namespace Proyecto.Models
                 new ObjectParameter("Nombre", nombre) :
                 new ObjectParameter("Nombre", typeof(string));
     
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("Apellido", apellido) :
+                new ObjectParameter("Apellido", typeof(string));
+    
             var correoElectronicoParameter = correoElectronico != null ?
                 new ObjectParameter("CorreoElectronico", correoElectronico) :
                 new ObjectParameter("CorreoElectronico", typeof(string));
     
-            var consecutivoParameter = consecutivo.HasValue ?
-                new ObjectParameter("Consecutivo", consecutivo) :
-                new ObjectParameter("Consecutivo", typeof(long));
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
     
-            var consecutivoRolParameter = consecutivoRol.HasValue ?
-                new ObjectParameter("ConsecutivoRol", consecutivoRol) :
-                new ObjectParameter("ConsecutivoRol", typeof(int));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarPerfil", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter);
+        }
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarPerfil", identificacionParameter, nombreParameter, correoElectronicoParameter, consecutivoParameter, consecutivoRolParameter);
+        public virtual int CambiarContrasenna(string identificacion, string contrasenna, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            var tieneContrasennaTempParameter = tieneContrasennaTemp.HasValue ?
+                new ObjectParameter("TieneContrasennaTemp", tieneContrasennaTemp) :
+                new ObjectParameter("TieneContrasennaTemp", typeof(bool));
+    
+            var fechaVencimientoTempParameter = fechaVencimientoTemp.HasValue ?
+                new ObjectParameter("FechaVencimientoTemp", fechaVencimientoTemp) :
+                new ObjectParameter("FechaVencimientoTemp", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CambiarContrasenna", identificacionParameter, contrasennaParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter);
         }
     
         public virtual ObjectResult<InicioSesion_Result> InicioSesion(string identificacion, string contrasenna)
@@ -126,25 +147,13 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
     
-        public virtual int CambiarContrasenna(string identificacion, string contrasenna, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp)
+        public virtual ObjectResult<ObtenerDatosUsuario_Result> ObtenerDatosUsuario(string identificacion)
         {
             var identificacionParameter = identificacion != null ?
                 new ObjectParameter("Identificacion", identificacion) :
                 new ObjectParameter("Identificacion", typeof(string));
     
-            var contrasennaParameter = contrasenna != null ?
-                new ObjectParameter("Contrasenna", contrasenna) :
-                new ObjectParameter("Contrasenna", typeof(string));
-    
-            var tieneContrasennaTempParameter = tieneContrasennaTemp.HasValue ?
-                new ObjectParameter("TieneContrasennaTemp", tieneContrasennaTemp) :
-                new ObjectParameter("TieneContrasennaTemp", typeof(bool));
-    
-            var fechaVencimientoTempParameter = fechaVencimientoTemp.HasValue ?
-                new ObjectParameter("FechaVencimientoTemp", fechaVencimientoTemp) :
-                new ObjectParameter("FechaVencimientoTemp", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CambiarContrasenna", identificacionParameter, contrasennaParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
         }
     }
 }

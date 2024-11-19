@@ -1,37 +1,46 @@
 ﻿@model Proyecto.Models.Usuario
 @{
-    ViewBag.Title = "CambiarContrasenna";
+    ViewBag.Title = "Cambiar Contraseña";
 }
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">Actualizar Contraseña</h5>
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-header bg-danger text-center">
+            <h5 class="mb-0 text-white">
+                <span class="d-block">Actualizar</span>
+                <span class="d-block">Contraseña</span>
+            </h5>
+        </div>
+        <div class="card-body">
+            @if (ViewBag.MensajePantalla != null)
+            {
+                <div class="alert alert-danger text-center" role="alert">
+                    @ViewBag.MensajePantalla
+                </div>
+            }
 
-        @if (ViewBag.MensajePantalla != null)
-        {
-            <div class="alert alert-danger text-center" role="alert">
-                @ViewBag.MensajePantalla
-            </div>
-        }
+            @using (Html.BeginForm("CambiarContrasenna", "Login", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
+            {
+                <div class="mb-4">
+                    <label for="ContrasennaAnterior" class="form-label fw-semibold">Contraseña Anterior</label>
+                    @Html.TextBoxFor(m => m.ContrasennaAnterior, new { @type = "password", @class = "form-control", @placeholder = "Ingrese su contraseña anterior" })
+                </div>
 
-        @using (Html.BeginForm("CambiarContrasenna", "Login"))
-        {
-            <div class="mb-3">
-                <label class="form-label">Contraseña Anterior</label>
-                @Html.TextBoxFor(m => m.ContrasennaAnterior, new { @type = "password", @class = "form-control" })
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Nueva Contraseña</label>
-                @Html.TextBoxFor(m => m.Contrasenna, new { @type = "password", @class = "form-control" })
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Confirmar Contraseña</label>
-                @Html.TextBoxFor(m => m.ConfirmarContrasenna, new { @type = "password", @class = "form-control" })
-            </div>
+                <div class="mb-4">
+                    <label for="Contrasenna" class="form-label fw-semibold">Nueva Contraseña</label>
+                    @Html.TextBoxFor(m => m.Contrasenna, new { @type = "password", @class = "form-control", @placeholder = "Ingrese su nueva contraseña" })
+                </div>
 
-            <button type="submit" class="btn btn-primary">Procesar</button>
-        }
+                <div class="mb-4">
+                    <label for="ConfirmarContrasenna" class="form-label fw-semibold">Confirmar Contraseña</label>
+                    @Html.TextBoxFor(m => m.ConfirmarContrasenna, new { @type = "password", @class = "form-control", @placeholder = "Confirme su nueva contraseña" })
+                </div>
 
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-danger fw-semibold">Actualizar Contraseña</button>
+                </div>
+            }
+        </div>
     </div>
 </div>
 

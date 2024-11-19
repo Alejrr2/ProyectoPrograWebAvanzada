@@ -1,0 +1,44 @@
+﻿@model Proyecto.Models.Usuario
+@{
+    ViewBag.Title = "ActualizarPerfil";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Actualizar Perfil</h5>
+
+        @if (ViewBag.MensajePantalla != null)
+        {
+            <div class="alert alert-danger text-center" role="alert">
+                @ViewBag.MensajePantalla
+            </div>
+        }
+
+        @using (Html.BeginForm("ActualizarPerfil", "Usuario"))
+        {
+            <div class="mb-3">
+                <label class="form-label">Identificación</label>
+                @Html.TextBoxFor(m => m.Identificacion, new { @class = "form-control", @readOnly = true, style = "background-color: #f5efee;" })
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control" })
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Correo</label>
+                @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email" })
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Teléfono</label>
+                @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel" })
+            </div>
+            <button type="submit" class="btn btn-primary">Procesar</button>
+        }
+    </div>
+</div>
+
+

@@ -190,14 +190,14 @@
           <Parameter Name="ContrasennaTemp" Type="varchar" Mode="In" />
           <Parameter Name="TieneContrasennaTemp" Type="bit" Mode="In" />
           <Parameter Name="FechaVencimientoTemp" Type="datetime" Mode="In" />
-          <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
+          <Parameter Name="Consecutivo" Type="int" Mode="In" />
         </Function>
         <Function Name="ActualizarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido" Type="varchar" Mode="In" />
           <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
-          <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
-          <Parameter Name="ConsecutivoRol" Type="int" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
         </Function>
         <Function Name="CambiarContrasenna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
@@ -208,6 +208,9 @@
         <Function Name="InicioSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
           <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ObtenerDatosUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
         </Function>
         <Function Name="RegistroUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
@@ -499,14 +502,20 @@
             <Parameter Name="ContrasennaTemp" Mode="In" Type="String" />
             <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
             <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
-            <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
+            <Parameter Name="Consecutivo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ActualizarPerfil">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido" Mode="In" Type="String" />
             <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-            <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
-            <Parameter Name="ConsecutivoRol" Mode="In" Type="Int32" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CambiarContrasenna">
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Contrasenna" Mode="In" Type="String" />
+            <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
+            <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -520,11 +529,8 @@
             <Parameter Name="Telefono" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="CambiarContrasenna">
-            <Parameter Name="Identificacion" Mode="In" Type="String" />
-            <Parameter Name="Contrasenna" Mode="In" Type="String" />
-            <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
-            <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
+          <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
+          <Parameter Name="Identificacion" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="InicioSesion_Result">
@@ -540,6 +546,14 @@
           <Property Type="String" Name="NombreRol" Nullable="false" MaxLength="50" />
           <Property Type="Boolean" Name="TieneContrasennaTemp" Nullable="false" />
           <Property Type="DateTime" Name="FechaVencimientoTemp" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ObtenerDatosUsuario_Result">
+          <Property Type="Int32" Name="Consecutivo" Nullable="false" />
+          <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -656,6 +670,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="ActualizarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.ActualizarContrasenna" />
           <FunctionImportMapping FunctionImportName="ActualizarPerfil" FunctionName="AlaPastaDatabaseModel.Store.ActualizarPerfil" />
+          <FunctionImportMapping FunctionImportName="CambiarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.CambiarContrasenna" />
           <FunctionImportMapping FunctionImportName="InicioSesion" FunctionName="AlaPastaDatabaseModel.Store.InicioSesion">
             <ResultMapping>
               <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.InicioSesion_Result">
@@ -675,7 +690,18 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
-          <FunctionImportMapping FunctionImportName="CambiarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.CambiarContrasenna" />
+          <FunctionImportMapping FunctionImportName="ObtenerDatosUsuario" FunctionName="AlaPastaDatabaseModel.Store.ObtenerDatosUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.ObtenerDatosUsuario_Result">
+                <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

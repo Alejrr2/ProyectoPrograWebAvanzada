@@ -238,14 +238,20 @@
       <Parameter Name="ContrasennaTemp" Mode="In" Type="String" />
       <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
       <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
-      <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
+      <Parameter Name="Consecutivo" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="ActualizarPerfil">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
       <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-      <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
-      <Parameter Name="ConsecutivoRol" Mode="In" Type="Int32" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CambiarContrasenna">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+      <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
+      <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -259,11 +265,8 @@
       <Parameter Name="Telefono" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="CambiarContrasenna">
+    <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
-      <Parameter Name="Contrasenna" Mode="In" Type="String" />
-      <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
-      <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="InicioSesion_Result">
@@ -279,5 +282,13 @@
     <Property Type="String" Name="NombreRol" Nullable="false" MaxLength="50" />
     <Property Type="Boolean" Name="TieneContrasennaTemp" Nullable="false" />
     <Property Type="DateTime" Name="FechaVencimientoTemp" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="ObtenerDatosUsuario_Result">
+    <Property Type="Int32" Name="Consecutivo" Nullable="false" />
+    <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
   </ComplexType>
 </Schema>

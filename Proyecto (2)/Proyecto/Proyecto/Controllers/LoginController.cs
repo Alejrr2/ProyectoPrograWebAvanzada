@@ -27,12 +27,10 @@ namespace Proyecto.Controllers
 
             using (var context = new AlaPastaDatabaseEntities1())
             {
-                // Llama al procedimiento almacenado `InicioSesion` para validar las credenciales
                 var resultado = context.InicioSesion(model.Identificacion, model.Contrasenna).FirstOrDefault();
 
                 if (resultado != null)
                 {
-                    // Credenciales correctas: redirige al Home o dashboard
                     if (resultado.TieneContrasennaTemp && resultado.FechaVencimientoTemp < DateTime.Now)
                     {
                         ViewBag.MensajePantalla = "Credenciales Expiradas";
@@ -45,10 +43,15 @@ namespace Proyecto.Controllers
                         Session["Rol"] = resultado.ConsecutivoRol;
                         return RedirectToAction("Index", "Home");
                     }
+                } else
+                {
+                    ViewBag.MensajePantalla = "Correo o Contraseña incorrecta";
+                    return View();
+
                 }
             }
 
-            return View();
+            
         }
 
     // GET: Login/Registro

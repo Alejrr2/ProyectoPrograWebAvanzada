@@ -23,27 +23,27 @@
                             {
                                 <div class="mb-4">
                                     <label class="form-label">Identificación</label>
-                                    @Html.TextBoxFor(m => m.Identificacion, new { @class = "form-control", @type = "id" })
+                                    @Html.TextBoxFor(m => m.Identificacion, new { @class = "form-control", @type = "id", @required = "required" })
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Nombre</label>
-                                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @type = "name" })
+                                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @type = "name", @required = "required" })
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Apellido</label>
-                                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @type = "lastname" })
+                                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @type = "lastname", @required = "required" })
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Número de télefono</label>
-                                    @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel" })
+                                    @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel", @required = "required" })
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Correo Electrónico</label>
-                                    @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email" })
+                                    @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email", @required = "required" })
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Contraseña</label>
-                                    @Html.TextBoxFor(m => m.Contrasenna, new { @class = "form-control", @type = "password" })
+                                    @Html.TextBoxFor(m => m.Contrasenna, new { @class = "form-control", @type = "password", @required = "required" })
                                 </div>
                                 <br>
 

@@ -35,10 +35,12 @@ namespace Proyecto.Controllers
                     // Credenciales correctas: redirige al Home o dashboard
                     if (resultado.TieneContrasennaTemp && resultado.FechaVencimientoTemp < DateTime.Now)
                     {
+                        ViewBag.MensajePantalla = "Credenciales Expiradas";
                         return View();
                     }
                     else
                     {
+                        Session["IdUsuario"] = resultado.Identificacion;
                         Session["NombreUsuario"] = resultado.Nombre;
                         return RedirectToAction("Index", "Home");
                     }
@@ -63,11 +65,20 @@ namespace Proyecto.Controllers
         using (var context = new AlaPastaDatabaseEntities())
         {
             var respuesta = context.RegistroUsuario(model.Identificacion, model.Nombre, model.Apellido, model.CorreoElectronico, model.Telefono, model.Contrasenna);
-            if (respuesta >)
+
+            if (respuesta > 0)
+                {
+                    return RedirectToAction("InicioSesion", "Login");
+                }
+            else
+                {
+                    ViewBag.MensajePantalla = "No se ha podido regitrar el usuario";
+                    return View();
+                }
               
         }
 
-        return RedirectToAction("InicioSesion", "Login");
+       
 
     }
 
@@ -142,6 +153,14 @@ namespace Proyecto.Controllers
             client.Send(message);
         }
 
+
+        [HttpGet]
+        public ActionResult CierreSesion()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpGet]
         public ActionResult CambiarContrasenna()
         {
@@ -164,8 +183,8 @@ namespace Proyecto.Controllers
 
             using (var context = new AlaPastaDatabaseEntities())
             {
-                long Consecutivo = long.Parse(Session["Consecutivo"].ToString());
-                var datos = context.tUsuario.Where(x => x.Consecutivo == Consecutivo).FirstOrDefault();
+                String Identificacion = Session["IdUsuario"].ToString();
+                var datos = context.tUsuario.Where(x => x.Identificacion == Identificacion).FirstOrDefault();
 
                 if (datos != null)
                 {
@@ -174,26 +193,24 @@ namespace Proyecto.Controllers
                         ViewBag.MensajePantalla = "La contraseña anterior no coincide";
                         return View();
                     }
-
-                    datos.Contrasenna = model.Contrasenna;
-                    datos.TieneContrasennaTemp = false;
-                    datos.FechaVencimientoTemp = DateTime.Now;
-                    context.SaveChanges();
-                    return RedirectToAction("Index", "Home");
+                    var respuesta = context.CambiarContrasenna(Identificacion, model.Contrasenna, false, DateTime.Now);
+                    if (respuesta > 0)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ViewBag.MensajePantalla = "No se ha Cambiar la contraseña el usuario";
+                        return View();
+                    }
+                    
                 }
-
                 ViewBag.MensajePantalla = "Sus credenciales no se han podido actualizar correctamente";
                 return View();
             }
         }
 
-        [HttpGet]
-        public ActionResult CierreSesion()
-        {
-            Session.Clear();
-            return RedirectToAction("Index", "Home");
-        }
 
-        
+
     }
 }

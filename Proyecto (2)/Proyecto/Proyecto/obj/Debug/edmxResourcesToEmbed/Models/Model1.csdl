@@ -259,6 +259,12 @@
       <Parameter Name="Telefono" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="CambiarContrasenna">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+      <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
+      <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="InicioSesion_Result">
     <Property Type="Int32" Name="Consecutivo" Nullable="false" />

@@ -194,6 +194,12 @@
     <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
     <Parameter Name="ConsecutivoRol" Type="int" Mode="In" />
   </Function>
+  <Function Name="CambiarContrasenna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+    <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
+    <Parameter Name="TieneContrasennaTemp" Type="bit" Mode="In" />
+    <Parameter Name="FechaVencimientoTemp" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="InicioSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Identificacion" Type="varchar" Mode="In" />
     <Parameter Name="Contrasenna" Type="varchar" Mode="In" />

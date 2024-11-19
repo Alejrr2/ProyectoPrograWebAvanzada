@@ -125,5 +125,26 @@ namespace Proyecto.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
         }
+    
+        public virtual int CambiarContrasenna(string identificacion, string contrasenna, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            var contrasennaParameter = contrasenna != null ?
+                new ObjectParameter("Contrasenna", contrasenna) :
+                new ObjectParameter("Contrasenna", typeof(string));
+    
+            var tieneContrasennaTempParameter = tieneContrasennaTemp.HasValue ?
+                new ObjectParameter("TieneContrasennaTemp", tieneContrasennaTemp) :
+                new ObjectParameter("TieneContrasennaTemp", typeof(bool));
+    
+            var fechaVencimientoTempParameter = fechaVencimientoTemp.HasValue ?
+                new ObjectParameter("FechaVencimientoTemp", fechaVencimientoTemp) :
+                new ObjectParameter("FechaVencimientoTemp", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CambiarContrasenna", identificacionParameter, contrasennaParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter);
+        }
     }
 }

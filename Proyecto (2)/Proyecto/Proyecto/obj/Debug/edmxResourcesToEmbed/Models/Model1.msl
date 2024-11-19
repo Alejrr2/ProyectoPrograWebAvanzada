@@ -129,5 +129,6 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
+    <FunctionImportMapping FunctionImportName="CambiarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.CambiarContrasenna" />
   </EntityContainerMapping>
 </Mapping>

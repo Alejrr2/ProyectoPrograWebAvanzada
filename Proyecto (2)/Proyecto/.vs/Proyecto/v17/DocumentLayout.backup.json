@@ -1,26 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\",
+  "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\styles\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\styles\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\proyecto final\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\jmario proyecto\\proyecto (2)\\proyecto\\proyecto\\styles\\css\\superfish.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\styles\\css\\superfish.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\login\\cambiarcontrasenna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\login\\iniciosesion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\login\\iniciosesion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,72 +34,79 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\style.css",
-              "RelativeDocumentMoniker": "Proyecto\\Styles\\css\\style.css",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\style.css",
-              "RelativeToolTip": "Proyecto\\Styles\\css\\style.css",
-              "ViewState": "AgIAALIEAAAAAAAAAAAuwNkEAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-18T23:43:25.408Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Usuario.cs",
+              "RelativeToolTip": "Proyecto\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T01:12:29.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CambiarContrasenna.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T00:37:32.462Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CambiarContrasenna.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
-              "RelativeDocumentMoniker": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
-              "RelativeToolTip": "Proyecto\\Views\\Login\\CambiarContrasenna.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T23:36:37.215Z",
-              "EditorCaption": ""
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "Proyecto\\Models\\Model1.edmx",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Proyecto\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-11-19T01:07:39.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Proyecto\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAcwJAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAQwMAAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T23:29:12.535Z",
+              "WhenOpened": "2024-11-19T00:36:18.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "superfish.css",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\superfish.css",
-              "RelativeDocumentMoniker": "Proyecto\\Styles\\css\\superfish.css",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\css\\superfish.css",
-              "RelativeToolTip": "Proyecto\\Styles\\css\\superfish.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-18T22:57:17.537Z",
-              "EditorCaption": ""
+              "Title": "InicioSesion.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\InicioSesion.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Login\\InicioSesion.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Login\\InicioSesion.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Login\\InicioSesion.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T00:11:23.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\Jmario Proyecto\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADQAAACFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T22:28:26.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T22:28:26.456Z"
             }
           ]
         }

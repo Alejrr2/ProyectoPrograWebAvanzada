@@ -28,9 +28,9 @@
           </Key>
           <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cant�n" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Canton" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="O_Se�ales" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="O_Senales" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -321,9 +321,9 @@
           </Key>
           <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cant_n" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="O_Se_ales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="O_Senales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -646,9 +646,9 @@
               <MappingFragment StoreEntitySet="tDirecciones">
                 <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Cant_n" ColumnName="Cant�n" />
+                <ScalarProperty Name="Canton" ColumnName="Canton" />
                 <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-                <ScalarProperty Name="O_Se_ales" ColumnName="O_Se�ales" />
+                <ScalarProperty Name="O_Senales" ColumnName="O_Senales" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

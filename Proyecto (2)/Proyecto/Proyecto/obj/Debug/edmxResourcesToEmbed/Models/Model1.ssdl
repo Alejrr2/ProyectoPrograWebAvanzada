@@ -23,9 +23,9 @@
     </Key>
     <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Cant�n" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Canton" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="O_Se�ales" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="O_Senales" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="tMetodos">
     <Key>

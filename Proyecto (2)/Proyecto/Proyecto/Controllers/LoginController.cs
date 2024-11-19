@@ -142,7 +142,7 @@ namespace Proyecto.Controllers
 
                 if (respuesta > 0)
                 {
-                    return RedirectToAction("InicioSesion", "Login");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

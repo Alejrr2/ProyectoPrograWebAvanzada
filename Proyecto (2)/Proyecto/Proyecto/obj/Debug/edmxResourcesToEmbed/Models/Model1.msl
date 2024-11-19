@@ -25,9 +25,9 @@
         <MappingFragment StoreEntitySet="tDirecciones">
           <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
           <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="Cant_n" ColumnName="Cant�n" />
+          <ScalarProperty Name="Canton" ColumnName="Canton" />
           <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-          <ScalarProperty Name="O_Se_ales" ColumnName="O_Se�ales" />
+          <ScalarProperty Name="O_Senales" ColumnName="O_Senales" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

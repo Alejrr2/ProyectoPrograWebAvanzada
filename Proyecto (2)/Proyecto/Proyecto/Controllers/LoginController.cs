@@ -118,6 +118,26 @@ namespace Proyecto.Controllers
 
             using (var context = new AlaPastaDatabaseEntities1())
             {
+                bool identificacionExiste = context.tUsuario.Any(u => u.Identificacion == model.Identificacion);
+                bool correoExiste = context.tUsuario.Any(u => u.CorreoElectronico == model.CorreoElectronico);
+                
+                if (identificacionExiste || correoExiste)
+                {
+                    if (identificacionExiste && correoExiste)
+                    {
+                        ViewBag.MensajePantalla = "La identificación y el correo ya existen.";
+                    }
+                    else if (identificacionExiste)
+                    {
+                        ViewBag.MensajePantalla = "La identificación ya existe.";
+                    }
+                    else if (correoExiste)
+                    {
+                        ViewBag.MensajePantalla = "El correo ya existe.";
+                    }
+                    return View(model);
+                }
+
                 var respuesta = context.RegistroEmpleado(model.Identificacion, model.Nombre, model.Apellido, model.CorreoElectronico, model.Telefono, model.Contrasenna);
 
                 if (respuesta > 0)
@@ -133,8 +153,12 @@ namespace Proyecto.Controllers
             }
         }
 
-        // GET: Login/RecuperarAcceso
-        [HttpGet]
+
+    
+
+
+    // GET: Login/RecuperarAcceso
+    [HttpGet]
     public ActionResult RecuperarAcceso()
     {
         return View();

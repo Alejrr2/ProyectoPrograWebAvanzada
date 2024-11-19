@@ -20,31 +20,31 @@
         {
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                @Html.TextBoxFor(m => m.NombreProducto, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.NombreProducto, new { @class = "form-control", @required = "required"})
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Descripción</label>
-                @Html.TextAreaFor(m => m.Descripción, new { @class = "form-control" })
+                @Html.TextAreaFor(m => m.Descripción, new { @class = "form-control", @required = "required" })
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Precio</label>
-                @Html.TextBoxFor(m => m.Precio, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Precio, new { @class = "form-control", @required = "required" })
             </div>
             <div class="mb-4">
                 <label class="form-label">Categoría</label>
-                @Html.DropDownListFor(m => m.ConsecutivoCat, (SelectList)ViewBag.Categorias, "Seleccione una Categoría", new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.ConsecutivoCat, (SelectList)ViewBag.Categorias, "Seleccione una Categoría", new { @class = "form-control", @required = "required" })
             </div>
 
             <div class="mb-4">
                 <label class="form-label">Cantidad</label>
-                @Html.TextBoxFor(m => m.Stock, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Stock, new { @class = "form-control", @required = "required" })
             </div>
 
             <div class="mb-4">
                 <label class="form-label">Imagen</label>
-                <input type="file" id="ImagenProd" name="ImagenProd" class="form-control">
+                <input type="file" id="ImagenProd" name="ImagenProd" class="form-control " required>
             </div>
             <div class="mb-4">
                 <label class="form-label">Activo</label>

@@ -45,31 +45,42 @@ namespace Proyecto.Controllers
         {
             using (var context = new AlaPastaDatabaseEntities1())
             {
-
+                
                 var datos = context.tUsuario.Where(x => x.Identificacion == model.Identificacion).FirstOrDefault();
-
-                if (datos != null)
+               
+                if (datos == null)
                 {
-                    var respuesta = context.ActualizarPerfil(model.Identificacion, model.Nombre, model.Apellido, model.CorreoElectronico, model.Telefono);
-
-                    
-                    if (respuesta > 0)
-                    {
-                        var nombreUsuario = model.Nombre;
-                        Session["NombreUsuario"] = nombreUsuario;
-                        
-                        return RedirectToAction("Index", "Home");
-                    }
+                    ViewBag.MensajePantalla = "Usuario no encontrado.";
+                    return View();
                 }
-                ViewBag.MensajePantalla = "Su información no se ha podido actualizar correctamente";
+          
+                bool correoExiste = false;
+                if (datos.CorreoElectronico != model.CorreoElectronico)
+                {
+                    correoExiste = context.tUsuario.Any(u => u.CorreoElectronico == model.CorreoElectronico);
+                }
 
-                return View();
+                if (correoExiste)
+                {
+                    ViewBag.MensajePantalla = "El correo ingresado ya existe.";
+                    return View(model);
+                }
 
+                var respuesta = context.ActualizarPerfil(model.Identificacion, model.Nombre, model.Apellido, model.CorreoElectronico, model.Telefono);
+
+                if (respuesta > 0)
+                {
+                    Session["NombreUsuario"] = model.Nombre;
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ViewBag.MensajePantalla = "Su información no se ha podido actualizar correctamente.";
+                    return View(model);
+                }
             }
-
         }
 
-        // LISTAR EMPLEADOS - Read
         public ActionResult ListarEmpleado()
         {
             using (var context = new AlaPastaDatabaseEntities1())

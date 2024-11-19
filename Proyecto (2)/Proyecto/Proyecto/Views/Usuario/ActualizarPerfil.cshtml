@@ -29,22 +29,22 @@
 
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Nombre</label>
-                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @placeholder = "Ingresa tu nombre" })
+                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @placeholder = "Ingresa tu nombre", @required = "required" })
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Apellido</label>
-                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @placeholder = "Ingresa tu apellido" })
+                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @placeholder = "Ingresa tu apellido", @required = "required" })
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Correo</label>
-                    @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email", @placeholder = "ejemplo@correo.com" })
+                    @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email", @placeholder = "ejemplo@correo.com", @required = "required" })
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Teléfono</label>
-                    @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel", @placeholder = "123-456-7890" })
+                    @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel", @placeholder = "123-456-7890", @required = "required" })
                 </div>
 
                 <div class="d-grid">

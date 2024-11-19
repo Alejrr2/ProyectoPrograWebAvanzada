@@ -25,7 +25,7 @@ namespace Proyecto.Controllers
         public ActionResult InicioSesion(Usuario model)
         {
 
-            using (var context = new AlaPastaDatabaseEntities())
+            using (var context = new AlaPastaDatabaseEntities1())
             {
                 // Llama al procedimiento almacenado `InicioSesion` para validar las credenciales
                 var resultado = context.InicioSesion(model.Identificacion, model.Contrasenna).FirstOrDefault();
@@ -62,7 +62,7 @@ namespace Proyecto.Controllers
     public ActionResult Registro(Usuario model)
     {
 
-        using (var context = new AlaPastaDatabaseEntities())
+        using (var context = new AlaPastaDatabaseEntities1())
         {
             var respuesta = context.RegistroUsuario(model.Identificacion, model.Nombre, model.Apellido, model.CorreoElectronico, model.Telefono, model.Contrasenna);
 
@@ -93,7 +93,7 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult RecuperarAcceso(Usuario model)
         {
-            using (var context = new AlaPastaDatabaseEntities())
+            using (var context = new AlaPastaDatabaseEntities1())
             {
                 var datos = context.tUsuario.Where(x => x.Identificacion == model.Identificacion).FirstOrDefault();
 
@@ -181,7 +181,7 @@ namespace Proyecto.Controllers
                 return View();
             }
 
-            using (var context = new AlaPastaDatabaseEntities())
+            using (var context = new AlaPastaDatabaseEntities1())
             {
                 String Identificacion = Session["IdUsuario"].ToString();
                 var datos = context.tUsuario.Where(x => x.Identificacion == Identificacion).FirstOrDefault();

@@ -195,7 +195,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="AlaPastaDatabaseEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="AlaPastaDatabaseEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tCategorias" EntityType="Self.tCategorias" />
     <EntitySet Name="tDetalles" EntityType="Self.tDetalles" />
     <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" />
@@ -238,7 +238,7 @@
       <Parameter Name="ContrasennaTemp" Mode="In" Type="String" />
       <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
       <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
-      <Parameter Name="Consecutivo" Mode="In" Type="Int32" />
+      <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
     </FunctionImport>
     <FunctionImport Name="ActualizarPerfil">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -257,6 +257,9 @@
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="RegistroUsuario">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Nombre" Mode="In" Type="String" />
@@ -264,9 +267,6 @@
       <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
       <Parameter Name="Telefono" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
-      <Parameter Name="Identificacion" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="InicioSesion_Result">

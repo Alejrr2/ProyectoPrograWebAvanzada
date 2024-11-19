@@ -13,7 +13,7 @@ namespace Proyecto.Controllers
 
         public ActionResult ActualizarPerfil()
         {
-            using (var context = new AlaPastaDatabaseEntities())
+            using (var context = new AlaPastaDatabaseEntities1())
             {
                 String Identificacion = Session["IdUsuario"].ToString();
                 var datos = context.ObtenerDatosUsuario(Identificacion).FirstOrDefault();
@@ -43,7 +43,7 @@ namespace Proyecto.Controllers
 
         public ActionResult ActualizarPerfil(Usuario model)
         {
-            using (var context = new AlaPastaDatabaseEntities())
+            using (var context = new AlaPastaDatabaseEntities1())
             {
 
                 var datos = context.tUsuario.Where(x => x.Identificacion == model.Identificacion).FirstOrDefault();

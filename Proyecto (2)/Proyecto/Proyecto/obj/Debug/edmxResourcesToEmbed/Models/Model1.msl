@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities">
+  <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities1">
     <EntitySetMapping Name="tCategorias">
       <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCategorias">
         <MappingFragment StoreEntitySet="tCategorias">
@@ -129,7 +129,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
     <FunctionImportMapping FunctionImportName="ObtenerDatosUsuario" FunctionName="AlaPastaDatabaseModel.Store.ObtenerDatosUsuario">
       <ResultMapping>
         <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.ObtenerDatosUsuario_Result">
@@ -142,5 +141,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
   </EntityContainerMapping>
 </Mapping>

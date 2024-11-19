@@ -1,44 +1,56 @@
 ﻿@model Proyecto.Models.Usuario
 @{
-    ViewBag.Title = "ActualizarPerfil";
+    ViewBag.Title = "Actualizar Perfil";
 }
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">Actualizar Perfil</h5>
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-header bg-danger text-center">
+            <h5 class="mb-0 text-white">
+                <span class="d-block">Actualizar</span>
+                <span class="d-block">Perfil</span>
+            </h5>
+        </div>
+        <div class="card-body">
+            @if (ViewBag.MensajePantalla != null)
+            {
+                <div class="alert alert-danger text-center" role="alert">
+                    @ViewBag.MensajePantalla
+                </div>
+            }
 
-        @if (ViewBag.MensajePantalla != null)
-        {
-            <div class="alert alert-danger text-center" role="alert">
-                @ViewBag.MensajePantalla
-            </div>
-        }
+            @using (Html.BeginForm("ActualizarPerfil", "Usuario", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
+            {
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Identificación</label>
+                    @Html.TextBoxFor(m => m.Identificacion, new { @class = "form-control", @readOnly = true, style = "background-color: #f8f9fa;", @placeholder = "Identificación" })
+                    <small class="form-text text-muted">Este campo no se puede modificar.</small>
+                </div>
 
-        @using (Html.BeginForm("ActualizarPerfil", "Usuario"))
-        {
-            <div class="mb-3">
-                <label class="form-label">Identificación</label>
-                @Html.TextBoxFor(m => m.Identificacion, new { @class = "form-control", @readOnly = true, style = "background-color: #f5efee;" })
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Apellido</label>
-                @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control" })
-            </div>
-            <div class="mb-4">
-                <label class="form-label">Correo</label>
-                @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email" })
-            </div>
-            <div class="mb-4">
-                <label class="form-label">Teléfono</label>
-                @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel" })
-            </div>
-            <button type="submit" class="btn btn-primary">Procesar</button>
-        }
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Nombre</label>
+                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @placeholder = "Ingresa tu nombre" })
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Apellido</label>
+                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @placeholder = "Ingresa tu apellido" })
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Correo</label>
+                    @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @type = "email", @placeholder = "ejemplo@correo.com" })
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Teléfono</label>
+                    @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @type = "tel", @placeholder = "123-456-7890" })
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-danger fw-semibold">Actualizar Perfil</button>
+                </div>
+            }
+        </div>
     </div>
 </div>
-
-

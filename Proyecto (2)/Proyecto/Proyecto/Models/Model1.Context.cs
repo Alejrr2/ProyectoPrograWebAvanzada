@@ -15,10 +15,10 @@ namespace Proyecto.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class AlaPastaDatabaseEntities : DbContext
+    public partial class AlaPastaDatabaseEntities1 : DbContext
     {
-        public AlaPastaDatabaseEntities()
-            : base("name=AlaPastaDatabaseEntities")
+        public AlaPastaDatabaseEntities1()
+            : base("name=AlaPastaDatabaseEntities1")
         {
         }
     
@@ -38,7 +38,7 @@ namespace Proyecto.Models
         public virtual DbSet<tRoles> tRoles { get; set; }
         public virtual DbSet<tUsuario> tUsuario { get; set; }
     
-        public virtual int ActualizarContrasenna(string contrasennaTemp, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp, Nullable<int> consecutivo)
+        public virtual int ActualizarContrasenna(string contrasennaTemp, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp, Nullable<long> consecutivo)
         {
             var contrasennaTempParameter = contrasennaTemp != null ?
                 new ObjectParameter("ContrasennaTemp", contrasennaTemp) :
@@ -54,7 +54,7 @@ namespace Proyecto.Models
     
             var consecutivoParameter = consecutivo.HasValue ?
                 new ObjectParameter("Consecutivo", consecutivo) :
-                new ObjectParameter("Consecutivo", typeof(int));
+                new ObjectParameter("Consecutivo", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarContrasenna", contrasennaTempParameter, tieneContrasennaTempParameter, fechaVencimientoTempParameter, consecutivoParameter);
         }
@@ -118,6 +118,15 @@ namespace Proyecto.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InicioSesion_Result>("InicioSesion", identificacionParameter, contrasennaParameter);
         }
     
+        public virtual ObjectResult<ObtenerDatosUsuario_Result> ObtenerDatosUsuario(string identificacion)
+        {
+            var identificacionParameter = identificacion != null ?
+                new ObjectParameter("Identificacion", identificacion) :
+                new ObjectParameter("Identificacion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
+        }
+    
         public virtual int RegistroUsuario(string identificacion, string nombre, string apellido, string correoElectronico, string telefono, string contrasenna)
         {
             var identificacionParameter = identificacion != null ?
@@ -145,15 +154,6 @@ namespace Proyecto.Models
                 new ObjectParameter("Contrasenna", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroUsuario", identificacionParameter, nombreParameter, apellidoParameter, correoElectronicoParameter, telefonoParameter, contrasennaParameter);
-        }
-    
-        public virtual ObjectResult<ObtenerDatosUsuario_Result> ObtenerDatosUsuario(string identificacion)
-        {
-            var identificacionParameter = identificacion != null ?
-                new ObjectParameter("Identificacion", identificacion) :
-                new ObjectParameter("Identificacion", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerDatosUsuario_Result>("ObtenerDatosUsuario", identificacionParameter);
         }
     }
 }

@@ -448,3 +448,7 @@ C:\Users\jose1\Documents\Visual Studio Comunity Projects\ProyectoPrograWebAvanza
 C:\Users\jose1\Documents\Visual Studio Comunity Projects\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.Up2Date
 C:\Users\jose1\Documents\Visual Studio Comunity Projects\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.dll
 C:\Users\jose1\Documents\Visual Studio Comunity Projects\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\ProyectoPrograAvanzada\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.AssemblyReference.cache
+C:\ProyectoPrograAvanzada\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.CoreCompileInputs.cache
+C:\ProyectoPrograAvanzada\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.dll
+C:\ProyectoPrograAvanzada\ProyectoPrograWebAvanzada\Proyecto (2)\Proyecto\Proyecto\obj\Debug\Proyecto.pdb

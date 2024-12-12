@@ -18,11 +18,12 @@ namespace Proyecto.Models
         public tProductos()
         {
             this.tDetalles = new HashSet<tDetalles>();
+            this.tCarrito = new HashSet<tCarrito>();
         }
     
         public int IdProducto { get; set; }
         public string NombreProducto { get; set; }
-        public string Descripcion { get; set; }
+        public string Descripción { get; set; }
         public decimal Precio { get; set; }
         public int ConsecutivoCat { get; set; }
         public int Stock { get; set; }
@@ -32,5 +33,7 @@ namespace Proyecto.Models
         public virtual tCategorias tCategorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tDetalles> tDetalles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tCarrito> tCarrito { get; set; }
     }
 }

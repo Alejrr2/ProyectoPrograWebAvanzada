@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AlaPastaDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tCarrito">
+          <Key>
+            <PropertyRef Name="Consecutivo" />
+          </Key>
+          <Property Name="Consecutivo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConsecutivoUsuario" Type="int" Nullable="false" />
+          <Property Name="ConsecutivoProducto" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="tCategorias">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -28,9 +38,9 @@
           </Key>
           <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Canton" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cantón" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="O_Senales" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="O_Señales" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -65,7 +75,7 @@
           </Key>
           <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreProducto" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Descripción" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ConsecutivoCat" Type="int" Nullable="false" />
           <Property Name="Stock" Type="int" Nullable="false" />
@@ -102,6 +112,30 @@
           <Property Name="TieneContrasennaTemp" Type="bit" Nullable="false" />
           <Property Name="FechaVencimientoTemp" Type="datetime" Nullable="false" />
         </EntityType>
+        <Association Name="FK_tCarrito_tProductos">
+          <End Role="tProductos" Type="Self.tProductos" Multiplicity="1" />
+          <End Role="tCarrito" Type="Self.tCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tProductos">
+              <PropertyRef Name="IdProducto" />
+            </Principal>
+            <Dependent Role="tCarrito">
+              <PropertyRef Name="ConsecutivoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tCarrito_tUsuario">
+          <End Role="tUsuario" Type="Self.tUsuario" Multiplicity="1" />
+          <End Role="tCarrito" Type="Self.tCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsuario">
+              <PropertyRef Name="Consecutivo" />
+            </Principal>
+            <Dependent Role="tCarrito">
+              <PropertyRef Name="ConsecutivoUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tDetalles_tPedidos">
           <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="1" />
           <End Role="tDetalles" Type="Self.tDetalles" Multiplicity="*" />
@@ -195,19 +229,9 @@
         <Function Name="ActualizarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="Apellido" Type="varchar" Mode="In" />
           <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
-          <Parameter Name="Telefono" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="ActualizarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdProducto" Type="int" Mode="In" />
-          <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
-          <Parameter Name="Precio" Type="decimal" Mode="In" />
-          <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
-          <Parameter Name="Stock" Type="int" Mode="In" />
-          <Parameter Name="ImagenProd" Type="varchar" Mode="In" />
-          <Parameter Name="ActivoProd" Type="bit" Mode="In" />
+          <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
+          <Parameter Name="ConsecutivoRol" Type="int" Mode="In" />
         </Function>
         <Function Name="CambiarContrasenna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
@@ -215,32 +239,9 @@
           <Parameter Name="TieneContrasennaTemp" Type="bit" Mode="In" />
           <Parameter Name="FechaVencimientoTemp" Type="datetime" Mode="In" />
         </Function>
-        <Function Name="EliminarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdProducto" Type="int" Mode="In" />
-        </Function>
         <Function Name="InicioSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
           <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="ObtenerDatosUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="RegistroEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="Apellido" Type="varchar" Mode="In" />
-          <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
-          <Parameter Name="Telefono" Type="varchar" Mode="In" />
-          <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="RegistroProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
-          <Parameter Name="Precio" Type="decimal" Mode="In" />
-          <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
-          <Parameter Name="Stock" Type="int" Mode="In" />
-          <Parameter Name="ImagenProd" Type="varchar" Mode="In" />
-          <Parameter Name="ActivoProd" Type="bit" Mode="In" />
         </Function>
         <Function Name="RegistroUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
@@ -251,6 +252,7 @@
           <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="AlaPastaDatabaseModelStoreContainer">
+          <EntitySet Name="tCarrito" EntityType="Self.tCarrito" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tCategorias" EntityType="Self.tCategorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tDetalles" EntityType="Self.tDetalles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" Schema="dbo" store:Type="Tables" />
@@ -261,6 +263,14 @@
           <EntitySet Name="tPuestos" EntityType="Self.tPuestos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tRoles" EntityType="Self.tRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tUsuario" EntityType="Self.tUsuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tCarrito_tProductos" Association="Self.FK_tCarrito_tProductos">
+            <End Role="tProductos" EntitySet="tProductos" />
+            <End Role="tCarrito" EntitySet="tCarrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tCarrito_tUsuario" Association="Self.FK_tCarrito_tUsuario">
+            <End Role="tUsuario" EntitySet="tUsuario" />
+            <End Role="tCarrito" EntitySet="tCarrito" />
+          </AssociationSet>
           <AssociationSet Name="FK_tDetalles_tPedidos" Association="Self.FK_tDetalles_tPedidos">
             <End Role="tPedidos" EntitySet="tPedidos" />
             <End Role="tDetalles" EntitySet="tDetalles" />
@@ -290,8 +300,7 @@
             <End Role="tUsuario" EntitySet="tUsuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlaPastaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -321,9 +330,9 @@
           </Key>
           <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cantón" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="O_Senales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="O_Señales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -364,7 +373,7 @@
           </Key>
           <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreProducto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ConsecutivoCat" Type="Int32" Nullable="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
@@ -372,6 +381,7 @@
           <Property Name="ActivoProd" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="tCategorias" Relationship="Self.FK_tProductos_tCategorias" FromRole="tProductos" ToRole="tCategorias" />
           <NavigationProperty Name="tDetalles" Relationship="Self.FK_tDetalles_tProductos" FromRole="tProductos" ToRole="tDetalles" />
+          <NavigationProperty Name="tCarrito" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tProductos" FromRole="tProductos" ToRole="tCarrito" />
         </EntityType>
         <EntityType Name="tPuestos">
           <Key>
@@ -405,6 +415,7 @@
           <Property Name="FechaVencimientoTemp" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="tPedidos" Relationship="Self.FK_tPedidos_tClientes" FromRole="tUsuario" ToRole="tPedidos" />
           <NavigationProperty Name="tRoles" Relationship="Self.FK_tUsuario_tRol" FromRole="tUsuario" ToRole="tRoles" />
+          <NavigationProperty Name="tCarrito" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tUsuario" FromRole="tUsuario" ToRole="tCarrito" />
         </EntityType>
         <Association Name="FK_tProductos_tCategorias">
           <End Role="tCategorias" Type="Self.tCategorias" Multiplicity="1" />
@@ -538,19 +549,9 @@
           <FunctionImport Name="ActualizarPerfil">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Apellido" Mode="In" Type="String" />
             <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-            <Parameter Name="Telefono" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ActualizarProducto">
-            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
-            <Parameter Name="NombreProducto" Mode="In" Type="String" />
-            <Parameter Name="Descripcion" Mode="In" Type="String" />
-            <Parameter Name="Precio" Mode="In" Type="Decimal" />
-            <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
-            <Parameter Name="Stock" Mode="In" Type="Int32" />
-            <Parameter Name="ImagenProd" Mode="In" Type="String" />
-            <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
+            <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
+            <Parameter Name="ConsecutivoRol" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="CambiarContrasenna">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -558,32 +559,9 @@
             <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
             <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="EliminarProducto">
-            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
-            <Parameter Name="Identificacion" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="RegistroEmpleado">
-            <Parameter Name="Identificacion" Mode="In" Type="String" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Apellido" Mode="In" Type="String" />
-            <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-            <Parameter Name="Telefono" Mode="In" Type="String" />
-            <Parameter Name="Contrasenna" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="RegistroProducto">
-            <Parameter Name="NombreProducto" Mode="In" Type="String" />
-            <Parameter Name="Descripcion" Mode="In" Type="String" />
-            <Parameter Name="Precio" Mode="In" Type="Decimal" />
-            <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
-            <Parameter Name="Stock" Mode="In" Type="Int32" />
-            <Parameter Name="ImagenProd" Mode="In" Type="String" />
-            <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="RegistroUsuario">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -593,6 +571,15 @@
             <Parameter Name="Telefono" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tCarrito" EntityType="AlaPastaDatabaseModel.tCarrito" />
+          <AssociationSet Name="FK_tCarrito_tProductos" Association="AlaPastaDatabaseModel.FK_tCarrito_tProductos">
+            <End Role="tProductos" EntitySet="tProductos" />
+            <End Role="tCarrito" EntitySet="tCarrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tCarrito_tUsuario" Association="AlaPastaDatabaseModel.FK_tCarrito_tUsuario">
+            <End Role="tUsuario" EntitySet="tUsuario" />
+            <End Role="tCarrito" EntitySet="tCarrito" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="InicioSesion_Result">
           <Property Type="Int32" Name="Consecutivo" Nullable="false" />
@@ -608,14 +595,42 @@
           <Property Type="Boolean" Name="TieneContrasennaTemp" Nullable="false" />
           <Property Type="DateTime" Name="FechaVencimientoTemp" Nullable="false" Precision="23" />
         </ComplexType>
-        <ComplexType Name="ObtenerDatosUsuario_Result">
-          <Property Type="Int32" Name="Consecutivo" Nullable="false" />
-          <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
-          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="255" />
-          <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
-          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
-        </ComplexType>
+        <EntityType Name="tCarrito">
+          <Key>
+            <PropertyRef Name="Consecutivo" />
+          </Key>
+          <Property Name="Consecutivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConsecutivoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="ConsecutivoProducto" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tProductos" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tProductos" FromRole="tCarrito" ToRole="tProductos" />
+          <NavigationProperty Name="tUsuario" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tUsuario" FromRole="tCarrito" ToRole="tUsuario" />
+        </EntityType>
+        <Association Name="FK_tCarrito_tProductos">
+          <End Type="AlaPastaDatabaseModel.tProductos" Role="tProductos" Multiplicity="1" />
+          <End Type="AlaPastaDatabaseModel.tCarrito" Role="tCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tProductos">
+              <PropertyRef Name="IdProducto" />
+            </Principal>
+            <Dependent Role="tCarrito">
+              <PropertyRef Name="ConsecutivoProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tCarrito_tUsuario">
+          <End Type="AlaPastaDatabaseModel.tUsuario" Role="tUsuario" Multiplicity="1" />
+          <End Type="AlaPastaDatabaseModel.tCarrito" Role="tCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tUsuario">
+              <PropertyRef Name="Consecutivo" />
+            </Principal>
+            <Dependent Role="tCarrito">
+              <PropertyRef Name="ConsecutivoUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -646,9 +661,9 @@
               <MappingFragment StoreEntitySet="tDirecciones">
                 <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Canton" ColumnName="Canton" />
+                <ScalarProperty Name="Cantón" ColumnName="Cantón" />
                 <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-                <ScalarProperty Name="O_Senales" ColumnName="O_Senales" />
+                <ScalarProperty Name="O_Señales" ColumnName="O_Señales" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -687,7 +702,7 @@
               <MappingFragment StoreEntitySet="tProductos">
                 <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
                 <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="ConsecutivoCat" ColumnName="ConsecutivoCat" />
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
@@ -731,9 +746,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="ActualizarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.ActualizarContrasenna" />
           <FunctionImportMapping FunctionImportName="ActualizarPerfil" FunctionName="AlaPastaDatabaseModel.Store.ActualizarPerfil" />
-          <FunctionImportMapping FunctionImportName="ActualizarProducto" FunctionName="AlaPastaDatabaseModel.Store.ActualizarProducto" />
           <FunctionImportMapping FunctionImportName="CambiarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.CambiarContrasenna" />
-          <FunctionImportMapping FunctionImportName="EliminarProducto" FunctionName="AlaPastaDatabaseModel.Store.EliminarProducto" />
           <FunctionImportMapping FunctionImportName="InicioSesion" FunctionName="AlaPastaDatabaseModel.Store.InicioSesion">
             <ResultMapping>
               <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.InicioSesion_Result">
@@ -752,21 +765,18 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ObtenerDatosUsuario" FunctionName="AlaPastaDatabaseModel.Store.ObtenerDatosUsuario">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.ObtenerDatosUsuario_Result">
-                <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
-                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
-          <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
           <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
+          <EntitySetMapping Name="tCarrito">
+            <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCarrito">
+              <MappingFragment StoreEntitySet="tCarrito">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="ConsecutivoProducto" ColumnName="ConsecutivoProducto" />
+                <ScalarProperty Name="ConsecutivoUsuario" ColumnName="ConsecutivoUsuario" />
+                <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

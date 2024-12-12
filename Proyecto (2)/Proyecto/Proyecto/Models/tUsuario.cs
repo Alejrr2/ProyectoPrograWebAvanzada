@@ -14,6 +14,12 @@ namespace Proyecto.Models
     
     public partial class tUsuario
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tUsuario()
+        {
+            this.tCarrito = new HashSet<tCarrito>();
+        }
+    
         public int Consecutivo { get; set; }
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
@@ -28,5 +34,7 @@ namespace Proyecto.Models
     
         public virtual tPedidos tPedidos { get; set; }
         public virtual tRoles tRoles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tCarrito> tCarrito { get; set; }
     }
 }

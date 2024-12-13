@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Consecutivo" />
           </Key>
-          <Property Name="Consecutivo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Consecutivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ConsecutivoUsuario" Type="int" Nullable="false" />
           <Property Name="ConsecutivoProducto" Type="int" Nullable="false" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
@@ -38,9 +38,9 @@
           </Key>
           <Property Name="IdDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cantón" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Canton" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Distrito" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="O_Señales" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="O_Senales" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -75,7 +75,7 @@
           </Key>
           <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreProducto" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Descripción" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ConsecutivoCat" Type="int" Nullable="false" />
           <Property Name="Stock" Type="int" Nullable="false" />
@@ -229,9 +229,19 @@
         <Function Name="ActualizarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido" Type="varchar" Mode="In" />
           <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
-          <Parameter Name="Consecutivo" Type="bigint" Mode="In" />
-          <Parameter Name="ConsecutivoRol" Type="int" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ActualizarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
+          <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Precio" Type="decimal" Mode="In" />
+          <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
+          <Parameter Name="Stock" Type="int" Mode="In" />
+          <Parameter Name="ImagenProd" Type="varchar" Mode="In" />
+          <Parameter Name="ActivoProd" Type="bit" Mode="In" />
         </Function>
         <Function Name="CambiarContrasenna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
@@ -239,9 +249,32 @@
           <Parameter Name="TieneContrasennaTemp" Type="bit" Mode="In" />
           <Parameter Name="FechaVencimientoTemp" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="EliminarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
+        </Function>
         <Function Name="InicioSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
           <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ObtenerDatosUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="RegistroEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido" Type="varchar" Mode="In" />
+          <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="Contrasenna" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="RegistroProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Precio" Type="decimal" Mode="In" />
+          <Parameter Name="ConsecutivoCat" Type="int" Mode="In" />
+          <Parameter Name="Stock" Type="int" Mode="In" />
+          <Parameter Name="ImagenProd" Type="varchar" Mode="In" />
+          <Parameter Name="ActivoProd" Type="bit" Mode="In" />
         </Function>
         <Function Name="RegistroUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Identificacion" Type="varchar" Mode="In" />
@@ -330,9 +363,9 @@
           </Key>
           <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cantón" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="O_Señales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="O_Senales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="tMetodos">
           <Key>
@@ -373,7 +406,7 @@
           </Key>
           <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NombreProducto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ConsecutivoCat" Type="Int32" Nullable="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
@@ -549,9 +582,19 @@
           <FunctionImport Name="ActualizarPerfil">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido" Mode="In" Type="String" />
             <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-            <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
-            <Parameter Name="ConsecutivoRol" Mode="In" Type="Int32" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ActualizarProducto">
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+            <Parameter Name="NombreProducto" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="Precio" Mode="In" Type="Decimal" />
+            <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
+            <Parameter Name="Stock" Mode="In" Type="Int32" />
+            <Parameter Name="ImagenProd" Mode="In" Type="String" />
+            <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="CambiarContrasenna">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -559,9 +602,32 @@
             <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
             <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="EliminarProducto">
+          <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
             <Parameter Name="Contrasenna" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
+          <Parameter Name="Identificacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegistroEmpleado">
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido" Mode="In" Type="String" />
+            <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="Contrasenna" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegistroProducto">
+            <Parameter Name="NombreProducto" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="Precio" Mode="In" Type="Decimal" />
+            <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
+            <Parameter Name="Stock" Mode="In" Type="Int32" />
+            <Parameter Name="ImagenProd" Mode="In" Type="String" />
+            <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="RegistroUsuario">
             <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -595,11 +661,19 @@
           <Property Type="Boolean" Name="TieneContrasennaTemp" Nullable="false" />
           <Property Type="DateTime" Name="FechaVencimientoTemp" Nullable="false" Precision="23" />
         </ComplexType>
+        <ComplexType Name="ObtenerDatosUsuario_Result">
+          <Property Type="Int32" Name="Consecutivo" Nullable="false" />
+          <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
+        </ComplexType>
         <EntityType Name="tCarrito">
           <Key>
             <PropertyRef Name="Consecutivo" />
           </Key>
-          <Property Name="Consecutivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ConsecutivoUsuario" Type="Int32" Nullable="false" />
           <Property Name="ConsecutivoProducto" Type="Int32" Nullable="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
@@ -661,9 +735,9 @@
               <MappingFragment StoreEntitySet="tDirecciones">
                 <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Cantón" ColumnName="Cantón" />
+                <ScalarProperty Name="Canton" ColumnName="Canton" />
                 <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-                <ScalarProperty Name="O_Señales" ColumnName="O_Señales" />
+                <ScalarProperty Name="O_Senales" ColumnName="O_Senales" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -702,7 +776,7 @@
               <MappingFragment StoreEntitySet="tProductos">
                 <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
                 <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="ConsecutivoCat" ColumnName="ConsecutivoCat" />
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
@@ -746,7 +820,9 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="ActualizarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.ActualizarContrasenna" />
           <FunctionImportMapping FunctionImportName="ActualizarPerfil" FunctionName="AlaPastaDatabaseModel.Store.ActualizarPerfil" />
+          <FunctionImportMapping FunctionImportName="ActualizarProducto" FunctionName="AlaPastaDatabaseModel.Store.ActualizarProducto" />
           <FunctionImportMapping FunctionImportName="CambiarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.CambiarContrasenna" />
+          <FunctionImportMapping FunctionImportName="EliminarProducto" FunctionName="AlaPastaDatabaseModel.Store.EliminarProducto" />
           <FunctionImportMapping FunctionImportName="InicioSesion" FunctionName="AlaPastaDatabaseModel.Store.InicioSesion">
             <ResultMapping>
               <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.InicioSesion_Result">
@@ -765,6 +841,20 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ObtenerDatosUsuario" FunctionName="AlaPastaDatabaseModel.Store.ObtenerDatosUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.ObtenerDatosUsuario_Result">
+                <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
+          <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
           <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
           <EntitySetMapping Name="tCarrito">
             <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCarrito">

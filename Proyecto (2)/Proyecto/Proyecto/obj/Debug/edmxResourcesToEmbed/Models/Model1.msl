@@ -25,9 +25,9 @@
         <MappingFragment StoreEntitySet="tDirecciones">
           <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
           <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="Cantón" ColumnName="Cantón" />
+          <ScalarProperty Name="Canton" ColumnName="Canton" />
           <ScalarProperty Name="Distrito" ColumnName="Distrito" />
-          <ScalarProperty Name="O_Señales" ColumnName="O_Señales" />
+          <ScalarProperty Name="O_Senales" ColumnName="O_Senales" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -66,7 +66,7 @@
         <MappingFragment StoreEntitySet="tProductos">
           <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
           <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
           <ScalarProperty Name="ConsecutivoCat" ColumnName="ConsecutivoCat" />
           <ScalarProperty Name="Stock" ColumnName="Stock" />
@@ -110,7 +110,9 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="ActualizarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.ActualizarContrasenna" />
     <FunctionImportMapping FunctionImportName="ActualizarPerfil" FunctionName="AlaPastaDatabaseModel.Store.ActualizarPerfil" />
+    <FunctionImportMapping FunctionImportName="ActualizarProducto" FunctionName="AlaPastaDatabaseModel.Store.ActualizarProducto" />
     <FunctionImportMapping FunctionImportName="CambiarContrasenna" FunctionName="AlaPastaDatabaseModel.Store.CambiarContrasenna" />
+    <FunctionImportMapping FunctionImportName="EliminarProducto" FunctionName="AlaPastaDatabaseModel.Store.EliminarProducto" />
     <FunctionImportMapping FunctionImportName="InicioSesion" FunctionName="AlaPastaDatabaseModel.Store.InicioSesion">
       <ResultMapping>
         <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.InicioSesion_Result">
@@ -129,6 +131,20 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerDatosUsuario" FunctionName="AlaPastaDatabaseModel.Store.ObtenerDatosUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AlaPastaDatabaseModel.ObtenerDatosUsuario_Result">
+          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
+    <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
     <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
     <EntitySetMapping Name="tCarrito">
       <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCarrito">

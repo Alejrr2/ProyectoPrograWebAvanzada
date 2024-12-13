@@ -24,7 +24,7 @@ namespace Proyecto.Controllers
                     {
                         IdProducto = item.IdProducto,
                         NombreProducto = item.NombreProducto,
-                        Descripcion = item.Descripción,
+                        Descripcion = item.Descripcion,
                         Precio = item.Precio,
                         ConsecutivoCat = item.ConsecutivoCat,
                         Stock = item.Stock,
@@ -57,7 +57,7 @@ namespace Proyecto.Controllers
                 var tabla = new tProductos();
                 tabla.IdProducto = 0;
                 tabla.NombreProducto = model.NombreProducto;
-                tabla.Descripción = model.Descripcion;
+                tabla.Descripcion = model.Descripcion;
                 tabla.Precio = model.Precio;
                 tabla.ConsecutivoCat = model.ConsecutivoCat;
                 tabla.Stock = model.Stock;

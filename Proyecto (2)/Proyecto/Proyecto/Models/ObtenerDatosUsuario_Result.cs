@@ -10,17 +10,14 @@
 namespace Proyecto.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class tCarrito
+    public partial class ObtenerDatosUsuario_Result
     {
         public int Consecutivo { get; set; }
-        public int ConsecutivoUsuario { get; set; }
-        public int ConsecutivoProducto { get; set; }
-        public int Cantidad { get; set; }
-        public System.DateTime Fecha { get; set; }
-    
-        public virtual tProductos tProductos { get; set; }
-        public virtual tUsuario tUsuario { get; set; }
+        public string Identificacion { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string CorreoElectronico { get; set; }
+        public string Telefono { get; set; }
     }
 }

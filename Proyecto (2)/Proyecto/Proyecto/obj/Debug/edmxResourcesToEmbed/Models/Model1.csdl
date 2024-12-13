@@ -26,9 +26,9 @@
     </Key>
     <Property Name="IdDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Cantón" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="O_Señales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="O_Senales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="tMetodos">
     <Key>
@@ -69,7 +69,7 @@
     </Key>
     <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NombreProducto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="ConsecutivoCat" Type="Int32" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
@@ -245,9 +245,19 @@
     <FunctionImport Name="ActualizarPerfil">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
       <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
-      <Parameter Name="Consecutivo" Mode="In" Type="Int64" />
-      <Parameter Name="ConsecutivoRol" Mode="In" Type="Int32" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ActualizarProducto">
+      <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+      <Parameter Name="NombreProducto" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
+      <Parameter Name="Stock" Mode="In" Type="Int32" />
+      <Parameter Name="ImagenProd" Mode="In" Type="String" />
+      <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="CambiarContrasenna">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -255,9 +265,32 @@
       <Parameter Name="TieneContrasennaTemp" Mode="In" Type="Boolean" />
       <Parameter Name="FechaVencimientoTemp" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="EliminarProducto">
+      <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="InicioSesion" ReturnType="Collection(AlaPastaDatabaseModel.InicioSesion_Result)">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerDatosUsuario" ReturnType="Collection(AlaPastaDatabaseModel.ObtenerDatosUsuario_Result)">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroEmpleado">
+      <Parameter Name="Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Contrasenna" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegistroProducto">
+      <Parameter Name="NombreProducto" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="ConsecutivoCat" Mode="In" Type="Int32" />
+      <Parameter Name="Stock" Mode="In" Type="Int32" />
+      <Parameter Name="ImagenProd" Mode="In" Type="String" />
+      <Parameter Name="ActivoProd" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="RegistroUsuario">
       <Parameter Name="Identificacion" Mode="In" Type="String" />
@@ -291,11 +324,19 @@
     <Property Type="Boolean" Name="TieneContrasennaTemp" Nullable="false" />
     <Property Type="DateTime" Name="FechaVencimientoTemp" Nullable="false" Precision="23" />
   </ComplexType>
+  <ComplexType Name="ObtenerDatosUsuario_Result">
+    <Property Type="Int32" Name="Consecutivo" Nullable="false" />
+    <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
+  </ComplexType>
   <EntityType Name="tCarrito">
     <Key>
       <PropertyRef Name="Consecutivo" />
     </Key>
-    <Property Name="Consecutivo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ConsecutivoUsuario" Type="Int32" Nullable="false" />
     <Property Name="ConsecutivoProducto" Type="Int32" Nullable="false" />
     <Property Name="Cantidad" Type="Int32" Nullable="false" />

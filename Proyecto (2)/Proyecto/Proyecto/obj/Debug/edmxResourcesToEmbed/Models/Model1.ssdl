@@ -58,7 +58,7 @@
     <Key>
       <PropertyRef Name="IdPedido" />
     </Key>
-    <Property Name="IdPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPedido" Type="int" Nullable="false" />
     <Property Name="FechaPedido" Type="date" Nullable="false" />
     <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="ConsecutivoCli" Type="int" Nullable="false" />
@@ -95,7 +95,7 @@
     <Key>
       <PropertyRef Name="Consecutivo" />
     </Key>
-    <Property Name="Consecutivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Consecutivo" Type="int" Nullable="false" />
     <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Apellido" Type="varchar" MaxLength="255" Nullable="false" />

@@ -7,7 +7,7 @@ namespace Proyecto.Models
 {
     public class Producto
     {
-        public long IdProducto { get; set; }
+        public int IdProducto { get; set; }
         public string NombreProducto { get; set; }
         public string Descripcion { get; set; }
         public Decimal Precio { get; set; }

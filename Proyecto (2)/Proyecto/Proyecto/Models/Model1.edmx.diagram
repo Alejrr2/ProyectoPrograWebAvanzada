@@ -4,17 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d447dbdc27024047ba4d8a0e659b4723" Name="Diagram1" ZoomLevel="47">
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tCategorias" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tDetalles" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tDirecciones" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tMetodos" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tPagos" Width="1.5" PointX="10.5" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tPedidos" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tProductos" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tPuestos" Width="1.5" PointX="9.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tRoles" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tUsuario" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+      <Diagram DiagramId="1fca66beedd349ef884e60901f8a3184" Name="Diagram1">
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tCarrito" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tCategorias" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tDetalles" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tDirecciones" Width="1.5" PointX="7.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tMetodos" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tPagos" Width="1.5" PointX="10.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tPedidos" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tProductos" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tPuestos" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tRoles" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tUsuario" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="AlaPastaDatabaseModel.FK_tCarrito_tProductos" ManuallyRouted="false" />
+        <AssociationConnector Association="AlaPastaDatabaseModel.FK_tCarrito_tUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tProductos_tCategorias" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tDetalles_tPedidos" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tDetalles_tProductos" ManuallyRouted="false" />
@@ -22,9 +25,6 @@
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tPagos_tPedidos" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tPedidos_tClientes" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tUsuario_tRol" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tCarrito" Width="1.5" PointX="10.5" PointY="9.875" />
-        <AssociationConnector Association="AlaPastaDatabaseModel.FK_tCarrito_tProductos" />
-        <AssociationConnector Association="AlaPastaDatabaseModel.FK_tCarrito_tUsuario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

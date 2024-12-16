@@ -1,7 +1,5 @@
 ﻿@model List<Proyecto.Models.Producto>
-@{
-    ViewBag.Title = "Productos";
-}
+
 <section id="content" class="prod">
     <div class="container_24">
         <div class="wrapper">
@@ -27,7 +25,7 @@
                 <div class="row">
                     @foreach (var item in Model)
                     {
-                        <div class="col-md-4 mb-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="card h-100 text-center border-0 shadow-sm" style="background-color: #f8f9fa;">
                                 <figure class="page3-img1 img-bot">
                                     <img src="@(!string.IsNullOrEmpty(item.ImagenProd) ? item.ImagenProd : Url.Content("~/Images/placeholder.png"))"
@@ -37,20 +35,41 @@
                                 </figure>
                                 <div class="card-body">
                                     <h5 class="card-title text-danger font-weight-bold">@item.NombreProducto</h5>
-                                    <p class="card-text text-body">@item.Descripcion</p>
-                                    <span class="text-dark font-weight-bold">$@item.Precio</span>
+                                    <p style="text-align: justify" class="card-text text-body">@item.Descripcion</p>
+                                    <div class="row text-center">
+                                        <div class="col-5">
+                                            Unidades: @item.Stock
+                                        </div>
+                                        <div class="col-7 text-dark font-weight-bold">
+                                            Precio: ¢ @item.Precio.ToString("N2")
+                                        </div>
+                                    </div>
                                 </div>
+
+                                @if (rol != 0)
+                                {
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input id=@item.IdProducto type="number" class="form-control" style="text-align: center" value="0" min="1" max="@item.Stock" onkeypress="return ValidarNumero(this.id)" />
+                                        </div>
+                                        <div class="col-6">
+                                            <a onclick="AgregarProducto(@item.IdProducto, @item.Stock)" class="card-link btn btn-outline-primary" style="width:100%">Actualizar</a>
+                                        </div>
+                                    </div>
+                                }
+
                                 @if (rol == 1)
                                 {
-                                    <!-- <a class="btn" href="@Url.Action("ActualizarProducto","Productos", new { q = item.IdProducto })"><i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a> -->
+                                    <!-- <a class="btn" href=""><i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a> -->
 
                                     <form action="@Url.Action("EliminarProducto", "Productos")" method="post" style="display:inline;">
                                         <input type="hidden" name="idProducto" value="@item.IdProducto" />
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
                                     </form>
                                 }
-                                    <br />
-                                </div>
+                                <br />
+                            </div>
                         </div>
                     }
                 </div>
@@ -61,3 +80,76 @@
 
 <!-- Archivo JS -->
 <script src="~/Styles/FuncionesJS/Productos.js"></script>
+<script>
+    function ValidarNumero(evt) {
+
+        let charCode = (evt.which) ? evt.which : evente.keyCode;
+
+        if (charCode >= 48 && charCode <= 57) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    function AgregarProducto(IdProducto, cantidadDisponible) {
+
+        let cantidadDeseada = $("#" + IdProducto).val();
+
+        if (cantidadDeseada > cantidadDisponible) {
+
+            MostrarMensaje("En este momento no contamos con la cantidad de unidades que desea adquirir");
+            return;
+        }
+
+        if (cantidadDeseada <= 0) {
+            MostrarMensaje("La cantidad de unidades que desea adquirir no es permitida");
+            return;
+        }
+
+        $.ajax({
+            url: '/Carrito/AgregarCarrito',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                "IdProducto": IdProducto,
+                "Cantidad": cantidadDeseada
+            },
+            success: function (data) {
+                if (data == "OK") {
+                    MostrarMensajeOK("Producto actualizado correctamente en su carrito");
+                }
+                else {
+                    MostrarMensaje("El producto no se pudo actualizar en su carrito");
+                }
+            }
+        });
+    }
+
+    function MostrarMensajeOK(texto) {
+
+        Swal.fire({
+            title: "Información",
+            text: texto,
+            icon: "info",
+            showCancelButton: false,
+            confirmButtonText: "Aceptar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                window.location.href = '/Productos/Productos'
+            }
+        });
+
+    }
+
+    function MostrarMensaje(texto) {
+        Swal.fire({
+            title: "Información",
+            text: texto,
+            icon: "warning"
+        });
+    }
+
+</script>

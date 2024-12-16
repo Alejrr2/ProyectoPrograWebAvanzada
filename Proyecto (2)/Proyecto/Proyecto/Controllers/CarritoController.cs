@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace Proyecto.Controllers
 {
     public class CarritoController : Controller
     {
         [HttpPost]
-        public ActionResult AgregarCarrito(int Consecutivo, int Cantidad)
+        public ActionResult AgregarCarrito(int IdProducto, int Cantidad)
         {
             using (var context = new AlaPastaDatabaseEntities())
             {
-                var consecutivoUsuarioLogueado = int.Parse(Session["Consecutivo"].ToString());
+                var consecutivoUsuarioLogueado = int.Parse(Session["IdUsuario"].ToString());
                 var cantidadExistenteCarrito = context.tCarrito.Where(
                     x => x.ConsecutivoUsuario == consecutivoUsuarioLogueado
-                        && x.ConsecutivoProducto == Consecutivo).FirstOrDefault();
+                        && x.ConsecutivoProducto == IdProducto).FirstOrDefault();
 
                 if (cantidadExistenteCarrito != null)
                 {
@@ -31,7 +32,7 @@ namespace Proyecto.Controllers
                     var tabla = new tCarrito();
                     tabla.Consecutivo = 0;
                     tabla.ConsecutivoUsuario = consecutivoUsuarioLogueado;
-                    tabla.ConsecutivoProducto = Consecutivo;
+                    tabla.ConsecutivoProducto = IdProducto;
                     tabla.Cantidad = Cantidad;
                     tabla.Fecha = DateTime.Now;
                     context.tCarrito.Add(tabla);

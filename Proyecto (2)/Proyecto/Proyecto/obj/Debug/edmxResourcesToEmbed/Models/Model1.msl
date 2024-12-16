@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AlaPastaDatabaseModelStoreContainer" CdmEntityContainer="AlaPastaDatabaseEntities">
+    <EntitySetMapping Name="tCarrito">
+      <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCarrito">
+        <MappingFragment StoreEntitySet="tCarrito">
+          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+          <ScalarProperty Name="ConsecutivoUsuario" ColumnName="ConsecutivoUsuario" />
+          <ScalarProperty Name="ConsecutivoProducto" ColumnName="ConsecutivoProducto" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tCategorias">
       <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCategorias">
         <MappingFragment StoreEntitySet="tCategorias">
@@ -146,16 +157,5 @@
     <FunctionImportMapping FunctionImportName="RegistroEmpleado" FunctionName="AlaPastaDatabaseModel.Store.RegistroEmpleado" />
     <FunctionImportMapping FunctionImportName="RegistroProducto" FunctionName="AlaPastaDatabaseModel.Store.RegistroProducto" />
     <FunctionImportMapping FunctionImportName="RegistroUsuario" FunctionName="AlaPastaDatabaseModel.Store.RegistroUsuario" />
-    <EntitySetMapping Name="tCarrito">
-      <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tCarrito">
-        <MappingFragment StoreEntitySet="tCarrito">
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="ConsecutivoProducto" ColumnName="ConsecutivoProducto" />
-          <ScalarProperty Name="ConsecutivoUsuario" ColumnName="ConsecutivoUsuario" />
-          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

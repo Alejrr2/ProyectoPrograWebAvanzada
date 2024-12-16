@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AlaPastaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tCarrito">
+    <Key>
+      <PropertyRef Name="Consecutivo" />
+    </Key>
+    <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConsecutivoUsuario" Type="Int32" Nullable="false" />
+    <Property Name="ConsecutivoProducto" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tProductos" Relationship="Self.FK_tCarrito_tProductos" FromRole="tCarrito" ToRole="tProductos" />
+    <NavigationProperty Name="tUsuario" Relationship="Self.FK_tCarrito_tUsuario" FromRole="tCarrito" ToRole="tUsuario" />
+  </EntityType>
   <EntityType Name="tCategorias">
     <Key>
       <PropertyRef Name="IdCategoria" />
@@ -54,7 +66,7 @@
     <Key>
       <PropertyRef Name="IdPedido" />
     </Key>
-    <Property Name="IdPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPedido" Type="Int32" Nullable="false" />
     <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="ConsecutivoCli" Type="Int32" Nullable="false" />
@@ -75,9 +87,9 @@
     <Property Name="Stock" Type="Int32" Nullable="false" />
     <Property Name="ImagenProd" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ActivoProd" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tCarrito" Relationship="Self.FK_tCarrito_tProductos" FromRole="tProductos" ToRole="tCarrito" />
     <NavigationProperty Name="tCategorias" Relationship="Self.FK_tProductos_tCategorias" FromRole="tProductos" ToRole="tCategorias" />
     <NavigationProperty Name="tDetalles" Relationship="Self.FK_tDetalles_tProductos" FromRole="tProductos" ToRole="tDetalles" />
-    <NavigationProperty Name="tCarrito" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tProductos" FromRole="tProductos" ToRole="tCarrito" />
   </EntityType>
   <EntityType Name="tPuestos">
     <Key>
@@ -98,7 +110,7 @@
     <Key>
       <PropertyRef Name="Consecutivo" />
     </Key>
-    <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Consecutivo" Type="Int32" Nullable="false" />
     <Property Name="Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -109,10 +121,34 @@
     <Property Name="Activo" Type="Boolean" Nullable="false" />
     <Property Name="TieneContrasennaTemp" Type="Boolean" Nullable="false" />
     <Property Name="FechaVencimientoTemp" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tCarrito" Relationship="Self.FK_tCarrito_tUsuario" FromRole="tUsuario" ToRole="tCarrito" />
     <NavigationProperty Name="tPedidos" Relationship="Self.FK_tPedidos_tClientes" FromRole="tUsuario" ToRole="tPedidos" />
     <NavigationProperty Name="tRoles" Relationship="Self.FK_tUsuario_tRol" FromRole="tUsuario" ToRole="tRoles" />
-    <NavigationProperty Name="tCarrito" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tUsuario" FromRole="tUsuario" ToRole="tCarrito" />
   </EntityType>
+  <Association Name="FK_tCarrito_tProductos">
+    <End Role="tProductos" Type="Self.tProductos" Multiplicity="1" />
+    <End Role="tCarrito" Type="Self.tCarrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProductos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tCarrito">
+        <PropertyRef Name="ConsecutivoProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tCarrito_tUsuario">
+    <End Role="tUsuario" Type="Self.tUsuario" Multiplicity="1" />
+    <End Role="tCarrito" Type="Self.tCarrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="Consecutivo" />
+      </Principal>
+      <Dependent Role="tCarrito">
+        <PropertyRef Name="ConsecutivoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tProductos_tCategorias">
     <End Role="tCategorias" Type="Self.tCategorias" Multiplicity="1" />
     <End Role="tProductos" Type="Self.tProductos" Multiplicity="*" />
@@ -198,6 +234,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="AlaPastaDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tCarrito" EntityType="Self.tCarrito" />
     <EntitySet Name="tCategorias" EntityType="Self.tCategorias" />
     <EntitySet Name="tDetalles" EntityType="Self.tDetalles" />
     <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" />
@@ -208,6 +245,14 @@
     <EntitySet Name="tPuestos" EntityType="Self.tPuestos" />
     <EntitySet Name="tRoles" EntityType="Self.tRoles" />
     <EntitySet Name="tUsuario" EntityType="Self.tUsuario" />
+    <AssociationSet Name="FK_tCarrito_tProductos" Association="Self.FK_tCarrito_tProductos">
+      <End Role="tProductos" EntitySet="tProductos" />
+      <End Role="tCarrito" EntitySet="tCarrito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tCarrito_tUsuario" Association="Self.FK_tCarrito_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tCarrito" EntitySet="tCarrito" />
+    </AssociationSet>
     <AssociationSet Name="FK_tProductos_tCategorias" Association="Self.FK_tProductos_tCategorias">
       <End Role="tCategorias" EntitySet="tCategorias" />
       <End Role="tProductos" EntitySet="tProductos" />
@@ -300,15 +345,6 @@
       <Parameter Name="Telefono" Mode="In" Type="String" />
       <Parameter Name="Contrasenna" Mode="In" Type="String" />
     </FunctionImport>
-    <EntitySet Name="tCarrito" EntityType="AlaPastaDatabaseModel.tCarrito" />
-    <AssociationSet Name="FK_tCarrito_tProductos" Association="AlaPastaDatabaseModel.FK_tCarrito_tProductos">
-      <End Role="tProductos" EntitySet="tProductos" />
-      <End Role="tCarrito" EntitySet="tCarrito" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tCarrito_tUsuario" Association="AlaPastaDatabaseModel.FK_tCarrito_tUsuario">
-      <End Role="tUsuario" EntitySet="tUsuario" />
-      <End Role="tCarrito" EntitySet="tCarrito" />
-    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="InicioSesion_Result">
     <Property Type="Int32" Name="Consecutivo" Nullable="false" />
@@ -332,40 +368,4 @@
     <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="80" />
     <Property Type="String" Name="Telefono" Nullable="false" MaxLength="255" />
   </ComplexType>
-  <EntityType Name="tCarrito">
-    <Key>
-      <PropertyRef Name="Consecutivo" />
-    </Key>
-    <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ConsecutivoUsuario" Type="Int32" Nullable="false" />
-    <Property Name="ConsecutivoProducto" Type="Int32" Nullable="false" />
-    <Property Name="Cantidad" Type="Int32" Nullable="false" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="tProductos" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tProductos" FromRole="tCarrito" ToRole="tProductos" />
-    <NavigationProperty Name="tUsuario" Relationship="AlaPastaDatabaseModel.FK_tCarrito_tUsuario" FromRole="tCarrito" ToRole="tUsuario" />
-  </EntityType>
-  <Association Name="FK_tCarrito_tProductos">
-    <End Type="AlaPastaDatabaseModel.tProductos" Role="tProductos" Multiplicity="1" />
-    <End Type="AlaPastaDatabaseModel.tCarrito" Role="tCarrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tProductos">
-        <PropertyRef Name="IdProducto" />
-      </Principal>
-      <Dependent Role="tCarrito">
-        <PropertyRef Name="ConsecutivoProducto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tCarrito_tUsuario">
-    <End Type="AlaPastaDatabaseModel.tUsuario" Role="tUsuario" Multiplicity="1" />
-    <End Type="AlaPastaDatabaseModel.tCarrito" Role="tCarrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tUsuario">
-        <PropertyRef Name="Consecutivo" />
-      </Principal>
-      <Dependent Role="tCarrito">
-        <PropertyRef Name="ConsecutivoUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

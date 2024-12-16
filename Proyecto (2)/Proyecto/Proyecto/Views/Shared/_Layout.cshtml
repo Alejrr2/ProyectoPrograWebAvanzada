@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/Styles/cssLayout/Layout.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body class="page1">
     <!--==============================header=================================-->
@@ -24,11 +25,11 @@
                     <div class="clear"></div>
                     @if (Session["NombreUsuario"] != null)
                     {
-                    <p id="welcome-message">Bienvenido, @Session["NombreUsuario"].ToString()</p>
+                        <p id="welcome-message">Bienvenido, @Session["NombreUsuario"].ToString()</p>
                     }
                     <div class="clear"></div>
                 </form>
-                
+
                 <div class="clear"></div>
             </div>
         </div>
@@ -46,45 +47,45 @@
                             {
                                 <li><a href="@Url.Action("Canasta", "Carrito")">Carrito</a></li>
                             }
-                                @{
-                                    int rol = 0;
-                                    if (Session["Rol"] != null)
-                                    {
-                                        rol = int.Parse(Session["Rol"].ToString());
-                                    }
-                                }
-
-
-                                @if (Session["NombreUsuario"] != null)
+                            @{
+                                int rol = 0;
+                                if (Session["Rol"] != null)
                                 {
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Mi Perfil
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                                            <li><a class="dropdown-item" href="@Url.Action("ActualizarPerfil", "Usuario")">Actualizar <br /> Usuario</a></li>
-                                            @if (rol == 1)
-                                            {
-                                                <li><a class="dropdown-item" href="@Url.Action("RegistroEmpleado", "Login")">Registro <br /> Empleado</a></li>
-                                            }
-                                            <li><a class="dropdown-item" href="@Url.Action("CambiarContrasenna", "Login")">Cambiar <br /> Contraseña</a></li>
-                                            <li><a class="dropdown-item" href="@Url.Action("CierreSesion", "Login")">Cerrar Sesión</a></li>
-
-                                        </ul>
-                                    </li>
+                                    rol = int.Parse(Session["Rol"].ToString());
                                 }
-                                else
-                                {
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="guestDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Mi Perfil</a>
-                                        <ul class="dropdown-menu" aria-labelledby="guestDropdown">
-                                            <li><a class="dropdown-item" href="@Url.Action("InicioSesion", "Login")">Ingresar</a></li>
-                                        </ul>
-                                    </li>
-                                }
+                            }
 
 
-                            </ul>
+                            @if (Session["NombreUsuario"] != null)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Mi Perfil
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                        <li><a class="dropdown-item" href="@Url.Action("ActualizarPerfil", "Usuario")">Actualizar <br /> Usuario</a></li>
+                                        @if (rol == 1)
+                                        {
+                                            <li><a class="dropdown-item" href="@Url.Action("RegistroEmpleado", "Login")">Registro <br /> Empleado</a></li>
+                                        }
+                                        <li><a class="dropdown-item" href="@Url.Action("CambiarContrasenna", "Login")">Cambiar <br /> Contraseña</a></li>
+                                        <li><a class="dropdown-item" href="@Url.Action("CierreSesion", "Login")">Cerrar Sesión</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="guestDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Mi Perfil</a>
+                                    <ul class="dropdown-menu" aria-labelledby="guestDropdown">
+                                        <li><a class="dropdown-item" href="@Url.Action("InicioSesion", "Login")">Ingresar</a></li>
+                                    </ul>
+                                </li>
+                            }
+
+
+                        </ul>
                         <div class="clear"></div>
                     </nav>
                 </div>
@@ -132,5 +133,6 @@
     <script src="~/Styles/js/jquery.carouFredSel-6.1.0-packed.js"></script>
     <script src="~/Styles/js/jquery.touchSwipe.min.js"></script>
     <script src="~/Styles/FuncionesJS/Layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>

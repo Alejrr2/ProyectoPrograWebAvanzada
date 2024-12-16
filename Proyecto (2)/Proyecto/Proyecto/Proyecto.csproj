@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
@@ -137,6 +138,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Carrito.cs" />
+    <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\InicioSesion_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -388,6 +390,9 @@
     <Content Include="Views\Productos\AgregarProducto.cshtml" />
     <Content Include="Views\Login\RegistroEmpleado.cshtml" />
     <Content Include="Views\Carrito\ConsultarCarrito.cshtml" />
+    <Content Include="Views\Empleado\VerEmpleados.cshtml" />
+    <Content Include="Views\Empleado\ActualizarEmpleado.cshtml" />
+    <Content Include="Views\Empleado\CrearEmpleado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

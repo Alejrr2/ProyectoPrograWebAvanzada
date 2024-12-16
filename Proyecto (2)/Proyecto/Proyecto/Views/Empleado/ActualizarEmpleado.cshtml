@@ -1,0 +1,48 @@
+﻿<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
+
+@model Proyecto.Models.Empleado
+
+@{
+    ViewBag.Title = "Actualizar Empleado";
+}
+
+<h2>Actualizar Empleado</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.MensajePantalla))
+{
+    <div class="alert alert-warning">
+        @ViewBag.MensajePantalla
+    </div>
+}
+
+@using (Html.BeginForm("ActualizarEmpleado", "Empleado", FormMethod.Post))
+{
+    // @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        <label for="NombreEmp">Nombre</label>
+        @Html.TextBoxFor(model => model.NombreEmp, new { @class = "form-control", @placeholder = "Ingrese el nombre" })
+        @Html.ValidationMessageFor(model => model.NombreEmp, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label for="ApellidoEmp">Apellido</label>
+        @Html.TextBoxFor(model => model.ApellidoEmp, new { @class = "form-control", @placeholder = "Ingrese el apellido" })
+        @Html.ValidationMessageFor(model => model.ApellidoEmp, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label for="CorreoEmp">Correo Electrónico</label>
+        @Html.TextBoxFor(model => model.CorreoEmp, new { @class = "form-control", @placeholder = "Ingrese el correo electrónico" })
+        @Html.ValidationMessageFor(model => model.CorreoEmp, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label for="TelEmp">Teléfono</label>
+        @Html.TextBoxFor(model => model.TelEmp, new { @class = "form-control", @placeholder = "Ingrese el número de teléfono" })
+        @Html.ValidationMessageFor(model => model.TelEmp, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="@Url.Action("VerEmpleados", "Empleado")" class="btn btn-secondary">Cancelar</a>
+}

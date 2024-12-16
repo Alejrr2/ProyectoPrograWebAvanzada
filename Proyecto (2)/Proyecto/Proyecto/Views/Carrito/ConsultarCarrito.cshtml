@@ -1,7 +1,73 @@
 ﻿
-@{
-    ViewBag.Title = "ConsultarCarrito";
-}
+<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
 
-<h2>ConsultarCarrito</h2>
+<div class="container px-3 my-5 clearfix">
+    <!-- Shopping cart table -->
+    <div class="card">
+        <div class="card-header">
 
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Mi Carrito</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered m-0">
+                    <thead>
+                        <tr>
+                            <!-- Set columns width -->
+                            <th class="text-center py-3 px-4" style="width: 100px;">Nombre</th>
+                            <th class="text-center py-3 px-4" style="width: 100px;">Fecha</th>
+                            <th class="text-center py-3 px-4" style="width: 100px;">Precio</th>
+                            <th class="text-center py-3 px-4" style="width: 120px;">Cantidad</th>
+                            <th class="text-center py-3 px-4" style="width: 100px;">Total</th>
+                            <th class="text-center py-3 px-4" style="width: 100px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@item.Nombre</td>
+                                <td class="text-center">@item.Fecha.ToString("dd/MM/yyyy hh:mm tt")</td>
+                                <td class="text-center">¢ @item.Precio.ToString("N2")</td>
+                                <td class="text-center">@item.Cantidad</td>
+                                <td class="text-center">¢ @item.Total.ToString("N2")</td>
+                                <td class="text-center">
+
+                                    <button type="button" class="btn abrirModal" data-bs-toggle="modal" data-bs-target="#modalCarrito"
+                                            data-id="@item.ConsecutivoProducto"
+                                            data-name="@item.Nombre">
+                                        <i class="fa fa-trash-o" style="font-size: 1.4em;"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- / Shopping cart table -->
+            @if (Session["Total"].ToString() != null && Session["Total"].ToString() != "0")
+            {
+                <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
+                    <div class="mt-4">
+                    </div>
+                    <div class="d-flex">
+
+                        <div class="text-right mt-4">
+                            <label class="text-muted font-weight-normal m-0">Precio Total</label>
+                            <div class="text-large"><strong>¢ @decimal.Parse(Session["Total"].ToString()).ToString("N2")</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-right">
+                    <a class="btn btn-outline-primary" style="width:200px; margin-bottom: 1%" href="@Url.Action("Productos", "Productos")">Volver</a>
+                    @using (Html.BeginForm("PagarCarrito", "Carrito"))
+                    {
+                        <button type="submit" class="btn btn-outline-primary" style="width:200px">Pagar</button>
+                    }
+                </div>
+            }
+            </div>
+    </div>
+</div>

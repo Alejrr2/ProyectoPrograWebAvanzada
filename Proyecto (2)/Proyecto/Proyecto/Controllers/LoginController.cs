@@ -38,6 +38,7 @@ namespace Proyecto.Controllers
                     }
                     else
                     {
+                        Session["Consecutivo"] = resultado.Consecutivo;
                         Session["IdUsuario"] = resultado.Identificacion;
                         Session["NombreUsuario"] = resultado.Nombre;
                         Session["Rol"] = resultado.ConsecutivoRol;
@@ -284,8 +285,6 @@ namespace Proyecto.Controllers
                 return View();
             }
         }
-
-
 
     }
 }

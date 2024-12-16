@@ -15,7 +15,7 @@ namespace Proyecto.Controllers
         {
             using (var context = new AlaPastaDatabaseEntities())
             {
-                var consecutivoUsuarioLogueado = int.Parse(Session["IdUsuario"].ToString());
+                var consecutivoUsuarioLogueado = int.Parse(Session["Consecutivo"].ToString());
                 var cantidadExistenteCarrito = context.tCarrito.Where(
                     x => x.ConsecutivoUsuario == consecutivoUsuarioLogueado
                         && x.ConsecutivoProducto == IdProducto).FirstOrDefault();
@@ -78,7 +78,7 @@ namespace Proyecto.Controllers
         {
             using (var context = new AlaPastaDatabaseEntities())
             {
-                var consecutivoUsuarioLogueado = long.Parse(Session["Consecutivo"].ToString());
+                var consecutivoUsuarioLogueado = int.Parse(Session["Consecutivo"].ToString());
                 var datos = context.tCarrito.Where(x => x.ConsecutivoUsuario == consecutivoUsuarioLogueado).ToList(); ;
 
                 var carrito = new List<Carrito>();

@@ -62,7 +62,10 @@
                                     <li><a href="@Url.Action("ListadoCategorias", "Categoria")">Categorias</a></li>
                                 }
                             }
-
+                            @if (rol == 1)
+                            {
+                                <li><a href="@Url.Action("VerEmpleados","Usuario")">Empleados</a></li>
+                            }
 
                             @if (Session["NombreUsuario"] != null)
                             {
@@ -91,10 +94,7 @@
                                     </ul>
                                 </li>
                             }
-                            @if (rol == 1)
-                                {
-                                <li><a href="@Url.Action("VerEmpleados","Usuario")">Empleados</a></li>
-                            }
+
 
 
                         </ul>
@@ -116,8 +116,8 @@
                 <ul class="foot-menu">
                     <li class="last3"><a class="active" href=@Url.Action("Index", "Home")>Inicio</a></li>
                     <li><a href="@Url.Action("Productos","Productos")">Menú</a></li>
-                    <li><a href="@Url.Action("About","Nosotros")">Nosotros</a></li>
-                    <li><a href="@Url.Action("Contact","Contacto")">Contáctenos</a></li>
+                    <li><a href="@Url.Action("About","Home")">Nosotros</a></li>
+                    <li><a href="@Url.Action("Contact","Home")">Contáctenos</a></li>
                     <li><a href="@Url.Action("Canasta", "Carrito")">Carrito</a></li>
                     <li><a href="@Url.Action("InicioSesion", "Login")">Ingresar</a></li>
                 </ul>

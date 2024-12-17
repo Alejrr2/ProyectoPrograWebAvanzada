@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\proyecto final\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\ale\\desktop\\proyecto final\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\pedidos\\consultarpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\pedidos\\consultarpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\productos\\editarproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\productos\\editarproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -27,12 +39,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwDkAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T22:58:04.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsultarPedidos.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Pedidos\\ConsultarPedidos.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Pedidos\\ConsultarPedidos.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Pedidos\\ConsultarPedidos.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Pedidos\\ConsultarPedidos.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T22:56:23.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditarProducto.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\EditarProducto.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Productos\\EditarProducto.cshtml",
+              "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\EditarProducto.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Productos\\EditarProducto.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T20:35:44.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Productos.cshtml",
               "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Productos\\Productos.cshtml",
               "ToolTip": "C:\\Users\\Ale\\Desktop\\Proyecto Final\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Productos\\Productos.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAswEcAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAswD8AAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-17T20:27:59.043Z",
               "EditorCaption": ""

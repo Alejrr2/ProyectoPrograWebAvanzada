@@ -3,29 +3,32 @@
 @{
     ViewBag.Title = "ConsultarPedidos";
 }
+<br />
 
-<h2>Mis Pedidos</h2>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th># Pedido</th>
-            <th>Fecha</th>
-            <th>Dirección</th>
-            <th>Total</th>
-            <th>Estado</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var pedido in Model)
-        {
+<div style="max-width: 600px; margin: auto;">
+    <h2>Mis Pedidos</h2>
+    <table class="table table-striped table-sm">
+        <thead>
             <tr>
-                <td>@pedido.Consecutivo</td>
-                <td>@pedido.FechaPedido.ToString("dd/MM/yyyy HH:mm")</td>
-                <td>@pedido.Direccion</td>
-                <td>@pedido.Total.ToString("C")</td>
-                <td>@pedido.Estado</td>
+                <th># Pedido</th>
+                <th>Fecha</th>
+                <th>Dirección</th>
+                <th>Total</th>
+                <th>Estado</th>
             </tr>
-        }
-    </tbody>
-</table>
-
+        </thead>
+        <tbody>
+            @foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.Consecutivo</td>
+                    <td>@pedido.FechaPedido.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@pedido.Direccion</td>
+                    <td>@pedido.Total.ToString("C")</td>
+                    <td>@pedido.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />

@@ -58,20 +58,22 @@
                                         </div>
                                     </div>
                                 }
-
+                            <br />
                                 @if (rol == 1)
-                                {
-                                    <a class="btn btn-warning" href="@Url.Action("EditarProducto", "Productos", new { idProducto = item.IdProducto })">
-                                        Modificar
-                                    </a>
-                                    <form action="@Url.Action("EliminarProducto", "Productos")" method="post" style="display:inline;">
-                                        <input type="hidden" name="idProducto" value="@item.IdProducto" />
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
-                                    </form>
-                                }
-                                <br />
-                            </div>
-                        </div>
+                                { 
+                                    <div style="display: flex; justify-content: center; gap: 10px;">
+                                        <a class="btn btn-warning" href="@Url.Action("EditarProducto", "Productos", new { idProducto = item.IdProducto })">
+                                            Modificar
+                                        </a>
+                                        <form action="@Url.Action("EliminarProducto", "Productos")" method="post" style="display:inline;">
+                                            <input type="hidden" name="idProducto" value="@item.IdProducto" />
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
+                                        </form>
+                                    </div>
+                                        }
+                                        <br />
+                                    </div>
+                                </div>
                     }
                 </div>
             </article>

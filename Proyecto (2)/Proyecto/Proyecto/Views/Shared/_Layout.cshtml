@@ -71,7 +71,7 @@
                                         Mi Perfil
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                                        <li><a class="dropdown-item" href="@Url.Action("ActualizarPerfil", "Usuario")">Actualizar <br /> Usuario</a></li>
+                                        <li><a class="dropdown-item" href="@Url.Action("ActualizarPerfil", "Usuario")">Actualizar <br /> Perfil</a></li>
                                         @if (rol == 1)
                                         {
                                             <li><a class="dropdown-item" href="@Url.Action("RegistroEmpleado", "Login")">Registro <br /> Empleado</a></li>
@@ -91,8 +91,8 @@
                                     </ul>
                                 </li>
                             }
-                            @if (Session["NombreUsuario"] != null)
-                            {
+                            @if (rol == 1)
+                                {
                                 <li><a href="@Url.Action("VerEmpleados","Usuario")">Empleados</a></li>
                             }
 

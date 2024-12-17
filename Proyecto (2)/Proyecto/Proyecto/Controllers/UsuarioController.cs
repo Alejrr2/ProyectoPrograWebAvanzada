@@ -81,7 +81,7 @@ namespace Proyecto.Controllers
             }
         }
 
-        public ActionResult ListarEmpleado()
+        public ActionResult VerEmpleados()
         {
             using (var context = new AlaPastaDatabaseEntities())
             {
@@ -110,37 +110,99 @@ namespace Proyecto.Controllers
             }
         }
 
-
-        /*
         [HttpGet]
-        public ActionResult EditarEmpleado(Usuario model)
+        public ActionResult ActualizarEmpleado(string id)
         {
-            Usuario usuario = new Usuario();
-
             using (var context = new AlaPastaDatabaseEntities())
             {
-                var datos = context.tUsuario
-                    .Where(x => x.Identificacion == model.Identificacion && x.ConsecutivoRol == 2)
-                    .FirstOrDefault();
+                // buscar el empleado                
+                var datos = context.tUsuario.FirstOrDefault(e => e.Identificacion == id);
+                var empleado = new Usuario();
 
                 if (datos != null)
                 {
-                    usuario.Consecutivo = datos.Consecutivo;
-                    usuario.Identificacion = datos.Identificacion;
-                    usuario.Nombre = datos.Nombre;
-                    usuario.Apellido = datos.Apellido;
-                    usuario.CorreoElectronico = datos.CorreoElectronico;
-                    usuario.Telefono = datos.Telefono;
+                    empleado.Identificacion = datos.Identificacion;
+                    empleado.Nombre = datos.Nombre;
+                    empleado.CorreoElectronico = datos.CorreoElectronico;
+                    empleado.Telefono = datos.Telefono;
+                    return View(empleado);
                 }
                 else
                 {
-                    ViewBag.MensajePantalla = "No se encontró un empleado con el ID especificado.";
-                    return RedirectToAction("ListarEmpleado");
+                    ViewBag.MensajePantalla = "Empleado no encontrado";
+                    return RedirectToAction("VerEmpleados", "Usuario");
+                }
+               
+            }
+        }
+
+
+
+        [HttpPost]
+        public ActionResult ActualizarEmpleado(Usuario model)
+        {
+            using (var context = new AlaPastaDatabaseEntities())
+            {
+
+                var empleadoExistente = context.tUsuario.FirstOrDefault(e => e.Identificacion == model.Identificacion);
+
+                if (empleadoExistente != null)
+                {
+                    // Actualice los campos
+                    empleadoExistente.Nombre = model.Nombre;
+                    empleadoExistente.Apellido = model.Apellido;
+                    empleadoExistente.CorreoElectronico = model.CorreoElectronico;
+                    empleadoExistente.Telefono = model.Telefono;
+
+                    //Salvar en lal BD
+                    context.SaveChanges();
+
+                    return RedirectToAction("VerEmpleados", "Usuario");
                 }
 
-                return View(usuario);
+                ViewBag.MensajePantalla = "La información no se ha podido actualizar correctamente";
+                return View();
             }
-        }*/
+        }
 
+        [HttpGet]
+        public ActionResult CrearEmpleado()
+        {
+            return View();
+
+        }
+
+
+        [HttpPost]
+        public ActionResult CrearEmpleado(Usuario model)
+        {
+            using (var context = new AlaPastaDatabaseEntities()) //definir la base de datos 
+            {
+                var tabla = new tUsuario();
+
+                //listar los atributos de la tabla e igualarlos al atributo del modelo LinQ
+                tabla.Consecutivo = 0;
+                tabla.Identificacion = "";
+                tabla.Nombre = model.Nombre;
+                tabla.Apellido = model.Apellido;
+                tabla.CorreoElectronico = model.CorreoElectronico;
+                tabla.Telefono = model.Telefono;
+                tabla.ConsecutivoRol = 2;
+                tabla.Activo = true;
+                tabla.Contrasenna = model.Contrasenna;
+
+
+                context.tUsuario.Add(tabla);
+                var respuesta = context.SaveChanges();
+
+
+                if (respuesta > 0)
+                    return RedirectToAction("VerEmpleados", "Usuario");
+
+                ViewBag.MensajePantalla = "Su información no se ha podido registrar correctamente";
+                return View();
+            }
+
+        }
     }
 }

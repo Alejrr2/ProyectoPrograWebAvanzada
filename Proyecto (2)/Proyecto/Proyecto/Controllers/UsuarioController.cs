@@ -122,6 +122,7 @@ namespace Proyecto.Controllers
                 {
                     empleado.Identificacion = datos.Identificacion;
                     empleado.Nombre = datos.Nombre;
+                    empleado.Apellido = datos.Apellido;
                     empleado.CorreoElectronico = datos.CorreoElectronico;
                     empleado.Telefono = datos.Telefono;
                     return View(empleado);
@@ -147,13 +148,12 @@ namespace Proyecto.Controllers
 
                 if (empleadoExistente != null)
                 {
-                    // Actualice los campos
                     empleadoExistente.Nombre = model.Nombre;
                     empleadoExistente.Apellido = model.Apellido;
                     empleadoExistente.CorreoElectronico = model.CorreoElectronico;
                     empleadoExistente.Telefono = model.Telefono;
 
-                    //Salvar en lal BD
+     
                     context.SaveChanges();
 
                     return RedirectToAction("VerEmpleados", "Usuario");
@@ -182,5 +182,26 @@ namespace Proyecto.Controllers
                 return View();
             }
         }
+        [HttpPost]
+        public ActionResult EliminarEmpleado(string id)
+        {
+            using (var context = new AlaPastaDatabaseEntities())
+            {
+                var empleado = context.tUsuario.FirstOrDefault(x => x.Identificacion == id);
+
+                if (empleado != null)
+                {
+                    context.tUsuario.Remove(empleado);
+                    context.SaveChanges();
+                    ViewBag.MensajePantalla = "Empleado eliminado correctamente.";
+
+                    return RedirectToAction("VerEmpleados", "Usuario");
+                }
+                ViewBag.MensajePantalla = "No se pudo eliminar el empleado. Verifique el ID.";
+
+                return RedirectToAction("VerEmpleados", "Usuario");
+            }
+        }
+
     }
 }

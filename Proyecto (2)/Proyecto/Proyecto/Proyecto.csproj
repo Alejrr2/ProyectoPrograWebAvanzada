@@ -396,13 +396,11 @@
     <Content Include="Views\Productos\AgregarProducto.cshtml" />
     <Content Include="Views\Login\RegistroEmpleado.cshtml" />
     <Content Include="Views\Carrito\ConsultarCarrito.cshtml" />
-    <Content Include="Views\Empleado\VerEmpleados.cshtml" />
-    <Content Include="Views\Empleado\ActualizarEmpleado.cshtml" />
-    <Content Include="Views\Empleado\CrearEmpleado.cshtml" />
     <Content Include="Views\Pedidos\ConsultarPedidos.cshtml" />
     <Content Include="Views\Categoria\ListadoCategorias.cshtml" />
     <Content Include="Views\Categoria\ActualizarCategoria.cshtml" />
     <Content Include="Views\Usuario\VerEmpleados.cshtml" />
+    <Content Include="Views\Usuario\ActualizarEmpleado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,4 @@
-﻿
-<section id="content" class="p6">
+﻿<section id="content" class="p6">
     <div class="container_24 p7">
         <article class="grid_8">
             <div class="page1-box1 maxheight2">
@@ -114,37 +113,49 @@
             <!--Columna top productos lado derecho-->
 
             <article class="grid_8 prefix_2 maxheight1 border2">
-                <h2 class="p10">Mejores <br />Productos</h2>
-                <div class="page1-box4">
-                    <figure class="page1-img2 img-bot"><img src="~/Styles/images/page1-img4.jpg" alt=""></figure>
-                    <div class="extra-wrap">
-                        <a class="link2" href="#">Producto 1</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$14.99</span>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <section id="chatbot" class="p6">
+                    <div class="container_24 p7">
+                        <article class="grid_8">
+                            <div class="page1-box1 maxheight2">
+                                <div class="inner1">
+                                    <strong>Chatbot</strong>
+                                    <span class="text1">Preguntas</span>
+                                    <span class="text2">frecuentes</span>
+                                </div>
+                                <div class="inner2">
+                                    <p>Hola, soy el asistente virtual de A La Pasta. ¿En qué puedo ayudarte hoy?</p>
+                                    <p>Elige una opción para obtener más información:</p>
+                                    <ul>
+                                        <li>1. ¿Cuál es el menú del día?</li>
+                                        <li>2. ¿Qué opciones de pago tienen?</li>
+                                        <li>3. ¿Cuál es el horario de atención?</li>
+                                        <li>4. ¿Hacen entregas a domicilio?</li>
+                                        <li>5. ¿Tienen opciones vegetarianas?</li>
+                                        <li>6. ¿Cuál es el plato más popular?</li>
+                                        <li>7. ¿Aceptan reservas?</li>
+                                        <li>8. ¿Dónde están ubicados?</li>
+                                    </ul>
+                                    <input type="number" id="userInput" placeholder="Escribe el número de tu opción">
+                                    <button id="askButton">Enviar</button>
+                                    <div id="response" style="margin-top: 10px;"></div>
+                                </div>
+                                <i></i>
+                            </div>
+                        </article>
                     </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="page1-box4">
-                    <figure class="page1-img2 img-bot"><img src="~/Styles/images/page1-img5.jpg" alt=""></figure>
-                    <div class="extra-wrap">
-                        <a class="link2" href="#">Producto 2 </a>
-                        <p class="p11">Descripcion del producto </p>
-                        <span class="text5">$15.75</span>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="page1-box4 p12">
-                    <figure class="page1-img2 img-bot"><img src="~/Styles/images/page1-img6.jpg" alt=""></figure>
-                    <div class="extra-wrap">
-                        <a class="link2" href="#">Producto 3</a>
-                        <p class="p11">Descripcion del producto</p>
-                        <span class="text5">$12.00</span>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <a class="button1 p28 p28" href="@Url.Action("Productos","Productos") ">Ver mas</a>
+                </section>
             </article>
             <div class="clear"></div>
         </div>
     </div>
 </section>
+<script src="~/Styles/js/Chatbot.js"></script>
+

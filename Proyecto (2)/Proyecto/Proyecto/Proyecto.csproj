@@ -350,6 +350,7 @@
     <Content Include="Styles\images\ui.totop.png" />
     <Content Include="Styles\js\bootstrap.bundle.min.js" />
     <Content Include="Styles\js\camera.js" />
+    <Content Include="Styles\js\Chatbot.js" />
     <Content Include="Styles\js\forms.js" />
     <Content Include="Styles\js\html5shiv.js" />
     <Content Include="Styles\js\jquery-migrate-1.1.1.js" />

@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\jose1\\documents\\visual studio comunity projects\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\styles\\js\\chatbot.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\styles\\js\\chatbot.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\jose1\\documents\\visual studio comunity projects\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\categoria\\listadocategorias.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\categoria\\listadocategorias.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\jose1\\documents\\visual studio comunity projects\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\categoria\\actualizarcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\categoria\\actualizarcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\jose1\\documents\\visual studio comunity projects\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\categoria\\listadocategorias.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\categoria\\listadocategorias.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\carrito\\consultarcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -94,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,7 +110,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Chatbot.js",
+              "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\js\\Chatbot.js",
+              "RelativeDocumentMoniker": "Proyecto\\Styles\\js\\Chatbot.js",
+              "ToolTip": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\js\\Chatbot.js",
+              "RelativeToolTip": "Proyecto\\Styles\\js\\Chatbot.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-17T07:09:11.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ActualizarEmpleado.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\ActualizarEmpleado.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Empleado\\ActualizarEmpleado.cshtml",
@@ -119,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CrearEmpleado.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\CrearEmpleado.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Empleado\\CrearEmpleado.cshtml",
@@ -132,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "VerEmpleados.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\VerEmpleados.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Empleado\\VerEmpleados.cshtml",
@@ -145,20 +162,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "ListadoCategorias.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Categoria\\ListadoCategorias.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Categoria\\ListadoCategorias.cshtml",
               "ToolTip": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Categoria\\ListadoCategorias.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Categoria\\ListadoCategorias.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-17T06:28:53.714Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ConsultarCarrito.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
@@ -171,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ConsultarPedidos.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Pedidos\\ConsultarPedidos.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Pedidos\\ConsultarPedidos.cshtml",
@@ -184,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Productos.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Productos\\Productos.cshtml",
@@ -203,14 +220,14 @@
               "RelativeDocumentMoniker": "Proyecto\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJ8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-17T03:31:14.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\UsuarioController.cs",
@@ -223,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\HomeController.cs",
@@ -236,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "CarritoController.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\CarritoController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\CarritoController.cs",
@@ -249,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ActualizarCategoria.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Categoria\\ActualizarCategoria.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Categoria\\ActualizarCategoria.cshtml",
@@ -262,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "CategoriaController.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\CategoriaController.cs",
@@ -275,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\LoginController.cs",
@@ -288,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Categoria.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Categoria.cs",
               "RelativeDocumentMoniker": "Proyecto\\Models\\Categoria.cs",
@@ -301,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "PedidosController.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\PedidosController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\PedidosController.cs",
@@ -314,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Shared\\_Layout.cshtml",
@@ -327,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Web.config",
               "RelativeDocumentMoniker": "Proyecto\\Web.config",
@@ -340,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "EliminarCarrito.js",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Styles\\FuncionesJS\\EliminarCarrito.js",
               "RelativeDocumentMoniker": "Proyecto\\Styles\\FuncionesJS\\EliminarCarrito.js",
@@ -353,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Model1.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx",
               "RelativeDocumentMoniker": "Proyecto\\Models\\Model1.edmx",
@@ -365,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Users\\jose1\\Documents\\Visual Studio Comunity Projects\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Producto.cs",
               "RelativeDocumentMoniker": "Proyecto\\Models\\Producto.cs",

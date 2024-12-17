@@ -39,6 +39,7 @@ namespace Proyecto.Models
         public virtual DbSet<tPuestos> tPuestos { get; set; }
         public virtual DbSet<tRoles> tRoles { get; set; }
         public virtual DbSet<tUsuario> tUsuario { get; set; }
+        public virtual DbSet<tContactos> tContactos { get; set; }
     
         public virtual int ActualizarContrasenna(string contrasennaTemp, Nullable<bool> tieneContrasennaTemp, Nullable<System.DateTime> fechaVencimientoTemp, Nullable<long> consecutivo)
         {

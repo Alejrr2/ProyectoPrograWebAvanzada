@@ -27,6 +27,15 @@
     <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NombreCat" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="tContactos">
+    <Key>
+      <PropertyRef Name="Id_Contacto" />
+    </Key>
+    <Property Name="Id_Contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreContacto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NumeroTel" Type="int" Nullable="false" />
+    <Property Name="Comentario" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="tDetallePedidos">
     <Key>
       <PropertyRef Name="ConsecutivoDetalle" />
@@ -282,6 +291,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tCarrito" EntityType="Self.tCarrito" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tCategorias" EntityType="Self.tCategorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tContactos" EntityType="Self.tContactos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tDetallePedidos" EntityType="Self.tDetallePedidos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tMetodos" EntityType="Self.tMetodos" Schema="dbo" store:Type="Tables" />

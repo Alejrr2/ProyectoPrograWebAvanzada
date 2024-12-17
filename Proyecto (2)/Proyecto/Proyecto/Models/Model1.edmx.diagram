@@ -22,6 +22,7 @@
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tProductos_tCategorias" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK__tDetalleP__Conse__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="AlaPastaDatabaseModel.FK_tUsuario_tRol" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AlaPastaDatabaseModel.tContactos" Width="1.5" PointX="10.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

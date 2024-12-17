@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\InicioSesion_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -176,6 +177,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tCategorias.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tContactos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tDetallePedidos.cs">

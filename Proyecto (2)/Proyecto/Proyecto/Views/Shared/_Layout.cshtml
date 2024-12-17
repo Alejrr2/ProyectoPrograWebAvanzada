@@ -57,8 +57,8 @@
                                 {
                                     <li><a href="@Url.Action("ConsultarPedidos", "Pedidos")">Pedidos</a></li>
                                 }
-                                if (rol == 1) 
-                                { 
+                                if (rol == 1)
+                                {
                                     <li><a href="@Url.Action("ListadoCategorias", "Categoria")">Categorias</a></li>
                                 }
                             }
@@ -90,6 +90,10 @@
                                         <li><a class="dropdown-item" href="@Url.Action("InicioSesion", "Login")">Ingresar</a></li>
                                     </ul>
                                 </li>
+                            }
+                            @if (Session["NombreUsuario"] != null)
+                            {
+                                <li><a href="@Url.Action("VerEmpleados","Usuario")">Empleados</a></li>
                             }
 
 

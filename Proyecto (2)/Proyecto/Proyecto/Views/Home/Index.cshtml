@@ -1,4 +1,6 @@
-﻿<section id="content" class="p6">
+﻿@model List<Proyecto.Models.tContactos>
+
+<section id="content" class="p6">
     <div class="container_24 p7">
         <article class="grid_8">
             <div class="page1-box1 maxheight2">
@@ -60,7 +62,7 @@
                     Gracias por elegirnos y por permitirnos ser parte de tu día a día. ¡Esperamos seguir acompañándote en muchas más comidas llenas de sabor y tradición!
                 </p>
                 <!--Aqui inicia el carrusel de la historia
-                    Inicio mitad A de parte izquierda-->
+        Inicio mitad A de parte izquierda-->
 
                 <article class="grid_6 alpha maxheight">
                     <h2>Nuestra <br />Historia</h2>
@@ -96,58 +98,54 @@
                 <!--Inicio mitad B parte izquierda-->
                 <article class="grid_6 prefix_2 maxheight border1 omega">
                     <h2>Comentarios<br />clientes</h2>
-                    <div class="page1-box3">
-                        <a class="link1" href="#">Marco,  23 a;os, SJ</a>
-                        <p class="last2">“ La pasta de A La Pasta siempre es un éxito en casa. ¡Sabor auténtico y calidad inigualable!”</p>
-                        <time class="time1" datetime="2022-09-05T15:31">junio 30, 2022</time>
-                    </div>
-                    <div class="page1-box3 last3">
-                        <a class="link1" href="#">Julia,  22 a;os, SJ</a>
-                        <p class="last2">“ Nos encanta la frescura y textura. Se nota el cuidado en cada detalle. ¡No cambiamos de marca! “</p>
-                        <time class="time1" datetime="2023-05-15T05:21">marzo 15, 2023</time>
-                    </div>
+                    @foreach (var contacto in Model)
+                    {
+                        <div class="page1-box3">
+                            <a class="link1" href="#">@contacto.NombreContacto</a>
+                            <p class="last2">“ @contacto.Comentario”</p>
+                            <time class="time1" datetime="2022-09-05T15:31">junio 30, 2022</time>
+                        </div>
+                    }
+                </article>
+            </article>
+                <!--Columna top productos lado derecho-->
+
+                <article class="grid_8 prefix_2 maxheight1 border2">
+                    <br />
+                    <br />
+                    <section id="chatbot" class="p6">
+                        <div class="container_24 p7">
+                            <article class="grid_8">
+                                <div class="page1-box1 maxheight2">
+                                    <div class="inner1">
+                                        <strong>Chatbot</strong>
+                                        <span class="text1">Preguntas</span>
+                                        <span class="text2">frecuentes</span>
+                                    </div>
+                                    <div class="inner2">
+                                        <p>Hola, soy el asistente virtual de A La Pasta. ¿En qué puedo ayudarte hoy?</p>
+                                        <p>Elige una opción para obtener más información:</p>
+                                        <li>1. ¿Cuál es el menú del día?</li>
+                                        <li>2. ¿Qué opciones de pago tienen?</li>
+                                        <li>3. ¿Cuál es el horario de atención?</li>
+                                        <li>4. ¿Hacen entregas a domicilio?</li>
+                                        <li>5. ¿Tienen opciones vegetarianas?</li>
+                                        <li>6. ¿Cuál es el plato más popular?</li>
+                                        <li>7. ¿Aceptan reservas?</li>
+                                        <li>8. ¿Dónde están ubicados?</li>
+                                        <input type="number" id="userInput" placeholder="Escribe el número de tu opción">
+                                        <button id="askButton">Enviar</button>
+                                    </div>
+                                    <i></i>
+                                </div>
+                                <br />
+                                <br />
+                                <div id="response" style="margin-top: 10px;"></div>
+                            </article>
+                        </div>
+                    </section>
                 </article>
                 <div class="clear"></div>
-            </article>
-
-            <!--Columna top productos lado derecho-->
-
-            <article class="grid_8 prefix_2 maxheight1 border2">
-                <br />
-                <br />
-                <section id="chatbot" class="p6">
-                    <div class="container_24 p7">
-                        <article class="grid_8">
-                            <div class="page1-box1 maxheight2">
-                                <div class="inner1">
-                                    <strong>Chatbot</strong>
-                                    <span class="text1">Preguntas</span>
-                                    <span class="text2">frecuentes</span>
-                                </div>
-                                <div class="inner2">
-                                    <p>Hola, soy el asistente virtual de A La Pasta. ¿En qué puedo ayudarte hoy?</p>
-                                    <p>Elige una opción para obtener más información:</p>
-                                    <li>1. ¿Cuál es el menú del día?</li>
-                                    <li>2. ¿Qué opciones de pago tienen?</li>
-                                    <li>3. ¿Cuál es el horario de atención?</li>
-                                    <li>4. ¿Hacen entregas a domicilio?</li>
-                                    <li>5. ¿Tienen opciones vegetarianas?</li>
-                                    <li>6. ¿Cuál es el plato más popular?</li>
-                                    <li>7. ¿Aceptan reservas?</li>
-                                    <li>8. ¿Dónde están ubicados?</li>
-                                    <input type="number" id="userInput" placeholder="Escribe el número de tu opción">
-                                    <button id="askButton">Enviar</button>
-                                </div>
-                                <i></i>
-                            </div>
-                            <br />
-                            <br />
-                            <div id="response" style="margin-top: 10px;"></div>
-                        </article>
-                    </div>
-                </section>
-            </article>
-            <div class="clear"></div>
         </div>
     </div>
 </section>

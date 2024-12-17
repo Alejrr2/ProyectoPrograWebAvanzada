@@ -176,11 +176,10 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult CrearEmpleado(Usuario model)
         {
-            using (var context = new AlaPastaDatabaseEntities()) //definir la base de datos 
+            using (var context = new AlaPastaDatabaseEntities())
             {
                 var tabla = new tUsuario();
 
-                //listar los atributos de la tabla e igualarlos al atributo del modelo LinQ
                 tabla.Consecutivo = 0;
                 tabla.Identificacion = "";
                 tabla.Nombre = model.Nombre;

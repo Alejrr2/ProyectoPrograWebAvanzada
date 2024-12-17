@@ -1,5 +1,4 @@
-﻿
-<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
+﻿<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
 
 <div class="container px-3 my-5 clearfix">
     <!-- Shopping cart table -->
@@ -46,29 +45,32 @@
                     </tbody>
                 </table>
             </div>
-            <!-- / Shopping cart table -->
-            @if (Session["Total"].ToString() != null && Session["Total"].ToString() != "0")
+            @if (Session["Total"] != null && Session["Total"].ToString() != "0")
             {
                 <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
-                    <div class="mt-4">
-                    </div>
+                    <div class="mt-4"> </div>
                     <div class="d-flex">
-
                         <div class="text-right mt-4">
                             <label class="text-muted font-weight-normal m-0">Precio Total</label>
-                            <div class="text-large"><strong>¢ @decimal.Parse(Session["Total"].ToString()).ToString("N2")</strong></div>
+                            <div class="text-large">
+                                <strong>¢ @decimal.Parse(Session["Total"].ToString()).ToString("N2")</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="float-right">
-                    <a class="btn btn-outline-primary" style="width:200px; margin-bottom: 1%" href="@Url.Action("Productos", "Productos")">Volver</a>
+                    <a class="btn btn-outline-primary" style="width:200px; margin-bottom: 1%"
+                       href="@Url.Action("Productos", "Productos")">Volver</a>
                     @using (Html.BeginForm("PagarCarrito", "Carrito"))
                     {
-                        <button type="submit" class="btn btn-outline-primary" style="width:200px">Pagar</button>
+                        <button type="button" class="btn btn-outline-primary" style="width:200px" data-bs-toggle="modal" data-bs-target="#modalPagarCarrito">
+                            Pagar
+                        </button>
                     }
                 </div>
             }
-            </div>
+
+        </div>
     </div>
 </div>
 
@@ -90,6 +92,31 @@
 
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Procesar</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalPagarCarrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalPagarCarritoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalPagarCarritoLabel">Confirmación de Pago</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @using (Html.BeginForm("PagarCarrito", "Carrito", FormMethod.Post, new { id = "formPagarCarrito" }))
+            {
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección de entrega</label>
+                        <textarea class="form-control" id="direccion" name="Direccion" rows="3" placeholder="Ingrese su dirección aquí..." required></textarea>
+                    </div>
+                    <p>¿Está seguro de que desea proceder con el pago del carrito?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Pagar</button>
                 </div>
             }
         </div>

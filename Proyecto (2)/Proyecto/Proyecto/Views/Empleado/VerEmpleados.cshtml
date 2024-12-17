@@ -19,7 +19,6 @@
             <div class="table-responsive">
                 <table id="example" class="table text-nowrap align-middle mb-0">
                     <thead>
-                        <!-- identificacion de los datos a leer/mostrar en la vista -->
                         <tr class="border-2 border-bottom border-primary border-0">
                             <th>Consecutivo</th>
                             <th>Identificacion</th>
@@ -34,7 +33,6 @@
                     </thead>
                     <tbody class="table-group-divider">
 
-                        <!-- Lectura de los datos -->
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -51,7 +49,6 @@
                                     <!--<a class="btn btn-success text-white" href="@Url.Action("VerEmpleados", "Usuario")">Crear<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>-->
                                     <a class="btn btn-primary text-white" href="@Url.Action("VerEmpleados","Usuario", new { q = item.Identificacion })">Editar<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>
 
-                                    <!-- La variable q es la llave unica de la base de datos con la que queremos encontrar los datos a editar -->
 
 
                                     <button type="button" class="btn abrirModal btn-danger text-white" data-bs-toggle="modal" data-bs-target="#modalEmpleado"

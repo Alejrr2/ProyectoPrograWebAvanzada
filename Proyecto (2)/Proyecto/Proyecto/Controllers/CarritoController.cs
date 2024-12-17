@@ -131,10 +131,68 @@ namespace Proyecto.Controllers
         }
 
         [HttpPost]
-        public ActionResult PagarCarrito()
+        public ActionResult PagarCarrito(string Direccion)
         {
-            return View();
+            using (var context = new AlaPastaDatabaseEntities())
+            {
+                var consecutivoUsuarioLogueado = int.Parse(Session["Consecutivo"].ToString());
+                var nombreUsuario = Session["NombreUsuario"].ToString();
+                var carrito = context.tCarrito
+                    .Where(x => x.ConsecutivoUsuario == consecutivoUsuarioLogueado)
+                    .ToList();
 
+                if (carrito.Any())
+                {
+                    var nuevoPedido = new tPedidos
+                    {
+                        ConsecutivoUsuario = consecutivoUsuarioLogueado,
+                        NombreUsuario = nombreUsuario,
+                        Direccion = Direccion,
+                        FechaPedido = DateTime.Now,
+                        Total = carrito.Sum(x => x.Cantidad * x.tProductos.Precio),
+                        Estado = "Pagado"
+                    };
+
+                    context.tPedidos.Add(nuevoPedido);
+                    context.SaveChanges();
+
+                    foreach (var item in carrito)
+                    {
+                        var detallePedido = new tDetallePedidos
+                        {
+                            ConsecutivoPedido = nuevoPedido.Consecutivo,
+                            ConsecutivoProducto = item.ConsecutivoProducto,
+                            NombreProducto = item.tProductos.NombreProducto,
+                            Cantidad = item.Cantidad,
+                            PrecioUnitario = item.tProductos.Precio,
+                            Total = item.Cantidad * item.tProductos.Precio
+                        };
+
+                        context.tDetallePedidos.Add(detallePedido);
+
+                        var producto = context.tProductos.FirstOrDefault(p => p.IdProducto == item.ConsecutivoProducto);
+                        if (producto != null)
+                        {
+                            producto.Stock -= item.Cantidad;
+                            if (producto.Stock < 0) producto.Stock = 0;
+                        }
+
+                        context.tCarrito.Remove(item);
+                    }
+
+                    context.SaveChanges();
+
+                    ActualizarCarrito();
+
+                    TempData["Mensaje"] = "El pago se ha realizado correctamente. ¡Gracias por su compra!";
+                }
+                else
+                {
+                    TempData["Mensaje"] = "No hay productos en el carrito para procesar el pago.";
+                }
+            }
+
+            return RedirectToAction("ConsultarCarrito", "Carrito");
         }
     }
 }

@@ -17,20 +17,18 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tPedidos()
         {
-            this.tDetalles = new HashSet<tDetalles>();
-            this.tPagos = new HashSet<tPagos>();
+            this.tDetallePedidos = new HashSet<tDetallePedidos>();
         }
     
-        public int IdPedido { get; set; }
+        public int Consecutivo { get; set; }
+        public int ConsecutivoUsuario { get; set; }
+        public string NombreUsuario { get; set; }
+        public string Direccion { get; set; }
         public System.DateTime FechaPedido { get; set; }
         public decimal Total { get; set; }
-        public int ConsecutivoCli { get; set; }
         public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tDetalles> tDetalles { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tPagos> tPagos { get; set; }
-        public virtual tUsuario tUsuario { get; set; }
+        public virtual ICollection<tDetallePedidos> tDetallePedidos { get; set; }
     }
 }

@@ -1,0 +1,27 @@
+﻿@model Proyecto.Models.Categoria
+
+<br />
+<div class="card" style="max-width: 80%; margin: auto;">
+    <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Actualizar Categoría</h5>
+
+        @if (ViewBag.MensajePantalla != null)
+        {
+            <div class="alert alert-danger text-center" role="alert">
+                @ViewBag.MensajePantalla
+            </div>
+        }
+
+        @using (Html.BeginForm("ActualizarCategoria", "Categoria", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => m.IdCategoria)
+
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                @Html.TextBoxFor(m => m.NombreCat, new { @class = "form-control" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">Procesar</button>
+        }
+    </div>
+</div>

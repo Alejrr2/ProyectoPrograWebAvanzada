@@ -129,14 +129,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Carrito.cs" />
+    <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\InicioSesion_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -165,16 +168,13 @@
     <Compile Include="Models\tCategorias.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tDetalles.cs">
+    <Compile Include="Models\tDetallePedidos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tDirecciones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tMetodos.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tPagos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tPedidos.cs">
@@ -394,6 +394,9 @@
     <Content Include="Views\Empleado\VerEmpleados.cshtml" />
     <Content Include="Views\Empleado\ActualizarEmpleado.cshtml" />
     <Content Include="Views\Empleado\CrearEmpleado.cshtml" />
+    <Content Include="Views\Pedidos\ConsultarPedidos.cshtml" />
+    <Content Include="Views\Categoria\ListadoCategorias.cshtml" />
+    <Content Include="Views\Categoria\ActualizarCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

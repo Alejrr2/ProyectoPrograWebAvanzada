@@ -29,10 +29,9 @@ namespace Proyecto.Models
     
         public virtual DbSet<tCarrito> tCarrito { get; set; }
         public virtual DbSet<tCategorias> tCategorias { get; set; }
-        public virtual DbSet<tDetalles> tDetalles { get; set; }
+        public virtual DbSet<tDetallePedidos> tDetallePedidos { get; set; }
         public virtual DbSet<tDirecciones> tDirecciones { get; set; }
         public virtual DbSet<tMetodos> tMetodos { get; set; }
-        public virtual DbSet<tPagos> tPagos { get; set; }
         public virtual DbSet<tPedidos> tPedidos { get; set; }
         public virtual DbSet<tProductos> tProductos { get; set; }
         public virtual DbSet<tPuestos> tPuestos { get; set; }

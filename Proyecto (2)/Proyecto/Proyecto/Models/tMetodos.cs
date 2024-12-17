@@ -14,16 +14,7 @@ namespace Proyecto.Models
     
     public partial class tMetodos
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tMetodos()
-        {
-            this.tPagos = new HashSet<tPagos>();
-        }
-    
         public int IdMetodo { get; set; }
         public string Tipo { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tPagos> tPagos { get; set; }
     }
 }

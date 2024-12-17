@@ -53,6 +53,14 @@
                                 {
                                     rol = int.Parse(Session["Rol"].ToString());
                                 }
+                                if (rol == 1 || rol == 2)
+                                {
+                                    <li><a href="@Url.Action("ConsultarPedidos", "Pedidos")">Pedidos</a></li>
+                                }
+                                if (rol == 1) 
+                                { 
+                                    <li><a href="@Url.Action("ListadoCategorias", "Categoria")">Categorias</a></li>
+                                }
                             }
 
 

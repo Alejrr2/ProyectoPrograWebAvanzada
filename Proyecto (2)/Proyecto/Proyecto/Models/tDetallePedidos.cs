@@ -12,15 +12,16 @@ namespace Proyecto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tPagos
+    public partial class tDetallePedidos
     {
-        public int IdPago { get; set; }
-        public decimal Monto { get; set; }
-        public System.DateTime FechaPago { get; set; }
-        public int ConsecutivoPed { get; set; }
-        public int ConsecutivoMet { get; set; }
+        public int ConsecutivoDetalle { get; set; }
+        public Nullable<int> ConsecutivoPedido { get; set; }
+        public int ConsecutivoProducto { get; set; }
+        public string NombreProducto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        public decimal Total { get; set; }
     
-        public virtual tMetodos tMetodos { get; set; }
         public virtual tPedidos tPedidos { get; set; }
     }
 }

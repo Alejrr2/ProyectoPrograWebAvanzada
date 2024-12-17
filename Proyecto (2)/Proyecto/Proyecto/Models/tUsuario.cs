@@ -34,7 +34,6 @@ namespace Proyecto.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tCarrito> tCarrito { get; set; }
-        public virtual tPedidos tPedidos { get; set; }
         public virtual tRoles tRoles { get; set; }
     }
 }

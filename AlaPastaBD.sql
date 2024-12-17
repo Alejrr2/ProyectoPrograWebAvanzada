@@ -157,7 +157,7 @@ SET IDENTITY_INSERT [dbo].[tCategorias] OFF
 GO
 SET IDENTITY_INSERT [dbo].[tProductos] ON 
 GO
-INSERT [dbo].[tProductos] ([IdProducto], [NombreProducto], [Descripcion], [Precio], [ConsecutivoCat], [Stock], [ImagenProd], [ActivoProd]) VALUES (1, N'Pasta Ravioli', N'Pasta rellena realizada con diferentes ingredientes y generalmente replegada en forma cuadrada, t�pico de la cocina italiana. Se acompa�an de alg�n tipo de salsa, en especial de tomate (similar al rag�), tucos, pesto (salsa a base de albahaca) o crema.', CAST(6500.00 AS Decimal(10, 2)), 1, 10, N'/ImagenProd/1.png', 1)
+INSERT [dbo].[tProductos] ([IdProducto], [NombreProducto], [Descripcion], [Precio], [ConsecutivoCat], [Stock], [ImagenProd], [ActivoProd]) VALUES (1, N'Pasta Ravioli', N'Pasta rellena realizada con diferentes ingredientes y generalmente replegada en forma cuadrada, t?pico de la cocina italiana. Se acompa?an de alg?n tipo de salsa, en especial de tomate (similar al rag?), tucos, pesto (salsa a base de albahaca) o crema.', CAST(6500.00 AS Decimal(10, 2)), 1, 10, N'/ImagenProd/1.png', 1)
 GO
 SET IDENTITY_INSERT [dbo].[tProductos] OFF
 GO
@@ -415,3 +415,9 @@ ON DELETE CASCADE;
 
 
 
+CREATE TABLE tContactos (
+    Id_Contacto INT PRIMARY KEY IDENTITY(1,1),
+	NombreContacto NVARCHAR(100) NOT NULL,
+    NumeroTel INT NOT NULL,
+    Comentario NVARCHAR(100) NOT NULL,
+);

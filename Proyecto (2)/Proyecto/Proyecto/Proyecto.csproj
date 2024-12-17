@@ -261,7 +261,9 @@
     <Content Include="Styles\css\styles.min.css" />
     <Content Include="Styles\css\superfish.css" />
     <Content Include="Styles\FuncionesJS\About.js" />
+    <Content Include="Styles\FuncionesJS\EliminarCarrito.js" />
     <Content Include="Styles\FuncionesJS\Layout.js" />
+    <Content Include="Styles\FuncionesJS\ModalEmp.js" />
     <Content Include="Styles\FuncionesJS\Productos.js" />
     <Content Include="Styles\images\arrows.png" />
     <Content Include="Styles\images\banner1.jpg" />
@@ -346,6 +348,7 @@
     <Content Include="Styles\images\soc-link3.png" />
     <Content Include="Styles\images\spaguetti.png" />
     <Content Include="Styles\images\ui.totop.png" />
+    <Content Include="Styles\js\bootstrap.bundle.min.js" />
     <Content Include="Styles\js\camera.js" />
     <Content Include="Styles\js\forms.js" />
     <Content Include="Styles\js\html5shiv.js" />

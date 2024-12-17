@@ -51,6 +51,16 @@
           <Property Name="IdMetodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <EntityType Name="tPagos">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaPago" Type="date" Nullable="false" />
+          <Property Name="ConsecutivoPed" Type="int" Nullable="false" />
+          <Property Name="ConsecutivoMet" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="tPedidos">
           <Key>
             <PropertyRef Name="Consecutivo" />
@@ -94,7 +104,7 @@
           <Key>
             <PropertyRef Name="Consecutivo" />
           </Key>
-          <Property Name="Consecutivo" Type="int" Nullable="false" />
+          <Property Name="Consecutivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Apellido" Type="varchar" MaxLength="255" Nullable="false" />
@@ -106,7 +116,7 @@
           <Property Name="TieneContrasennaTemp" Type="bit" Nullable="false" />
           <Property Name="FechaVencimientoTemp" Type="datetime" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tDetalleP__Conse__6477ECF3">
+        <Association Name="FK__tDetalleP__Conse__440B1D61">
           <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="0..1" />
           <End Role="tDetallePedidos" Type="Self.tDetallePedidos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -238,12 +248,13 @@
           <EntitySet Name="tDetallePedidos" EntityType="Self.tDetallePedidos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tMetodos" EntityType="Self.tMetodos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tPagos" EntityType="Self.tPagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tPedidos" EntityType="Self.tPedidos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tProductos" EntityType="Self.tProductos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tPuestos" EntityType="Self.tPuestos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tRoles" EntityType="Self.tRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tUsuario" EntityType="Self.tUsuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tDetalleP__Conse__6477ECF3" Association="Self.FK__tDetalleP__Conse__6477ECF3">
+          <AssociationSet Name="FK__tDetalleP__Conse__440B1D61" Association="Self.FK__tDetalleP__Conse__440B1D61">
             <End Role="tPedidos" EntitySet="tPedidos" />
             <End Role="tDetallePedidos" EntitySet="tDetallePedidos" />
           </AssociationSet>
@@ -300,7 +311,7 @@
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="PrecioUnitario" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="tPedidos" Relationship="Self.FK__tDetalleP__Conse__6477ECF3" FromRole="tDetallePedidos" ToRole="tPedidos" />
+          <NavigationProperty Name="tPedidos" Relationship="Self.FK__tDetalleP__Conse__440B1D61" FromRole="tDetallePedidos" ToRole="tPedidos" />
         </EntityType>
         <EntityType Name="tDirecciones">
           <Key>
@@ -319,6 +330,16 @@
           <Property Name="IdMetodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
+        <EntityType Name="tPagos">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Monto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ConsecutivoPed" Type="Int32" Nullable="false" />
+          <Property Name="ConsecutivoMet" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="tPedidos">
           <Key>
             <PropertyRef Name="Consecutivo" />
@@ -330,7 +351,7 @@
           <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tDetallePedidos" Relationship="Self.FK__tDetalleP__Conse__6477ECF3" FromRole="tPedidos" ToRole="tDetallePedidos" />
+          <NavigationProperty Name="tDetallePedidos" Relationship="Self.FK__tDetalleP__Conse__440B1D61" FromRole="tPedidos" ToRole="tDetallePedidos" />
         </EntityType>
         <EntityType Name="tProductos">
           <Key>
@@ -366,7 +387,7 @@
           <Key>
             <PropertyRef Name="Consecutivo" />
           </Key>
-          <Property Name="Consecutivo" Type="Int32" Nullable="false" />
+          <Property Name="Consecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -418,7 +439,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tDetalleP__Conse__6477ECF3">
+        <Association Name="FK__tDetalleP__Conse__440B1D61">
           <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="0..1" />
           <End Role="tDetallePedidos" Type="Self.tDetallePedidos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -448,6 +469,7 @@
           <EntitySet Name="tDetallePedidos" EntityType="Self.tDetallePedidos" />
           <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" />
           <EntitySet Name="tMetodos" EntityType="Self.tMetodos" />
+          <EntitySet Name="tPagos" EntityType="Self.tPagos" />
           <EntitySet Name="tPedidos" EntityType="Self.tPedidos" />
           <EntitySet Name="tProductos" EntityType="Self.tProductos" />
           <EntitySet Name="tPuestos" EntityType="Self.tPuestos" />
@@ -465,7 +487,7 @@
             <End Role="tCategorias" EntitySet="tCategorias" />
             <End Role="tProductos" EntitySet="tProductos" />
           </AssociationSet>
-          <AssociationSet Name="FK__tDetalleP__Conse__6477ECF3" Association="Self.FK__tDetalleP__Conse__6477ECF3">
+          <AssociationSet Name="FK__tDetalleP__Conse__440B1D61" Association="Self.FK__tDetalleP__Conse__440B1D61">
             <End Role="tPedidos" EntitySet="tPedidos" />
             <End Role="tDetallePedidos" EntitySet="tDetallePedidos" />
           </AssociationSet>
@@ -614,6 +636,17 @@
               <MappingFragment StoreEntitySet="tMetodos">
                 <ScalarProperty Name="IdMetodo" ColumnName="IdMetodo" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tPagos">
+            <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tPagos">
+              <MappingFragment StoreEntitySet="tPagos">
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="ConsecutivoPed" ColumnName="ConsecutivoPed" />
+                <ScalarProperty Name="ConsecutivoMet" ColumnName="ConsecutivoMet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

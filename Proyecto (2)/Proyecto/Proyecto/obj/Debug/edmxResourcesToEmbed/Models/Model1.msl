@@ -52,6 +52,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tPagos">
+      <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tPagos">
+        <MappingFragment StoreEntitySet="tPagos">
+          <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="ConsecutivoPed" ColumnName="ConsecutivoPed" />
+          <ScalarProperty Name="ConsecutivoMet" ColumnName="ConsecutivoMet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tPedidos">
       <EntityTypeMapping TypeName="AlaPastaDatabaseModel.tPedidos">
         <MappingFragment StoreEntitySet="tPedidos">

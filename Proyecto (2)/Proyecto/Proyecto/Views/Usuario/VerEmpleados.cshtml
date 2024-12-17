@@ -1,0 +1,65 @@
+﻿<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
+
+@model List<Proyecto.Models.Usuario>
+
+@{
+    ViewBag.Title = "CRUD Empleados";
+}
+
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <h5 class="card-title">Lista de Empleados</h5>
+            </div>
+            @if (!string.IsNullOrEmpty(ViewBag.MensajePantalla))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.MensajePantalla
+                </div>
+            }
+            <div class="d-flex justify-content-end mb-3">
+                <a class="btn btn-primary" href="@Url.Action("RegistroEmpleado", "Login")">
+                    Agregar Empleado
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table id="example" class="table text-nowrap align-middle mb-0">
+                    <thead>
+                        <tr class="border-2 border-bottom border-primary border-0">
+                            <th>Consecutivo</th>
+                            <th>Identificación</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo Electrónico</th>
+                            <th>Teléfono</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Consecutivo</td>
+                                <td>@item.Identificacion</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.Apellido</td>
+                                <td>@item.CorreoElectronico</td>
+                                <td>@item.Telefono</td>
+                                <td>@item.NombreRol</td>
+                                <td>
+                                    <a href="@Url.Action("ActualizarEmpleado", "Usuario", new { id = item.Identificacion })" class="btn btn-warning btn-sm">Editar</a>
+                                    <form action="@Url.Action("EliminarEmpleado", "Usuario")" method="post" style="display:inline;">
+                                        <input type="hidden" name="id" value="@item.Identificacion" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Styles/js/jquery.min.js"></script>

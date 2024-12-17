@@ -1,6 +1,7 @@
 ﻿<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
 
 @model List<Proyecto.Models.Usuario>
+
 @{
     ViewBag.Title = "CRUD Empleados";
 }
@@ -11,9 +12,9 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items">
                 <h5 class="card-title">Lista de Empleados</h5>
-                <a class="btn text-black d-inline align-middle" href="@Url.Action("VerEmpleados", "Usuario")" style="font-size: 1em; font-weight: bold;">
+                <button type="button" class="btn text-black d-inline align-middle" data-bs-toggle="modal" data-bs-target="#modalEmpleado" style="font-size: 1em; font-weight: bold;">
                     <i class="fa fa-plus" style="font-size: 1em; color:#000000;"></i>
-                </a>
+                </button>
             </div>
 
             <div class="table-responsive">
@@ -26,13 +27,10 @@
                             <th>Apellido</th>
                             <th>Correo Electronico</th>
                             <th>Telefono</th>
-                            <th>Estado</th>
                             <th>Rol</th>
-
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -42,22 +40,9 @@
                                 <td>@item.Apellido</td>
                                 <td>@item.CorreoElectronico</td>
                                 <td>@item.Telefono</td>
-                                <td>@item.Estado</td>
                                 <td>@item.NombreRol</td>
                                 <td>
-
-                                    <!--<a class="btn btn-success text-white" href="@Url.Action("VerEmpleados", "Usuario")">Crear<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>-->
-                                    <a class="btn btn-primary text-white" href="@Url.Action("VerEmpleados","Usuario", new { q = item.Identificacion })">Editar<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>
-
-
-
-                                    <button type="button" class="btn abrirModal btn-danger text-white" data-bs-toggle="modal" data-bs-target="#modalEmpleado"
-                                            data-id="@item.Identificacion"
-                                            data-name="@item.Nombre">
-                                        <i class="fa fa-trash-o" style="font-size: 1.4em;"></i>
-                                        Eliminar
-                                    </button>
-
+                                    <a class="btn btn-primary text-white" href="@Url.Action("ActualizarEmpleado", "Usuario", new { id = item.Identificacion })">Editar<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>
                                 </td>
                             </tr>
                         }
@@ -66,27 +51,63 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Modal para agregar empleado -->
     <div class="modal fade" id="modalEmpleado" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Confirmación</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Empleado</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                @using (Html.BeginForm("VerEmpleados", "Usuario"))
-                {
-                    <div class="modal-body">
-                        @*Html.Hidden("ConsecutivoPuesto", "IdEmpleado", "ActivoEmp", "NombrePuesto")*@
-                        ¿Desea eliminar el empleado seleccionado <label id="Nombre"></label>?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Procesar</button>
-                    </div>
-                }
+                <div class="modal-body">
+                    @if (ViewBag.MensajePantalla != null)
+                    {
+                        <div class="alert alert-danger text-center" role="alert">
+                            @ViewBag.MensajePantalla
+                        </div>
+                    }
+
+                    @using (Html.BeginForm("CrearEmpleado", "Empleado", FormMethod.Post))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Identificación</label>
+                            @Html.TextBoxFor(m => m., new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Apellido</label>
+                            @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo Electrónico</label>
+                            @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control", @required = "required", @type = "email" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", @required = "required", @type = "tel" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            @Html.PasswordFor(m => m.Contrasenna, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Activo</label>
+                            @Html.CheckBoxFor(m => m.Activo, new { @class = "form-check-input" })
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </div>
-
 
 
     <script src="~/Styles/js/jquery.min.js"></script>

@@ -46,6 +46,16 @@
     <Property Name="IdMetodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <EntityType Name="tPagos">
+    <Key>
+      <PropertyRef Name="IdPago" />
+    </Key>
+    <Property Name="IdPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="FechaPago" Type="date" Nullable="false" />
+    <Property Name="ConsecutivoPed" Type="int" Nullable="false" />
+    <Property Name="ConsecutivoMet" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="tPedidos">
     <Key>
       <PropertyRef Name="Consecutivo" />
@@ -89,7 +99,7 @@
     <Key>
       <PropertyRef Name="Consecutivo" />
     </Key>
-    <Property Name="Consecutivo" Type="int" Nullable="false" />
+    <Property Name="Consecutivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Apellido" Type="varchar" MaxLength="255" Nullable="false" />
@@ -101,7 +111,7 @@
     <Property Name="TieneContrasennaTemp" Type="bit" Nullable="false" />
     <Property Name="FechaVencimientoTemp" Type="datetime" Nullable="false" />
   </EntityType>
-  <Association Name="FK__tDetalleP__Conse__6477ECF3">
+  <Association Name="FK__tDetalleP__Conse__440B1D61">
     <End Role="tPedidos" Type="Self.tPedidos" Multiplicity="0..1" />
     <End Role="tDetallePedidos" Type="Self.tDetallePedidos" Multiplicity="*" />
     <ReferentialConstraint>
@@ -233,12 +243,13 @@
     <EntitySet Name="tDetallePedidos" EntityType="Self.tDetallePedidos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tDirecciones" EntityType="Self.tDirecciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tMetodos" EntityType="Self.tMetodos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPagos" EntityType="Self.tPagos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tPedidos" EntityType="Self.tPedidos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tProductos" EntityType="Self.tProductos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tPuestos" EntityType="Self.tPuestos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tRoles" EntityType="Self.tRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tUsuario" EntityType="Self.tUsuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__tDetalleP__Conse__6477ECF3" Association="Self.FK__tDetalleP__Conse__6477ECF3">
+    <AssociationSet Name="FK__tDetalleP__Conse__440B1D61" Association="Self.FK__tDetalleP__Conse__440B1D61">
       <End Role="tPedidos" EntitySet="tPedidos" />
       <End Role="tDetallePedidos" EntitySet="tDetallePedidos" />
     </AssociationSet>

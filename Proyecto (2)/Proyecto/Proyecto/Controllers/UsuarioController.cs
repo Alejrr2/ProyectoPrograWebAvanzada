@@ -81,13 +81,12 @@ namespace Proyecto.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult VerEmpleados()
         {
             using (var context = new AlaPastaDatabaseEntities())
             {
-                var datos = context.tUsuario
-                    .Where(x => x.ConsecutivoRol == 2)
-                    .ToList();
+                var datos = context.tUsuario.Where(x => x.ConsecutivoRol == 2).ToList();
 
                 List<Usuario> empleados = new List<Usuario>();
 
@@ -165,44 +164,6 @@ namespace Proyecto.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult CrearEmpleado()
-        {
-            return View();
-
-        }
-
-
-        [HttpPost]
-        public ActionResult CrearEmpleado(Usuario model)
-        {
-            using (var context = new AlaPastaDatabaseEntities())
-            {
-                var tabla = new tUsuario();
-
-                tabla.Consecutivo = 0;
-                tabla.Identificacion = "";
-                tabla.Nombre = model.Nombre;
-                tabla.Apellido = model.Apellido;
-                tabla.CorreoElectronico = model.CorreoElectronico;
-                tabla.Telefono = model.Telefono;
-                tabla.ConsecutivoRol = 2;
-                tabla.Activo = true;
-                tabla.Contrasenna = model.Contrasenna;
-
-
-                context.tUsuario.Add(tabla);
-                var respuesta = context.SaveChanges();
-
-
-                if (respuesta > 0)
-                    return RedirectToAction("VerEmpleados", "Usuario");
-
-                ViewBag.MensajePantalla = "Su información no se ha podido registrar correctamente";
-                return View();
-            }
-
-        }
         [HttpPost]
         public ActionResult ActualizarEstado(Usuario model)
         {

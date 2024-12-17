@@ -204,5 +204,23 @@ namespace Proyecto.Controllers
             }
 
         }
+        [HttpPost]
+        public ActionResult ActualizarEstado(Usuario model)
+        {
+            using (var context = new AlaPastaDatabaseEntities())
+            {
+                var datos = context.tUsuario.Where(x => x.Consecutivo == 2).FirstOrDefault();
+
+                if (datos != null)
+                {
+                    datos.Activo = (datos.Activo ? false : true);
+                    context.SaveChanges();
+                    return RedirectToAction("VerEmpleados", "Usuario");
+                }
+
+                ViewBag.MensajePantalla = "La información no se ha podido actualizar correctamente";
+                return View();
+            }
+        }
     }
 }

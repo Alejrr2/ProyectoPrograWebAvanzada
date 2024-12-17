@@ -1,6 +1,6 @@
 ﻿<link rel="stylesheet" href="~/Styles/cssLayout/Canasta.css" />
 
-@model List<Proyecto.Models.Empleado>
+@model List<Proyecto.Models.Usuario>
 @{
     ViewBag.Title = "CRUD Empleados";
 }
@@ -11,7 +11,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items">
                 <h5 class="card-title">Lista de Empleados</h5>
-                <a class="btn text-black d-inline align-middle" href="@Url.Action("VerEmpleados", "Empleado")" style="font-size: 1em; font-weight: bold;">
+                <a class="btn text-black d-inline align-middle" href="@Url.Action("VerEmpleados", "Usuario")" style="font-size: 1em; font-weight: bold;">
                     <i class="fa fa-plus" style="font-size: 1em; color:#000000;"></i>
                 </a>
             </div>
@@ -22,7 +22,7 @@
                         <!-- identificacion de los datos a leer/mostrar en la vista -->
                         <tr class="border-2 border-bottom border-primary border-0">
                             <th>Consecutivo</th>
-                            <th>ID</th>
+                            <th>Identificacion</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Correo Electronico</th>
@@ -38,25 +38,25 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.ConsecutivoRol</td>
-                                <td>@item.IdEmpleado</td>
-                                <td>@item.NombreEmp</td>
-                                <td>@item.ApellidoEmp</td>
-                                <td>@item.CorreoEmp</td>
-                                <td>@item.TelEmp</td>
-                                <td>@item.ActivoEmp</td>
-                                <td>@item.NombrePuesto</td>
+                                <td>@item.Consecutivo</td>
+                                <td>@item.Identificacion</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.Apellido</td>
+                                <td>@item.CorreoElectronico</td>
+                                <td>@item.Telefono</td>
+                                <td>@item.Estado</td>
+                                <td>@item.NombreRol</td>
                                 <td>
 
-                                    <!--<a class="btn btn-success text-white" href="@Url.Action("VerEmpleados", "Empleado")">Crear<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>-->
-                                    <a class="btn btn-primary text-white" href="@Url.Action("VerEmpleados","Empleado", new { q = item.IdEmpleado })">Editar<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>
+                                    <!--<a class="btn btn-success text-white" href="@Url.Action("VerEmpleados", "Usuario")">Crear<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>-->
+                                    <a class="btn btn-primary text-white" href="@Url.Action("VerEmpleados","Usuario", new { q = item.Identificacion })">Editar<i class="fa fa-pencil-square-o" style="font-size: 1.4em;"></i></a>
 
                                     <!-- La variable q es la llave unica de la base de datos con la que queremos encontrar los datos a editar -->
 
 
                                     <button type="button" class="btn abrirModal btn-danger text-white" data-bs-toggle="modal" data-bs-target="#modalEmpleado"
-                                            data-id="@item.IdEmpleado"
-                                            data-name="@item.NombreEmp">
+                                            data-id="@item.Identificacion"
+                                            data-name="@item.Nombre">
                                         <i class="fa fa-trash-o" style="font-size: 1.4em;"></i>
                                         Eliminar
                                     </button>
@@ -76,7 +76,7 @@
                     <h5 class="modal-title" id="staticBackdropLabel">Confirmación</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                @using (Html.BeginForm("VerEmpleados", "Empleado"))
+                @using (Html.BeginForm("VerEmpleados", "Usuario"))
                 {
                     <div class="modal-body">
                         @*Html.Hidden("ConsecutivoPuesto", "IdEmpleado", "ActivoEmp", "NombrePuesto")*@

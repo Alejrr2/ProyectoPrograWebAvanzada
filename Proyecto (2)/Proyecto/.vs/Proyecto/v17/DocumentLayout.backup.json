@@ -1,41 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\",
+  "WorkspaceRootPath": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\nataliaabarcamadriga\\documents\\prograavanzada\\proyecto\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\controllers\\empleadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\controllers\\empleadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\proyectoprograavanzada\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\nataliaabarcamadriga\\documents\\prograavanzada\\proyecto\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\empleado\\actualizarempleado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\empleado\\actualizarempleado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\nataliaabarcamadriga\\documents\\prograavanzada\\proyecto\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\empleado\\verempleados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\empleado\\verempleados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\nataliaabarcamadriga\\documents\\prograavanzada\\proyecto\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\carrito\\consultarcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\proyectoprograavanzada\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\views\\carrito\\consultarcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\carrito\\consultarcarrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\nataliaabarcamadriga\\documents\\prograavanzada\\proyecto\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|c:\\users\\nataliaabarcamadriga\\documents\\prograavanzada\\proyecto\\proyectoprograwebavanzada\\proyecto (2)\\proyecto\\proyecto\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\proyecto\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0C0B8E7-1952-49AC-80E6-DB49F7B4D099}|Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -46,117 +30,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T23:55:01.423Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ActualizarEmpleado.cshtml",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\ActualizarEmpleado.cshtml",
-              "RelativeDocumentMoniker": "Proyecto\\Views\\Empleado\\ActualizarEmpleado.cshtml",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\ActualizarEmpleado.cshtml",
-              "RelativeToolTip": "Proyecto\\Views\\Empleado\\ActualizarEmpleado.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Title": "ConsultarCarrito.cshtml",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
+              "RelativeDocumentMoniker": "Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
+              "RelativeToolTip": "Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAEcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T22:08:14.002Z",
+              "WhenOpened": "2024-12-16T23:35:20.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VerEmpleados.cshtml",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\VerEmpleados.cshtml",
-              "RelativeDocumentMoniker": "Proyecto\\Views\\Empleado\\VerEmpleados.cshtml",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Empleado\\VerEmpleados.cshtml",
-              "RelativeToolTip": "Proyecto\\Views\\Empleado\\VerEmpleados.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAE4AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T22:00:09.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx",
-              "RelativeDocumentMoniker": "Proyecto\\Models\\Model1.edmx",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "Proyecto\\Models\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-12-16T21:40:15.261Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Empleado.cs",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Empleado.cs",
-              "RelativeDocumentMoniker": "Proyecto\\Models\\Empleado.cs",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Empleado.cs",
-              "RelativeToolTip": "Proyecto\\Models\\Empleado.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T21:38:30.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmpleadoController.cs",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\EmpleadoController.cs",
-              "RelativeDocumentMoniker": "Proyecto\\Controllers\\EmpleadoController.cs",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\EmpleadoController.cs",
-              "RelativeToolTip": "Proyecto\\Controllers\\EmpleadoController.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAIwG4AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T21:11:28.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ConsultarCarrito.cshtml",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
-              "RelativeDocumentMoniker": "Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
-              "RelativeToolTip": "Proyecto\\Views\\Carrito\\ConsultarCarrito.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T19:52:16.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\CarritoController.cs",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\CarritoController.cs",
               "RelativeDocumentMoniker": "Proyecto\\Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Controllers\\CarritoController.cs",
               "RelativeToolTip": "Proyecto\\Controllers\\CarritoController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T19:44:17.828Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Productos.cshtml",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
               "RelativeDocumentMoniker": "Proyecto\\Views\\Productos\\Productos.cshtml",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Views\\Productos\\Productos.cshtml",
               "RelativeToolTip": "Proyecto\\Views\\Productos\\Productos.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T03:54:50.479Z"
+              "WhenOpened": "2024-12-16T03:54:50.479Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Producto.cs",
+              "DocumentMoniker": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Producto.cs",
               "RelativeDocumentMoniker": "Proyecto\\Models\\Producto.cs",
-              "ToolTip": "C:\\Users\\NataliaAbarcaMadriga\\Documents\\PrograAvanzada\\Proyecto\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Producto.cs",
+              "ToolTip": "C:\\ProyectoPrograAvanzada\\ProyectoPrograWebAvanzada\\Proyecto (2)\\Proyecto\\Proyecto\\Models\\Producto.cs",
               "RelativeToolTip": "Proyecto\\Models\\Producto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

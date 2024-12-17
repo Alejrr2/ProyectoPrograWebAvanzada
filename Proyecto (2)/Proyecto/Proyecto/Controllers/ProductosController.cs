@@ -84,8 +84,6 @@ namespace Proyecto.Controllers
             }
         }
 
-
-
         [HttpPost]
         public ActionResult EliminarProducto(int idProducto)
         {
@@ -102,17 +100,19 @@ namespace Proyecto.Controllers
                     ViewBag.MensajePantalla = "Ha ocurrido algun error";
                 }
 
-                return RedirectToAction("Productos");
+                return RedirectToAction("Productos", "Productos");
             }
         }
 
-
-
-
-        /*
         [HttpGet]
-        public ActionResult ActualizarProducto(long idProducto)
+        public ActionResult EditarProducto(long? idProducto)
         {
+            if (idProducto == null)
+            {
+                ViewBag.MensajePantalla = "No se encontró el producto.";
+                return RedirectToAction("Productos", "Productos");
+            }
+
             using (var context = new AlaPastaDatabaseEntities())
             {
                 var datos = context.tProductos.Where(x => x.IdProducto == idProducto).FirstOrDefault();
@@ -120,9 +120,10 @@ namespace Proyecto.Controllers
                 if (datos == null)
                 {
                     ViewBag.MensajePantalla = "No se encontró el producto.";
-                    return RedirectToAction("ConsultarProductos");
+                    return RedirectToAction("Productos", "Productos");
                 }
-                var producto = new Producto ()
+
+                var producto = new Producto()
                 {
                     IdProducto = datos.IdProducto,
                     NombreProducto = datos.NombreProducto,
@@ -136,7 +137,31 @@ namespace Proyecto.Controllers
 
                 return View(producto);
             }
-        }*/
+        }
+
+        [HttpPost]
+        public ActionResult EditarProducto(Producto model)
+        {
+                using (var context = new AlaPastaDatabaseEntities())
+                {
+                    var datos = context.tProductos.Where(x => x.IdProducto == model.IdProducto).FirstOrDefault();
+                    if (datos != null)
+                    {
+                        datos.NombreProducto = model.NombreProducto;
+                        datos.Descripcion = model.Descripcion;
+                        datos.Stock = model.Stock;
+                        datos.Precio = model.Precio;
+
+                        context.SaveChanges();
+                    return RedirectToAction("Productos", "Productos");
+                }
+
+                    ViewBag.MensajePantalla = "La información no se ha podido actualizar correctamente";
+                }
+            return View(model);
+        }
 
     }
 }
+
+
